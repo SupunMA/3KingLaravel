@@ -18,5 +18,14 @@ class homePageController extends Controller
         
     }
 
+    
+    public function register()
+    {
+        $bdata = branches::all();
+        //dd($bdata);
+        return view('auth.register',compact('bdata'));
+        
+    }
+
    
 }

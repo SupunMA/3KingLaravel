@@ -36,6 +36,8 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', [homePageController::class, 'index'])->name('welcome');
 
+Route::get('register', [homePageController::class, 'register'])->name('register');
+
 //Preventing go back
 Route::middleware(['middleware'=>'lockBack'])->group(function(){
     Auth::routes();
@@ -112,12 +114,10 @@ Route::group(['prefix'=>'Account/Checker','middleware'=>['checkChecker','auth','
 
 
 //Disabled User Registration
-Route::get('/register', function() {
-    return redirect('/login');
-});
+
 
 Route::post('/register', function() {
-    return redirect('/login');
+    return redirect('/register');
 });
 
 
