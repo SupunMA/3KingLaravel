@@ -76,13 +76,13 @@
                         <div class="inner">
         
                             <h3>{{$BranchesCount}}</h3>
-                            <h2>Branches</h2> 
+                            <h2>Plans</h2>
                             
                         </div>
                         <div class="icon">
                             <i class="far fa-building"></i>
                         </div>
-                        <a href="{{route('admin.allBranch')}}" class="small-box-footer">
+                        <a href="{{route('admin.allPlan')}}" class="small-box-footer">
                             More info <i class="fas fa-arrow-circle-right"></i>
                         </a>
                     </div>

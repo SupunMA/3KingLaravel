@@ -30,7 +30,7 @@ class admin_planCtr extends Controller
     public function allPlan()
     {
         $bdata = plan::all();
-        return view('Users.Admin.Plan.AddNewPlan',compact('bdata'));
+        return view('Users.Admin.Plan.AllPlans',compact('bdata'));
     }
 
     public function addingPlan(Request $data)
