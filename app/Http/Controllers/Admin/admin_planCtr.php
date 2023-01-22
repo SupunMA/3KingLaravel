@@ -36,8 +36,8 @@ class admin_planCtr extends Controller
     public function addingPlan(Request $data)
     {
          $data->validate([
-            'planName' =>'required',
-            'planPrice' =>'required'
+            'planName' =>['required','string'],
+            'planPrice' =>['required','integer']
          ]);
         $user = Plan::create($data->all());
         return redirect()->back()->with('message','successful');

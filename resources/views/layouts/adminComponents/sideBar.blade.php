@@ -89,8 +89,8 @@
 
                     {{-- Lands --}}
 
-                <li class="nav-item {{ Route::currentRouteNamed('admin.addLand') || Route::currentRouteNamed('admin.allLand') ? 'menu-open' : 'menu-close' }}">
-                  <a href="#" class="nav-link {{ Route::currentRouteNamed('admin.addLand') || Route::currentRouteNamed('admin.allLand') ? 'active' : '' }}">
+                <li class="nav-item {{ Route::currentRouteNamed('admin.addPlan') || Route::currentRouteNamed('admin.allPlan') ? 'menu-open' : 'menu-close' }}">
+                  <a href="#" class="nav-link {{ Route::currentRouteNamed('admin.addPlan') || Route::currentRouteNamed('admin.allPlan') ? 'active' : '' }}">
                     <i class="fas fa-house-user"></i>
                       <p>
                           Plans
@@ -99,13 +99,13 @@
                   </a>
                   <ul class="nav nav-treeview">
                       <li class="nav-item">
-                          <a href="{{ route('admin.addLand') }}" class="nav-link {{ Route::currentRouteNamed('admin.addLand') ? 'active' : '' }}">
+                          <a href="{{ route('admin.addPlan') }}" class="nav-link {{ Route::currentRouteNamed('admin.addPlan') ? 'active' : '' }}">
                               <i class="far fa-circle nav-icon"></i>
                               <p> Add New Plan</p>
                           </a>
                       </li>
                       <li class="nav-item">
-                          <a href="{{ route('admin.allLand') }}" class="nav-link {{ Route::currentRouteNamed('admin.allLand') ? 'active' : '' }}">
+                          <a href="{{ route('admin.allPlan') }}" class="nav-link {{ Route::currentRouteNamed('admin.allPlan') ? 'active' : '' }}">
                               <i class="far fa-circle nav-icon"></i>
                               <p> All Plans</p>
                           </a>

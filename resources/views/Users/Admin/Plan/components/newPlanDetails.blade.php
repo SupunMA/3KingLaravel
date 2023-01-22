@@ -50,10 +50,9 @@
 
                                 <div class="input-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-phone-alt"></i></span>
+                                        <span class="input-group-text"><i class="fa fa-money"></i></span>
                                     </div>
-                                    <input type="text" name="planPrice" class="form-control"
-                                        data-inputmask='"mask": "(999) 999 9999"' data-mask placeholder="Tel Number">
+                                    <input type="number" name="planPrice" class="form-control">
                                 </div>
                                 <!-- /.input group -->
                             </div>

@@ -36,7 +36,7 @@ class admin_ClientCtr extends Controller
         //$clients=User::where('role',0)->get();
 
         $branches=Plan::all('planName', 'planID');
-        $clients = User::join('plan','branches.branchID','=','users.refPlan')
+        $clients = User::join('plan','plan.planID','=','users.refPlan')
         ->where('users.role',0)->get();
         //->join('table1','table1.id','=','table3.id');
         return view('Users.Admin.Clients.allClients',compact('clients','branches'));

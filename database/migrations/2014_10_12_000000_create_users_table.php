@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('mobile')->nullable();
             $table->string('email')->unique()->nullable();
 
-            $table->BigInteger('zipCode')->unique()->nullable();
+            $table->BigInteger('zipCode')->nullable();
             
 
             $table->integer('role')->default(0);
