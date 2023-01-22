@@ -17,8 +17,8 @@
                     <th>Name</th>
                     <th>Date of Birth</th>
                     <th>Gender</th>
-                    <th>Address</th>
-                    <th>ZipCode</th>
+                    <th>Address, ZipCode</th>
+                    <th>Email</th>
                     <th>Mobile</th>
                     <th>Join Date</th>
                     <th>Plan</th>
@@ -33,8 +33,8 @@
                         <td>{{$client->name}}</td>
                         <td>{{$client->dob}}</td>
                         <td>{{$client->gender}}</td>
-                        <td>{{$client->address}}</td>
-                        <td>{{$client->zipCode}}</td>
+                        <td>{{$client->address}}, {{$client->zipCode}}</td>
+                        <td>{{$client->email}}</td>
                         <td>{{$client->mobile}}</td>
                         <td>{{$client->joinDate}}</td>
                         <td>{{$client->refPlan}}</td>
@@ -65,8 +65,8 @@
                     <th>Name</th>
                     <th>Date of Birth</th>
                     <th>Gender</th>
-                    <th>Address</th>
-                    <th>ZipCode</th>
+                    <th>Address, ZipCode</th>
+                    <th>Email</th>
                     <th>Mobile</th>
                     <th>Join Date</th>
                     <th>Plan</th>

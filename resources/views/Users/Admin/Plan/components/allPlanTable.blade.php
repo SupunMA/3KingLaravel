@@ -1,6 +1,6 @@
 <div class="card card-warning">
     <div class="card-header">
-        <h3 class="card-title">All Branches</h3>
+        <h3 class="card-title">All Plans</h3>
     </div>
     <!-- /.card-header -->
     
@@ -10,52 +10,44 @@
         <table id="example1" class="table table-bordered table-striped">
             <thead>
                 <tr>
-                    <th>Branch ID</th>
-                    <th>Branch Name</th>
-                    <th>Address</th>
-                    <th>Telephone</th>
-                    <th>Location</th>
-                    <th>Actions</th>
+                    <th>Plan ID</th>
+                    <th>Plan Name</th>
+                    <th>Plan Price</th>
+                    <th>Action</th>
+                    
                 </tr>
             </thead>
             <tbody>
 
                 @foreach ($bdata as $bd)
                     <tr>
-                        <td>{{$bd->branchID}}</td>
-                        <td>{{$bd->branchName}}</td>
-                        <td>{{$bd->branchAddress}}</td>
-                        <td>{{$bd->branchTP}}</td>
+                        <td>{{$bd->planID}}</td>
+                        <td>{{$bd->planName}}</td>
+                        <td>{{$bd->planPrice}}</td>
+                        
+                        
                         <td>
-                            <a class="btn bg-gradient-primary" href="{{$bd->branchLocation}}" target="_blank">
-                                <i class="fas fa-map-marked-alt"></i>
-                                check the map
-                            </a>
-                        </td>
-                        <td>
-                            <a class="btn btn-warning" type="button" data-toggle="modal" data-target="#branchEditModal-{{$bd->branchID}}" >
+                            <a class="btn btn-warning" type="button" data-toggle="modal" data-target="#branchEditModal-{{$bd->planID}}" >
                                 <i class="far fa-edit"></i>
                             </a>
-                            <a class="btn btn-danger" type="button" data-toggle="modal" data-target="#branchDeleteModal-{{$bd->branchID}}"  >
+                            <a class="btn btn-danger" type="button" data-toggle="modal" data-target="#branchDeleteModal-{{$bd->planID}}"  >
                                 <i class="far fa-trash-alt"></i>
                             </a>
                         </td>
                     </tr>
                     
                             {{-- update modal and delete modal --}}
-                            @include('Users.Admin.Branches.components.updateBranch')
-                            @include('Users.Admin.Branches.components.deleteBranch')
+                            @include('Users.Admin.Plan.components.updatePlan')
+                            @include('Users.Admin.Plan.components.deletePlan')
                 @endforeach
 
             </tbody>
             <tfoot>
                 <tr>
-                    <th>Branch ID</th>
-                    <th>Branch Name</th>
-                    <th>Address</th>
-                    <th>Telephone</th>
-                    <th>Location</th>
-                    <th>Actions</th>
+                    <th>Plan ID</th>
+                    <th>Plan Name</th>
+                    <th>Plan Price</th>
+                    <th>Action</th>
                 </tr>
             </tfoot>
         </table>

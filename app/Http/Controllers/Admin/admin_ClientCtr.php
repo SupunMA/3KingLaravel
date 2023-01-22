@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\branches;
+use App\Models\Plan;
 use App\Models\User;
 
 
@@ -26,7 +26,8 @@ class admin_ClientCtr extends Controller
     public function addClient()
     {
        
-        $branches=branches::all('branchName', 'branchID');
+        $branches=Plan::all('planName', 'planID');
+        
         return view('Users.Admin.Clients.addClient',compact('branches'));
     }
 
@@ -34,8 +35,8 @@ class admin_ClientCtr extends Controller
     {
         //$clients=User::where('role',0)->get();
 
-        $branches=branches::all('branchName', 'branchID');
-        $clients = User::join('branches','branches.branchID','=','users.refPlan')
+        $branches=Plan::all('planName', 'planID');
+        $clients = User::join('plan','branches.branchID','=','users.refPlan')
         ->where('users.role',0)->get();
         //->join('table1','table1.id','=','table3.id');
         return view('Users.Admin.Clients.allClients',compact('clients','branches'));
@@ -59,7 +60,7 @@ class admin_ClientCtr extends Controller
             'address' => ['string','required'],
             'mobile' =>['string'],
             'NIC'=>['integer','unique:users,id'], //can save same value according to user id
-            'refBranch'=>['required']
+            'refPlan'=>['required']
         ]);
 
 
@@ -74,7 +75,7 @@ class admin_ClientCtr extends Controller
                     'fileName' => $request->fileName,
                     'photo' => $request->photo,
                     'userMap' => $request->userMap,
-                    'refBranch' => $request->refBranch
+                    'refPlan' => $request->refPlan
                 ]);
 
         return redirect()->back()->with('message','successful');

@@ -124,7 +124,7 @@
                         <select class="form-control select2bs4" style="width: 100%;" name="refPlan">
                             {{-- <option selected="selected">Alabama</option> --}}
                             @foreach ($branches as $bd)
-                                <option value="{{$bd->branchID}}">{{$bd->branchName}}</option>
+                                <option value="{{$bd->planID}}">{{$bd->planName}}</option>
                             @endforeach
                             
                         </select>

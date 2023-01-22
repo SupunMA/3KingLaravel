@@ -7,7 +7,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Auth\RegisterController;
 
 use App\Http\Controllers\Admin\admin_HomeCtr;
-use App\Http\Controllers\Admin\admin_BranchCtr;
+use App\Http\Controllers\Admin\admin_PlanCtr;
 use App\Http\Controllers\Admin\admin_ClientCtr;
 use App\Http\Controllers\Admin\admin_LoanCtr;
 use App\Http\Controllers\Admin\admin_LandCtr;
@@ -71,11 +71,11 @@ Route::group(['prefix'=>'Admin','middleware'=>['checkAdmin','auth','lockBack']],
     Route::get('loan/delete/{loanID}', [admin_LoanCtr::class, 'deleteLoan'])->name('admin.deleteLoan');
     Route::post('loan/update', [admin_LoanCtr::class, 'updateLoan'])->name('admin.updateLoan');
 
-    Route::get('AddBranch', [admin_BranchCtr::class, 'addBranch'])->name('admin.addBranch');
-    Route::get('AllBranch', [admin_BranchCtr::class, 'allBranch'])->name('admin.allBranch');
-    Route::POST('addingBranch', [admin_BranchCtr::class, 'addingBranch'])->name('admin.addingBranch');
-    Route::get('branch/delete/{branchID}', [admin_BranchCtr::class, 'deleteBranch'])->name('admin.deleteBranch');
-    Route::post('branch/update', [admin_BranchCtr::class, 'updateBranch'])->name('admin.updateBranch');
+    Route::get('AddPlan', [admin_planCtr::class, 'addPlan'])->name('admin.addPlan');
+    Route::get('AllPlan', [admin_planCtr::class, 'allPlan'])->name('admin.allPlan');
+    Route::POST('addingPlan', [admin_planCtr::class, 'addingPlan'])->name('admin.addingPlan');
+    Route::get('plan/delete/{planID}', [admin_planCtr::class, 'deletePlan'])->name('admin.deletePlan');
+    Route::post('plan/update', [admin_planCtr::class, 'updatePlan'])->name('admin.updatePlan');
 
     Route::get('AddTransaction', [admin_TransactionCtr::class, 'addTransaction'])->name('admin.addTransaction');
     Route::get('AllTransaction', [admin_TransactionCtr::class, 'allTransaction'])->name('admin.allTransaction');

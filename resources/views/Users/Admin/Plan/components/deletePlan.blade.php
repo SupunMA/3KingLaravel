@@ -1,5 +1,5 @@
 <!-- Edit branch -->
-<div class="modal fade" id="branchDeleteModal-{{$bd->branchID}}" tabindex="-1" role="dialog"
+<div class="modal fade" id="branchDeleteModal-{{$bd->planID}}" tabindex="-1" role="dialog"
     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -10,14 +10,14 @@
                 </button>
             </div>
 
-            <form action="branch/delete/{{$bd->branchID}}" method="get">
+            <form action="plan/delete/{{$bd->planID}}" method="get">
                 @csrf
                 
                 <div class="modal-body">
                   
                     <h5>Are you sure you want to Delete ?.. </h5>
-                        <h2 class="text-center text-danger"><b>{{$bd->branchName}}</b> Branch</h2>
-                    <i>Please confirm it again. you will not be able to recover this branch data.</i>
+                        <h2 class="text-center text-danger"><b>{{$bd->planName}}</b> Plan</h2>
+                    <i>Please confirm it again. you will not be able to recover this plan data.</i>
 
                 </div>
                 <div class="modal-footer">

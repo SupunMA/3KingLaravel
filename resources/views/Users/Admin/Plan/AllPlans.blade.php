@@ -2,30 +2,26 @@
 
 @section('content')
 <div class="container-fluid ">
-    <a class="btn btn-danger mb-1" href="{{route('admin.allBranch')}}">
+    <a class="btn btn-danger mb-1" href="{{route('admin.addPlan')}}">
         <i class="fas fa-list-ul mr-1"></i>
-        <b>View All Branches</b>
+        <b>Add New Plan</b>
     </a>
-        
+        {{-- @include('Users.Admin.messages.deleteMsg') --}}
         {{-- <div class="row"> --}}
 
             {{-- Client Details form --}}
-            
-            @include('Users.Admin.Branches.components.newBranchDetails')
+            @include('Users.Admin.Plan.components.allPlanTable')
            
             {{-- Client Password form --}}
-            
-            
+
         {{-- </div>  --}}
-            {{-- End of Row --}}
-
-    
-            {{-- End of Form --}}
-
+            
+            
+            
 
 </div>
 @endsection
 
 @section('header')
-Add New Branch
+All Plans
 @endsection
