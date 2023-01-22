@@ -36,7 +36,8 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', [homePageController::class, 'index'])->name('welcome');
 
-Route::get('register', [homePageController::class, 'register'])->name('register');
+Route::get('signup', [homePageController::class, 'register2'])->name('register2');
+Route::POST('registering', [RegisterController::class, 'addingClient'])->name('registering');
 
 //Preventing go back
 Route::middleware(['middleware'=>'lockBack'])->group(function(){

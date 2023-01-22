@@ -16,8 +16,8 @@
                     @else
                     <a href="{{ route('login') }}" class="btn-get-started">Login</a>
 
-                    @if (Route::has('register'))
-                    <a href="{{ route('register') }}" class="btn-services">Register</a>
+                    @if (Route::has('register2'))
+                    <a href="{{ route('register2') }}" class="btn-services">Register</a>
                     @endif
                     @endif
                 </div>
