@@ -117,16 +117,17 @@
                     </div>
                 
                 </div>
+            
+                {{-- Role value --}}
 
                 <div class="col-lg-6 col-12">
                     <div class="form-group">
                         <label>Select The Role</label>
-                        
-                        <select class="form-control select2bs4" style="width: 100%;" name="refPlan">
+                        <select class="form-control select2bs4" style="width: 100%;" name="role">
                             {{-- <option selected="selected">Alabama</option> --}}
                             
                                 <option value="1">Admin</option>
-                                <option value="2">Coach</option>
+                                <option value="2" selected="selected">Coach</option>
                                 <option value="3">Manager</option>
                             
                             
@@ -136,7 +137,7 @@
 
             </div>
 
-{{-- Role value --}}
+
             {{-- <input name="role" type="hidden" value="2"> --}}
         </div>
         <!-- /.card-body -->

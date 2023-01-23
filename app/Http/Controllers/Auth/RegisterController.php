@@ -86,7 +86,7 @@ class RegisterController extends Controller
             'mobile' =>['string','unique:users'],
             'zipCode'=>['integer'],
             'joinDate'=> ['required', 'string', 'date'],
-            'refPlan'=>['required','integer']
+            'refPlan'=>['integer']
         ]);
 
         $user = new User();

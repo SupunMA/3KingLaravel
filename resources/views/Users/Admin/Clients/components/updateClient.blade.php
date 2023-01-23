@@ -150,7 +150,7 @@
                                 
                                 <select class="form-control select2bs4" style="width: 100%;" name="refPlan">
                                     {{-- <option selected="selected">Alabama</option> --}}
-                                    @foreach ($branches as $bd)
+                                    @foreach ($plans as $bd)
                                         @if ($bd->planID == $client->refPlan)
                                             <option value="{{$bd->planID}}" selected="selected">{{$bd->planName}} - Rs.{{$bd->planPrice}}</option>
                                         @else

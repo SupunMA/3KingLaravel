@@ -37,7 +37,7 @@
                         <td>{{$client->email}}</td>
                         <td>{{$client->mobile}}</td>
                         <td>{{$client->joinDate}}</td>
-                        <td>{{$client->refPlan}}</td>
+                        <td>{{$client->planName}}</td>
                         
                         
                         

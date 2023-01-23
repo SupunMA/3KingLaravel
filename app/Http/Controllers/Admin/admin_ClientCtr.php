@@ -35,12 +35,12 @@ class admin_ClientCtr extends Controller
     {
         //$clients=User::where('role',0)->get();
 
-        $branches=Plan::all('planName', 'planID', 'planPrice');
+        $plans=Plan::all('planName', 'planID', 'planPrice');
         $clients = User::join('plan','plan.planID','=','users.refPlan')
         ->where('users.role',0)->get();
         //->join('table1','table1.id','=','table3.id');
         //dd($clients);
-        return view('Users.Admin.Clients.allClients',compact('clients','branches'));
+        return view('Users.Admin.Clients.allClients',compact('clients','plans'));
     }
     
     public function deleteClient($userID)
@@ -101,12 +101,11 @@ class admin_ClientCtr extends Controller
     {
         //$clients=User::where('role',0)->get();
 
-        $branches=Plan::all('planName', 'planID', 'planPrice');
-        $clients = User::join('plan','plan.planID','=','users.refPlan')
-        ->where('users.role',0)->get();
+       // $branches=Plan::all('planName', 'planID', 'planPrice');
+        $clients = User::where('users.role','!=',0)->get();
         //->join('table1','table1.id','=','table3.id');
         //dd($clients);
-        return view('Users.Admin.Staff.allStaff',compact('clients','branches'));
+        return view('Users.Admin.Staff.allStaff',compact('clients'));
     }
     
     public function deleteStaff($userID)
@@ -130,7 +129,8 @@ class admin_ClientCtr extends Controller
             'mobile' =>['string'],
             'zipCode'=>['integer'],
             'joinDate'=> ['required', 'string', 'date'],
-            'refPlan'=>['required','integer']
+            'refPlan'=>['integer'],
+            'role' => ['required', 'integer']
         ]);
 
 
@@ -145,7 +145,8 @@ class admin_ClientCtr extends Controller
                     'joinDate'=> $request->joinDate,
                     'dob'=> $request->dob,
                     'gender' => $request->gender,
-                    'refPlan' => $request->refPlan
+                    'refPlan' => $request->refPlan,
+                    'role' => $request->role
                 ]);
 
         return redirect()->back()->with('message','successful');

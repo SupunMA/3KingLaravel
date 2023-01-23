@@ -37,7 +37,17 @@
                         <td>{{$client->email}}</td>
                         <td>{{$client->mobile}}</td>
                         <td>{{$client->joinDate}}</td>
-                        <td>{{$client->role}}</td>
+                        <td>
+                            @if ($client->role=='1')
+                                Admin
+                            @elseif ($client->role=='2')
+                                Coach
+                            @elseif ($client->role=='3')
+                                Manager
+                            @endif
+                            
+                        
+                        </td>
                         
                         
                         
