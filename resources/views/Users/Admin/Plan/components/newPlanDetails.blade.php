@@ -52,7 +52,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fa fa-money"></i></span>
                                     </div>
-                                    <input type="number" name="planPrice" class="form-control">
+                                    <input type="number" name="planPrice" class="form-control" placeholder="Price of the Plan">
                                 </div>
                                 <!-- /.input group -->
                             </div>

@@ -38,8 +38,8 @@
                                 <span class="input-group-text"><i class="fas fa-phone-alt"></i></span>
                             </div>
                             <input type="text" name="planPrice" class="form-control"
-                                data-inputmask='"mask": "(999) 999 9999"' data-mask placeholder="Tel Number"
-                                value="{{$bd->PlanPrice}}">
+                                 data-mask placeholder="Plan Price"
+                                value="{{$bd->planPrice}}">
                         </div>
                         <!-- /.input group -->
                     </div>

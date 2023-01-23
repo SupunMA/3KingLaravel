@@ -9,7 +9,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Admin\admin_HomeCtr;
 use App\Http\Controllers\Admin\admin_PlanCtr;
 use App\Http\Controllers\Admin\admin_ClientCtr;
-use App\Http\Controllers\Admin\admin_LoanCtr;
+//use App\Http\Controllers\Admin\admin_StaffCtr;
 use App\Http\Controllers\Admin\admin_LandCtr;
 use App\Http\Controllers\Admin\admin_TransactionCtr;
 
@@ -58,18 +58,18 @@ Route::group(['prefix'=>'Admin','middleware'=>['checkAdmin','auth','lockBack']],
     Route::POST('addingClient', [RegisterController::class, 'addingClient'])->name('admin.addingClient');
     Route::get('client/delete/{userID}', [admin_ClientCtr::class, 'deleteClient'])->name('admin.deleteClient');
     Route::post('client/update', [admin_ClientCtr::class, 'updateClient'])->name('admin.updateClient');
+    
+    Route::get('AddStaff', [admin_ClientCtr::class, 'addStaff'])->name('admin.addStaff');
+    Route::get('AllStaff', [admin_ClientCtr::class, 'allStaff'])->name('admin.allStaff');
+    Route::POST('addingStaff', [admin_ClientCtr::class, 'addingStaff'])->name('admin.addingStaff');
+    Route::get('staff/delete/{ID}', [admin_ClientCtr::class, 'deleteStaff'])->name('admin.deleteStaff');
+    Route::post('staff/update', [admin_ClientCtr::class, 'updateStaff'])->name('admin.updateStaff');
 
     Route::get('AddLand', [admin_LandCtr::class, 'addLand'])->name('admin.addLand');
     Route::get('AllLand', [admin_LandCtr::class, 'allLand'])->name('admin.allLand');
     Route::POST('addingLand', [admin_LandCtr::class, 'addingLand'])->name('admin.addingLand');
     Route::get('land/delete/{landID}', [admin_LandCtr::class, 'deleteLand'])->name('admin.deleteLand');
     Route::post('land/update', [admin_LandCtr::class, 'updateLand'])->name('admin.updateLand');
-    
-    Route::get('AddLoan', [admin_LoanCtr::class, 'addLoan'])->name('admin.addLoan');
-    Route::get('AllLoan', [admin_LoanCtr::class, 'allLoan'])->name('admin.allLoan');
-    Route::POST('addingLoan', [admin_LoanCtr::class, 'addingLoan'])->name('admin.addingLoan');
-    Route::get('loan/delete/{loanID}', [admin_LoanCtr::class, 'deleteLoan'])->name('admin.deleteLoan');
-    Route::post('loan/update', [admin_LoanCtr::class, 'updateLoan'])->name('admin.updateLoan');
 
     Route::get('AddPlan', [admin_planCtr::class, 'addPlan'])->name('admin.addPlan');
     Route::get('AllPlan', [admin_planCtr::class, 'allPlan'])->name('admin.allPlan');

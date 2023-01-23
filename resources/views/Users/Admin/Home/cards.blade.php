@@ -39,14 +39,14 @@
                     <div class="small-box bg-warning">
                         <div class="inner">
         
-                            <h3>{{$LandCount}}</h3>
-                            <h2>Lands</h2>
+                            <h3>{{$CoachCount}}</h3>
+                            <h2>Coaches</h2>
         
                         </div>
                         <div class="icon">
                             <i class="fas fa-house-user"></i>
                         </div>
-                        <a href="{{route('admin.allLand')}}" class="small-box-footer">
+                        <a href="{{route('admin.allStaff')}}" class="small-box-footer">
                             More info <i class="fas fa-arrow-circle-right"></i>
                         </a>
                     </div>
@@ -57,14 +57,14 @@
                     <div class="small-box bg-danger">
                         <div class="inner">
         
-                            <h3>{{$LoanCount}}</h3>
-                            <h2>Loans</h2> 
+                            <h3>{{$ManagerCount}}</h3>
+                            <h2>Mangers</h2> 
         
                         </div>
                         <div class="icon">
                             <i class="fas fa-money-bill-wave"></i>
                         </div>
-                        <a href="{{route('admin.allLoan')}}" class="small-box-footer">
+                        <a href="{{route('admin.allStaff')}}" class="small-box-footer">
                             More info <i class="fas fa-arrow-circle-right"></i>
                         </a>
                     </div>
@@ -75,7 +75,7 @@
                     <div class="small-box bg-success">
                         <div class="inner">
         
-                            <h3>{{$BranchesCount}}</h3>
+                            <h3>{{$PlanCount}}</h3>
                             <h2>Plans</h2>
                             
                         </div>

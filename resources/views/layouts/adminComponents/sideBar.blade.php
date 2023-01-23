@@ -116,8 +116,8 @@
 
                 {{-- Loans --}}
 
-              <li class="nav-item {{ Route::currentRouteNamed('admin.addLoan') || Route::currentRouteNamed('admin.allLoan') ? 'menu-open' : 'menu-close' }}">
-                <a href="#" class="nav-link {{ Route::currentRouteNamed('admin.addLoan') || Route::currentRouteNamed('admin.allLoan') ? 'active' : '' }}">
+              <li class="nav-item {{ Route::currentRouteNamed('admin.addStaff') || Route::currentRouteNamed('admin.allStaff') ? 'menu-open' : 'menu-close' }}">
+                <a href="#" class="nav-link {{ Route::currentRouteNamed('admin.addStaff') || Route::currentRouteNamed('admin.allStaff') ? 'active' : '' }}">
                     <i class="far fa-handshake"></i>
                     <p>
                         Staff
@@ -126,13 +126,13 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="{{ route('admin.addLoan') }}" class="nav-link {{ Route::currentRouteNamed('admin.addLoan') ? 'active' : '' }}">
+                        <a href="{{ route('admin.addStaff') }}" class="nav-link {{ Route::currentRouteNamed('admin.addStaff') ? 'active' : '' }}">
                             <i class="far fa-circle nav-icon"></i>
                             <p> Add New Staff Member</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('admin.allLoan') }}" class="nav-link {{ Route::currentRouteNamed('admin.allLoan') ? 'active' : '' }}">
+                        <a href="{{ route('admin.allStaff') }}" class="nav-link {{ Route::currentRouteNamed('admin.allStaff') ? 'active' : '' }}">
                             <i class="far fa-circle nav-icon"></i>
                             <p> All Staff</p>
                         </a>

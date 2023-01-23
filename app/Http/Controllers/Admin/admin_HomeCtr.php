@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\Plan;
 use App\Models\User;
 use App\Models\Land;
-use App\Models\Loan;
+
 use App\Models\Transaction;
 
 class admin_HomeCtr extends Controller
@@ -28,11 +28,15 @@ class admin_HomeCtr extends Controller
     public function checkAdmin()
     {
         $ClientsCount=User::where('users.role',0)->count();
+        $AdminCount=User::where('users.role',1)->count();
+        $CoachCount=User::where('users.role',2)->count();
+        $ManagerCount=User::where('users.role',3)->count();
+
+
         $LandCount = Land::count();
-        $BranchesCount=Plan::count();
-        $LoanCount=Loan::count();
+        $PlanCount=Plan::count();
         $TransCount=Transaction::count();
-        return view('Users.Admin.home',compact('ClientsCount','LandCount','BranchesCount','LoanCount','TransCount'));
+        return view('Users.Admin.home',compact('PlanCount','ClientsCount','LandCount','TransCount','ManagerCount','CoachCount','AdminCount'));
     }
 
     
