@@ -5,12 +5,13 @@
  <div class="col-lg-6 col-12">
     <div class="card card-info">
         <div class="card-header">
-            <h3 class="card-title">Client's Login Credentials</h3>
+            <h3 class="card-title">Member's Login Credentials</h3>
         </div>
         <!-- /.card-header -->
         <!-- form start -->
 
         <div class="card-body">
+
             <div class="row">
                 <div class="col-lg-6 col-12">
                     <div class="form-group">
@@ -25,10 +26,9 @@
                         <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                     </div>
                 </div>
-                <small class="form-text text-muted text-left">Minimum Password Length is 8 characters!</small>
 
             </div>
-
+            <small class="form-text text-muted text-left">Minimum Password Length is 8 characters!</small>
 
         </div>
         <!-- /.card-body -->

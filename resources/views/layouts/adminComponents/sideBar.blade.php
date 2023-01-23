@@ -2,8 +2,8 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="{{route('admin.home')}}" class="brand-link">
-        <img src="https://drive.google.com/uc?export=view&id=17oMlgpisY5HADXWqOh9jfu5WzDANcE_f"
-            alt="MMC Logo" class="brand-image img-circle elevation-3" style="opacity: 1">
+        <img src="https://media.istockphoto.com/id/1145254708/vector/portable-swimming-pool-vector-icon-illustration.jpg?s=612x612&w=0&k=20&c=lmIkgqOrzddXYqGZwWgClceUT5ZDK11MjKKarmXm90U="
+            alt="Logo" class="brand-image img-circle elevation-3" style="opacity: 1">
         <span class="brand-text font-weight-light">Admin Panel</span>
     </a>
 
@@ -12,7 +12,7 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                <img src="https://yt3.ggpht.com/ytc/AKedOLRJ7vDbP2EUGugOC5RpY5WwbegndXfVGUxnxFiOHA=s88-c-k-c0x00ffffff-no-rj"
+                <img src="https://icon-library.com/images/admin-user-icon/admin-user-icon-4.jpg"
                     class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">

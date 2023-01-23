@@ -3,7 +3,7 @@
 <div class="col-lg-6 col-12 ">
     <div class="card card-primary">
         <div class="card-header">
-            <h3 class="card-title">New Customer's Details</h3>
+            <h3 class="card-title">Staff Member's Details</h3>
         </div>
         <!-- /.card-header -->
         <!-- form start -->
@@ -120,13 +120,15 @@
 
                 <div class="col-lg-6 col-12">
                     <div class="form-group">
-                        <label>Select The Plan</label>
+                        <label>Select The Role</label>
                         
                         <select class="form-control select2bs4" style="width: 100%;" name="refPlan">
                             {{-- <option selected="selected">Alabama</option> --}}
-                            @foreach ($branches as $bd)
-                                <option value="{{$bd->planID}}">{{$bd->planName}} - Rs.{{$bd->planPrice}}</option>
-                            @endforeach
+                            
+                                <option value="1">Admin</option>
+                                <option value="2">Coach</option>
+                                <option value="3">Manager</option>
+                            
                             
                         </select>
                     </div>
@@ -135,7 +137,7 @@
             </div>
 
 {{-- Role value --}}
-            <input name="role" type="hidden" value="0">
+            {{-- <input name="role" type="hidden" value="2"> --}}
         </div>
         <!-- /.card-body -->
 

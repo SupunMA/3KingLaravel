@@ -26,7 +26,7 @@ class admin_ClientCtr extends Controller
     public function addClient()
     {
        
-        $branches=Plan::all('planName', 'planID');
+        $branches=Plan::all('planName', 'planID', 'planPrice');
         
         return view('Users.Admin.Clients.addClient',compact('branches'));
     }
@@ -35,10 +35,11 @@ class admin_ClientCtr extends Controller
     {
         //$clients=User::where('role',0)->get();
 
-        $branches=Plan::all('planName', 'planID');
+        $branches=Plan::all('planName', 'planID', 'planPrice');
         $clients = User::join('plan','plan.planID','=','users.refPlan')
         ->where('users.role',0)->get();
         //->join('table1','table1.id','=','table3.id');
+        //dd($clients);
         return view('Users.Admin.Clients.allClients',compact('clients','branches'));
     }
     
@@ -55,26 +56,29 @@ class admin_ClientCtr extends Controller
 
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            // 'email' => ['string', 'email', 'max:255', 'unique:users'],
+            'gender' => ['required', 'string', 'in:M,F,O'],
+            'dob' => ['required', 'string', 'date','before:-13 years'],
+            'email' => ['string', 'email', 'max:255'],
             //'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'address' => ['string','required'],
+            'address' => ['string'],
             'mobile' =>['string'],
-            'NIC'=>['integer','unique:users,id'], //can save same value according to user id
-            'refPlan'=>['required']
+            'zipCode'=>['integer'],
+            'joinDate'=> ['required', 'string', 'date'],
+            'refPlan'=>['required','integer']
         ]);
 
 
         User::where('id', $request->id)
         ->update([
                     'name' => $request->name,
-                    //'email' => $request->email,
+                    'email' => $request->email,
                     //'password' => \Hash::make($request->password),
                     'mobile' => $request->mobile,
                     'address' => $request->address,
-                    'NIC' => $request->NIC,
-                    'fileName' => $request->fileName,
-                    'photo' => $request->photo,
-                    'userMap' => $request->userMap,
+                    'zipCode'=> $request->zipCode,
+                    'joinDate'=> $request->joinDate,
+                    'dob'=> $request->dob,
+                    'gender' => $request->gender,
                     'refPlan' => $request->refPlan
                 ]);
 
