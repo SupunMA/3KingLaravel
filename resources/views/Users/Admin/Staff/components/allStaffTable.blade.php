@@ -32,7 +32,16 @@
                         <td>{{$client->id}}</td>
                         <td>{{$client->name}}</td>
                         <td>{{$client->dob}}</td>
-                        <td>{{$client->gender}}</td>
+                        <td>
+                            @if ($client->gender=='M')
+                                Male
+                            @elseif ($client->gender=='F')
+                                Female
+                            @elseif ($client->gender=='O')
+                                Other
+                            @endif
+                        
+                        </td>
                         <td>{{$client->address}}, {{$client->zipCode}}</td>
                         <td>{{$client->email}}</td>
                         <td>{{$client->mobile}}</td>
