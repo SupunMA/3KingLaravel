@@ -113,6 +113,24 @@
                     </div>
                 </div>
 
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                    <!-- small card -->
+                    <div class="small-box bg-danger">
+                        <div class="inner">
+        
+                            <h3>{{$AdminCount}}</h3>
+                            <h2>Admin</h2> 
+                            
+                        </div>
+                        <div class="icon">
+                            <i class="far fa-building"></i>
+                        </div>
+                        <a href="{{route('admin.allStaff')}}" class="small-box-footer">
+                            More info <i class="fas fa-arrow-circle-right"></i>
+                        </a>
+                    </div>
+                </div>
+
             </div>
 
 
