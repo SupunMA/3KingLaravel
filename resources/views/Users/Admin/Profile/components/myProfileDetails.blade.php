@@ -162,13 +162,7 @@
             </form>
         </div>
 
-        {{-- Delete Button --}}
-        <a class="btn btn-danger" type="button" data-toggle="modal" data-target="#clientDeleteModal-{{$client->id}}"  >
-            <i class="far fa-trash-alt"> Delete My Account</i>
-        </a>
-        <!-- /.card-body -->
-        {{-- add delete modal --}}
-        @include('Users.Admin.Profile.components.deleteProfile')
+        
 
 
     </div>
