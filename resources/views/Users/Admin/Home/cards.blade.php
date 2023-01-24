@@ -15,8 +15,8 @@
         <!-- /.card-header -->
         <div class="card-body">
             <div class="row">
-                
-                <div class="col-xl-3 col-lg-3 col-md-4 col-6">
+               
+                <div class="col-xl-2 col-lg-2 col-md-4 col-12">
                     <!-- small card -->
                     <div class="small-box bg-primary">
                         <div class="inner">
@@ -34,43 +34,28 @@
                     </div>
                 </div>
         
-                <div class="col-xl-3 col-lg-3 col-md-4 col-6">
+            
+                <div class="col-xl-2 col-lg-2 col-md-6 col-sm-12">
                     <!-- small card -->
-                    <div class="small-box bg-warning">
+                    <div class="small-box bg-light">
                         <div class="inner">
         
-                            <h3>{{$CoachCount}}</h3>
-                            <h2>Coaches</h2>
-        
-                        </div>
-                        <div class="icon">
-                            <i class="fas fa-house-user"></i>
-                        </div>
-                        <a href="{{route('admin.allStaff')}}" class="small-box-footer">
-                            More info <i class="fas fa-arrow-circle-right"></i>
-                        </a>
-                    </div>
-                </div>
-        
-                <div class="col-xl-3 col-lg-3 col-md-4 col-6">
-                    <!-- small card -->
-                    <div class="small-box bg-danger">
-                        <div class="inner">
-        
-                            <h3>{{$ManagerCount}}</h3>
-                            <h2>Mangers</h2> 
-        
+                            <h3>{{$TransCount}}</h3>
+                            <h2>Revenue</h2> 
+                            
                         </div>
                         <div class="icon">
                             <i class="fas fa-money-bill-wave"></i>
                         </div>
-                        <a href="{{route('admin.allStaff')}}" class="small-box-footer">
+                        <a href="{{route('admin.allTransaction')}}" class="small-box-footer">
                             More info <i class="fas fa-arrow-circle-right"></i>
                         </a>
                     </div>
                 </div>
-        
-                <div class="col-xl-3 col-lg-3 col-md-4 col-6">
+                
+
+
+                <div class="col-xl-2 col-lg-2 col-md-4 col-6">
                     <!-- small card -->
                     <div class="small-box bg-success">
                         <div class="inner">
@@ -80,7 +65,7 @@
                             
                         </div>
                         <div class="icon">
-                            <i class="far fa-building"></i>
+                            <i class="fa-solid fa-list-check"></i>
                         </div>
                         <a href="{{route('admin.allPlan')}}" class="small-box-footer">
                             More info <i class="fas fa-arrow-circle-right"></i>
@@ -88,42 +73,57 @@
                     </div>
                 </div>
 
-            </div>
 
 
-            <hr>
-
-
-            <div class="row">
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                <div class="col-xl-2 col-lg-2 col-md-4 col-6">
                     <!-- small card -->
-                    <div class="small-box bg-light">
+                    <div class="small-box bg-warning">
                         <div class="inner">
         
-                            <h3>{{$TransCount}}</h3>
-                            <h2>Transactions</h2> 
-                            
+                            <h3>{{$CoachCount}}</h3>
+                            <h2>Coaches</h2>
+        
                         </div>
                         <div class="icon">
-                            <i class="far fa-building"></i>
+                            <i class="fa-solid fa-person-swimming"></i>
                         </div>
-                        <a href="{{route('admin.allTransaction')}}" class="small-box-footer">
+                        <a href="{{route('admin.allStaff')}}" class="small-box-footer">
                             More info <i class="fas fa-arrow-circle-right"></i>
                         </a>
                     </div>
                 </div>
 
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                
+
+                <div class="col-xl-2 col-lg-2 col-md-4 col-6">
                     <!-- small card -->
                     <div class="small-box bg-danger">
                         <div class="inner">
         
+                            <h3>{{$ManagerCount}}</h3>
+                            <h2>Mangers</h2> 
+        
+                        </div>
+                        <div class="icon">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <a href="{{route('admin.allStaff')}}" class="small-box-footer">
+                            More info <i class="fas fa-arrow-circle-right"></i>
+                        </a>
+                    </div>
+                </div>
+        
+                <div class="col-xl-2 col-lg-2 col-md-6 col-6">
+                    <!-- small card -->
+                    <div class="small-box bg-info">
+                        <div class="inner">
+        
                             <h3>{{$AdminCount}}</h3>
-                            <h2>Admin</h2> 
+                            <h2>Admins</h2> 
                             
                         </div>
                         <div class="icon">
-                            <i class="far fa-building"></i>
+                            <i class="fas fa-user-lock"></i>
                         </div>
                         <a href="{{route('admin.allStaff')}}" class="small-box-footer">
                             More info <i class="fas fa-arrow-circle-right"></i>
@@ -132,6 +132,12 @@
                 </div>
 
             </div>
+
+
+            
+
+
+            
 
 
         </div>
