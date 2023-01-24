@@ -44,11 +44,14 @@
                 </div>
                 <div class="form-group">
                     <small class="form-text text-muted text-right">Please check details again.</small>
-                    <button type="submit" class="btn btn-danger btn-lg float-right"><b>&nbsp; Save All&nbsp;</b>
+                    <button type="submit" class="btn btn-success btn-lg float-right"><b>&nbsp; Save All&nbsp;</b>
                     </button>
                 </div>
             </div>
         </div>
     </div>
+    
 </div>
+
+
 {{-- End of Second Card --}}

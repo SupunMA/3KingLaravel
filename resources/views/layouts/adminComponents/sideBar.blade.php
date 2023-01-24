@@ -51,7 +51,7 @@
 
                 {{-- Transactions --}}
                 <li class="nav-item">
-                    <a href="{{ route('admin.addTransaction') }}" class="nav-link  text-white {{ Route::currentRouteNamed('admin.addTransaction') || Route::currentRouteNamed('admin.allTransaction') || Route::currentRouteNamed('admin.allTransactionOfLoan') ? 'active' : ' ' }}">
+                    <a href="{{ route('admin.addTransaction') }}" class="nav-link {{ Route::currentRouteNamed('admin.addTransaction') || Route::currentRouteNamed('admin.allTransaction') || Route::currentRouteNamed('admin.allTransactionOfLoan') ? 'active' : ' ' }}">
                         <i class="fas fa-money-bill-wave"></i>
                         <p>Payments
                             <span class="right badge badge-success">Pay</span>
@@ -145,7 +145,7 @@
                         <i class="fas fa-university"></i>
                         <p>
                             Profile
-                            <span class="right badge badge-warning">Money</span>
+                            <span class="right badge badge-warning">Update</span>
                         </p>
                     </a>
                 </li>

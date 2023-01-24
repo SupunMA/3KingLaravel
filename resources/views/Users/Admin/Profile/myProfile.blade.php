@@ -4,7 +4,7 @@
 <div class="container-fluid ">
 
     {{-- button to go to all clients --}}
-    
+    @include('Users.Admin.messages.addMsg')
     <form action="{{route('StaffProfileUpdating')}}" method="post">
         @csrf
         <div class="row">

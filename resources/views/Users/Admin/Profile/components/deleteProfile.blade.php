@@ -4,7 +4,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title text-danger" id="exampleModalCenterTitle">Delete <b>{{$client->name}}</b> Client</h5>
+                <h5 class="modal-title text-danger" id="exampleModalCenterTitle">Delete <b>{{$client->name}}</b> Account</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -15,8 +15,8 @@
                 
                 <div class="modal-body">
                   
-                    <h5>Are you sure you want to Delete ?.. </h5>
-                        <h2 class="text-center text-danger"><b>{{$client->name}}</b> Client</h2>
+                    <h5>{{$client->name}}, Do you want to Delete .. </h5>
+                        <h2 class="text-center text-danger"> Your Account?</h2>
                     <i>Please confirm it again. you will not be able to recover this user data.</i>
 
                 </div>

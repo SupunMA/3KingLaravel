@@ -20,7 +20,7 @@ class UpdateProfile extends Controller
  
     public function StaffUpdateProfile(Request $request)
     {
-        $erer;
+        
         $this->validate($request, [
 
             'name' => ['required', 'string', 'max:255'],
@@ -37,14 +37,20 @@ class UpdateProfile extends Controller
             
             
         ]);
-        $newPWD = $request->new_password;
+        $auth = Auth::user();
+        $user =  User::find($auth->id);
 
+        $newPWD = $request->new_password;
         if ($newPWD !=''){
             $this->validate($request, [
                 'new_password' => 'confirmed|min:8|string'
+                
             ]);
+            
+        $user->password = Hash::make($request->new_password);
+            
         }
-        $auth = Auth::user();
+        
  
  // The passwords matches
         if (!Hash::check($request->get('current_password'), $auth->password)) 
@@ -58,7 +64,7 @@ class UpdateProfile extends Controller
             return redirect()->back()->with("error", "New Password cannot be same as your current password.");
         }
  
-        $user =  User::find($auth->id);
+        
 
         $user->name = $request->name;
         $user->email = $request->email;
@@ -69,8 +75,7 @@ class UpdateProfile extends Controller
         $user->dob = $request->dob;
         $user->gender = $request->gender;
         $user->role = $request->role;
-
-        $user->password = Hash::make($request->new_password);
+        
         $user->save();
         return back()->with('message','successful');
     }
