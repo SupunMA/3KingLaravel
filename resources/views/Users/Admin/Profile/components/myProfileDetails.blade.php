@@ -3,7 +3,7 @@
 <div class="col-lg-6 col-12 ">
     <div class="card card-primary">
         <div class="card-header">
-            <h3 class="card-title">Staff Member's Details</h3>
+            <h3 class="card-title">Your Details</h3>
         </div>
         <!-- /.card-header -->
         <!-- form start -->

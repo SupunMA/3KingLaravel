@@ -27,7 +27,8 @@
             </thead>
             <tbody>
                 @foreach ($clients as $client)
-
+                    {{-- except auth user --}}
+                    @if ($client->id != Auth::user()->id)
                     <tr>
                         <td>{{$client->id}}</td>
                         <td>{{$client->name}}</td>
@@ -69,13 +70,14 @@
                             </a>
                         </td>
                     </tr>
+                    
 
                     {{-- delete modal --}}
                     @include('Users.Admin.Staff.components.deleteStaff')
                     {{-- update modal --}}
                     @include('Users.Admin.Staff.components.updateStaff')
 
-
+                    @endif
                 @endforeach
             </tbody>
             <tfoot>

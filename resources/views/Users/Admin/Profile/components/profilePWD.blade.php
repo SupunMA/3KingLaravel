@@ -5,7 +5,7 @@
  <div class="col-lg-6 col-12">
     <div class="card card-info">
         <div class="card-header">
-            <h3 class="card-title">Member's Login Credentials</h3>
+            <h3 class="card-title">Change Password</h3>
         </div>
         <!-- /.card-header -->
         <!-- form start -->

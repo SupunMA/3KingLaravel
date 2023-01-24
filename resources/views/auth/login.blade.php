@@ -8,7 +8,7 @@
                 <!-- /.login-logo -->
                 <div class="card card-outline card-danger">
                     <div class="card-header text-center">
-                        <a href="{{ route('login') }}" class="h4"><b>Madhushanka Micro Credit <br></b>(Pvt) Ltd</a>
+                        <a href="{{ route('login') }}" class="h4"><b>3 Kings Swimming Pool Complex <br></b>(Pvt) Ltd</a>
                     </div>
                     <div class="card-body">
                         <p class="login-box-msg">Sign in to your Account</p>
@@ -58,7 +58,7 @@
                             <a href="{{ route('forgotPWD') }}">I forgot my password</a>
                         </p>
                         <p class="mb-2">
-                            <a href="{{ route('forgotPWD') }}" class="text-center">Register a new member</a>
+                            <a href="{{ route('register2') }}" class="text-center">Register a new member</a>
                         </p>
                     </div>
                     <!-- /.card-body -->
