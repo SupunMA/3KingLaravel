@@ -9,7 +9,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Admin\admin_HomeCtr;
 use App\Http\Controllers\Admin\admin_PlanCtr;
 use App\Http\Controllers\Admin\admin_ClientCtr;
-//use App\Http\Controllers\Admin\admin_StaffCtr;
+use App\Http\Controllers\UpdateProfile;
 use App\Http\Controllers\Admin\admin_LandCtr;
 use App\Http\Controllers\Admin\admin_TransactionCtr;
 
@@ -48,6 +48,14 @@ Route::middleware(['middleware'=>'lockBack'])->group(function(){
 //common
 //Route::get('/home', [HomeController::class, 'index'])->name('home');
 
+// Route::group(['middleware' => 'auth'], function ()
+// {
+//     Route::get('/myProfile', [UpdateProfile::class, 'StaffViewUpdateProfile'])->name('StaffProfileUpdate');
+//     Route::post('/updatingProfile', [UpdateProfile::class, 'StaffUpdateProfile'])->name('StaffProfileUpdating');
+
+    
+// });
+
 
 //admin
 Route::group(['prefix'=>'Admin','middleware'=>['checkAdmin','auth','lockBack']],function(){
@@ -64,6 +72,9 @@ Route::group(['prefix'=>'Admin','middleware'=>['checkAdmin','auth','lockBack']],
     Route::POST('addingStaff', [admin_ClientCtr::class, 'addingStaff'])->name('admin.addingStaff');
     Route::get('staff/delete/{ID}', [admin_ClientCtr::class, 'deleteStaff'])->name('admin.deleteStaff');
     Route::post('staff/update', [admin_ClientCtr::class, 'updateStaff'])->name('admin.updateStaff');
+
+    Route::get('/myProfile', [UpdateProfile::class, 'StaffViewUpdateProfile'])->name('StaffProfileUpdate');
+    Route::post('/updatingProfile', [UpdateProfile::class, 'StaffUpdateProfile'])->name('StaffProfileUpdating');
 
     Route::get('AddLand', [admin_LandCtr::class, 'addLand'])->name('admin.addLand');
     Route::get('AllLand', [admin_LandCtr::class, 'allLand'])->name('admin.allLand');
@@ -87,6 +98,7 @@ Route::group(['prefix'=>'Admin','middleware'=>['checkAdmin','auth','lockBack']],
     Route::POST('AllTransaction/{loanID}', [admin_TransactionCtr::class, 'allTransactionOfLoan'])->name('admin.allTransactionOfLoan');
 
     
+
 
     
 });

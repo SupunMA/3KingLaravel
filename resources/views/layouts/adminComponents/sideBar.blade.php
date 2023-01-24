@@ -141,7 +141,7 @@
             </li>
 
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{ route('StaffProfileUpdate') }}" class="nav-link {{ Route::currentRouteNamed('StaffProfileUpdate') ? 'active' : '' }}">
                         <i class="fas fa-university"></i>
                         <p>
                             Profile

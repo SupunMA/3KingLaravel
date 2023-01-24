@@ -129,7 +129,6 @@ class admin_ClientCtr extends Controller
             'mobile' =>['string'],
             'zipCode'=>['integer'],
             'joinDate'=> ['required', 'string', 'date'],
-            'refPlan'=>['integer'],
             'role' => ['required', 'integer']
         ]);
 
