@@ -22,11 +22,11 @@
                     @foreach ($plans as $plan)
                    
                         <div class="card col-xl-4 col-lg-12 col-md-6 col-sm-12">
-                            <h2>{{$plan->planName}}</h2>
+                            <h2><b>{{$plan->planName}}</b></h2>
                         <img src="https://abovegroundpoolsknowitall.com/wp-content/uploads/2021/02/crystal_clear_water-05-1024x693.jpeg" style="max-width:600px;height:auto;" class="card-img-top" alt="...">
                         <div class="card-body">
-                            {{$plan->planName}}
-                            {{$plan->planPrice}}
+                            
+                            <h3>Rs.{{$plan->planPrice}}.00</h3>
                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                         </div>
                         <div class="card-footer">

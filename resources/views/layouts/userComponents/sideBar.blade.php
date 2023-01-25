@@ -158,7 +158,7 @@
 
 
                 <li class="nav-item">
-                    <a href="{{ route('CustomerProfileUpdate') }}" class="nav-link {{ Route::currentRouteNamed('CustomerProfileUpdate') ? 'active' : '' }}">
+                    <a href="{{ route('CustomerAllPlanView') }}" class="nav-link {{ Route::currentRouteNamed('CustomerAllPlanView') ? 'active' : '' }}">
                         <i class="fa-solid fa-list-check"></i>
                         <p>
                             Select Plan
