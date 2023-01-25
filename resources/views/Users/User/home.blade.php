@@ -12,7 +12,7 @@
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 ">
             <div class="card card-primary">
                 <div class="card-header">
-                    <h3 class="card-title">ගෙවීම් තොරතුරු</h3>
+                    <h3 class="card-title">Details</h3>
 
                     <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -181,5 +181,5 @@
 @endsection
 
 @section('header')
-මගේ ගිණුම -My Account
+Dashboard
 @endsection

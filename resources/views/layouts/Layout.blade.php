@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Madhushanka Micro Credit</title>
+    <title>3 Kings Swimming Pool Complex</title>
 {{-- {{ config('app.name', 'Laravel') }} --}}
     <!-- Scripts -->
     

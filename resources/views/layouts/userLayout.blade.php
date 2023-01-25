@@ -8,7 +8,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Client | MMC (Pvt) Ltd</title>
+        <title>3 Kings Swimming Pool | Client</title>
 
         <!-- Fav Icon -->
         @include('CDN_Css_Js.exImages.favIcon')
