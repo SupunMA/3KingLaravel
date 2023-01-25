@@ -35,4 +35,13 @@ class userController extends Controller
         //dd($clients);
         return view('Users.User.home',compact('loanData','transactionData','countTransRows'));
     }
+
+
+    public function deleteUser($userID)
+    {
+        //dd($branchID);
+        $delete = User::find($userID);
+        $delete->delete();
+        return redirect()->back()->with('message','successful');
+    }
 }

@@ -107,6 +107,13 @@ Route::group(['prefix'=>'Admin','middleware'=>['checkAdmin','auth','lockBack']],
 Route::group(['prefix'=>'Account/Client','middleware'=>['checkUser','auth','lockBack']],function(){
     Route::get('/', [userController::class, 'checkUser'])->name('user.home');
     
+    //update user profile
+    Route::get('/myProfile', [UpdateProfile::class, 'CustomerViewUpdateProfile'])->name('CustomerProfileUpdate');
+    Route::post('/updatingProfile', [UpdateProfile::class, 'CustomerUpdateProfile'])->name('CustomerProfileUpdating');
+
+    //Delete user profile
+    Route::get('user/delete/{ID}', [userController::class, 'deleteUser'])->name('user.deleteProfile');
+
 });
 
 

@@ -12,6 +12,7 @@ use App\Http\Requests\UserRequest;
 
 class UpdateProfile extends Controller
 {
+    // Staff
     public function StaffViewUpdateProfile(Request $request)
     {
         $client = Auth::user();
@@ -52,13 +53,13 @@ class UpdateProfile extends Controller
         }
         
  
- // The passwords matches
+        // The passwords matches
         if (!Hash::check($request->get('current_password'), $auth->password)) 
         {
             return back()->with('error', "Current Password is Invalid");
         }
  
-// Current password and new password same
+        // Current password and new password same
         if (strcmp($request->get('current_password'), $request->new_password) == 0) 
         {
             return redirect()->back()->with("error", "New Password cannot be same as your current password.");
@@ -78,5 +79,13 @@ class UpdateProfile extends Controller
         
         $user->save();
         return back()->with('message','successful');
+    }
+
+    //Customer
+
+    public function CustomerViewUpdateProfile(Request $request)
+    {
+        $client = Auth::user();
+        return view('Users.User.Profile.myProfile',compact('client'));
     }
 }
