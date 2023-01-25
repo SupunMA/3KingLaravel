@@ -16,7 +16,7 @@
         <div class="card-body">
             <div class="row">
                
-                <div class="col-xl-2 col-lg-2 col-md-4 col-12">
+                <div class="col-xl-2 col-lg-4 col-md-4 col-12">
                     <!-- small card -->
                     <div class="small-box bg-primary">
                         <div class="inner">
@@ -35,7 +35,7 @@
                 </div>
         
             
-                <div class="col-xl-2 col-lg-2 col-md-6 col-sm-12">
+                <div class="col-xl-2 col-lg-4 col-md-4 col-12">
                     <!-- small card -->
                     <div class="small-box bg-light">
                         <div class="inner">
@@ -55,7 +55,7 @@
                 
 
 
-                <div class="col-xl-2 col-lg-2 col-md-4 col-6">
+                <div class="col-xl-2 col-lg-4 col-md-4 col-6">
                     <!-- small card -->
                     <div class="small-box bg-success">
                         <div class="inner">
@@ -75,7 +75,7 @@
 
 
 
-                <div class="col-xl-2 col-lg-2 col-md-4 col-6">
+                <div class="col-xl-2 col-lg-4 col-md-4 col-6">
                     <!-- small card -->
                     <div class="small-box bg-warning">
                         <div class="inner">
@@ -95,13 +95,13 @@
 
                 
 
-                <div class="col-xl-2 col-lg-2 col-md-4 col-6">
+                <div class="col-xl-2 col-lg-4 col-md-4 col-6">
                     <!-- small card -->
                     <div class="small-box bg-danger">
                         <div class="inner">
         
                             <h3>{{$ManagerCount}}</h3>
-                            <h2>Mangers</h2> 
+                            <h2>Managers</h2> 
         
                         </div>
                         <div class="icon">
@@ -113,7 +113,7 @@
                     </div>
                 </div>
         
-                <div class="col-xl-2 col-lg-2 col-md-6 col-6">
+                <div class="col-xl-2 col-lg-4 col-md-4 col-6">
                     <!-- small card -->
                     <div class="small-box bg-info">
                         <div class="inner">
