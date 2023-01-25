@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Auth;
 use App\Models\User;
+use App\Models\Plan;
 use App\Models\Land;
 
 
@@ -43,5 +44,11 @@ class userController extends Controller
         $delete = User::find($userID);
         $delete->delete();
         return redirect()->back()->with('message','successful');
+    }
+
+    public function allPlanView(Request $request)
+    {
+        $plans = Plan::all();
+        return view('Users.User.Plans.plan',compact('plans'));
     }
 }

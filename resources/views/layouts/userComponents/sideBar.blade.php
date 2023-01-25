@@ -156,6 +156,45 @@
                     </a>
                 </li> --}}
 
+
+                <li class="nav-item">
+                    <a href="{{ route('CustomerProfileUpdate') }}" class="nav-link {{ Route::currentRouteNamed('CustomerProfileUpdate') ? 'active' : '' }}">
+                        <i class="fa-solid fa-list-check"></i>
+                        <p>
+                            Select Plan
+                            
+                        </p>
+                    </a>
+                </li>
+
+
+
+
+                <li class="nav-item {{ Route::currentRouteNamed('admin.addPlan') || Route::currentRouteNamed('admin.allPlan') ? 'menu-open' : 'menu-close' }}">
+                    <a href="#" class="nav-link {{ Route::currentRouteNamed('admin.addPlan') || Route::currentRouteNamed('admin.allPlan') ? 'active' : '' }}">
+                        <i class="fas fa-house-user"></i>
+                        <p>
+                            Coaches
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                      <li class="nav-item">
+                          <a href="{{ route('admin.addPlan') }}" class="nav-link {{ Route::currentRouteNamed('admin.addPlan') ? 'active' : '' }}">
+                              <i class="far fa-circle nav-icon"></i>
+                              <p> Add Reviews</p>
+                          </a>
+                      </li>
+                      <li class="nav-item">
+                          <a href="{{ route('admin.allPlan') }}" class="nav-link {{ Route::currentRouteNamed('admin.allPlan') ? 'active' : '' }}">
+                              <i class="far fa-circle nav-icon"></i>
+                              <p> View Reviews</p>
+                          </a>
+                      </li>
+                    </ul>
+                </li>
+
+
                 <li class="nav-item">
                     <a href="{{ route('CustomerProfileUpdate') }}" class="nav-link {{ Route::currentRouteNamed('CustomerProfileUpdate') ? 'active' : '' }}">
                         <i class="fas fa-university"></i>
@@ -165,6 +204,13 @@
                         </p>
                     </a>
                 </li>
+
+
+
+                
+
+
+
 
                 {{-- Logout --}}
                 <li class="nav-item">

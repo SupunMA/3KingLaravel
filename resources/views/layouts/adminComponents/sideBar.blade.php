@@ -90,14 +90,14 @@
                     {{-- Lands --}}
 
                 <li class="nav-item {{ Route::currentRouteNamed('admin.addPlan') || Route::currentRouteNamed('admin.allPlan') ? 'menu-open' : 'menu-close' }}">
-                  <a href="#" class="nav-link {{ Route::currentRouteNamed('admin.addPlan') || Route::currentRouteNamed('admin.allPlan') ? 'active' : '' }}">
-                    <i class="fas fa-house-user"></i>
-                      <p>
-                          Plans
-                          <i class="right fas fa-angle-left"></i>
-                      </p>
-                  </a>
-                  <ul class="nav nav-treeview">
+                    <a href="#" class="nav-link {{ Route::currentRouteNamed('admin.addPlan') || Route::currentRouteNamed('admin.allPlan') ? 'active' : '' }}">
+                        <i class="fas fa-house-user"></i>
+                        <p>
+                            Plans
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
                       <li class="nav-item">
                           <a href="{{ route('admin.addPlan') }}" class="nav-link {{ Route::currentRouteNamed('admin.addPlan') ? 'active' : '' }}">
                               <i class="far fa-circle nav-icon"></i>
@@ -110,13 +110,13 @@
                               <p> All Plans</p>
                           </a>
                       </li>
-                  </ul>
-              </li>
+                    </ul>
+                </li>
 
 
                 {{-- Loans --}}
 
-              <li class="nav-item {{ Route::currentRouteNamed('admin.addStaff') || Route::currentRouteNamed('admin.allStaff') ? 'menu-open' : 'menu-close' }}">
+            <li class="nav-item {{ Route::currentRouteNamed('admin.addStaff') || Route::currentRouteNamed('admin.allStaff') ? 'menu-open' : 'menu-close' }}">
                 <a href="#" class="nav-link {{ Route::currentRouteNamed('admin.addStaff') || Route::currentRouteNamed('admin.allStaff') ? 'active' : '' }}">
                     <i class="far fa-handshake"></i>
                     <p>
