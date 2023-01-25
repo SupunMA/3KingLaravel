@@ -11,8 +11,7 @@
         <div class="card-body">
             
 
-            <form action="{{route('admin.updateStaff')}}" method="post">
-                @csrf
+            
                 
                 <input type="hidden" name="id" value="{{$client->id}}">
                 
@@ -20,7 +19,7 @@
                     <label >Name</label>
                     <input type="name" name="name" value="{{$client->name}}" class="form-control" id="name" placeholder="Enter Name">
                 </div>
-    {{-- Gender and DOB --}}
+                    {{-- Gender and DOB --}}
                 <div class="row">
                     <div class="col-lg-6 col-12">
                         <div class="form-group">
@@ -54,7 +53,7 @@
                 
     
                 </div>
-        {{-- Address and zipcode --}}
+                {{-- Address and zipcode --}}
                 <div class="row">
                     <div class="col-lg-6 col-12">
                         <div class="form-group">
@@ -80,7 +79,7 @@
     
                 </div>
         
-        {{-- Mobile and Email --}}
+                {{-- Mobile and Email --}}
                 <div class="row">
                     <div class="col-lg-6 col-12">
                         <label >Mobile</label>
@@ -107,10 +106,10 @@
                 </div>
         
                     
-        {{-- Joining Date and Plan --}}
+                {{-- Joining Date and Plan --}}
                 <div class="row">
                         <!-- Date  -->
-                        <div class="form-group">
+                    <div class="form-group">
                         <label>Joining Date</label>
     
                         <div class="input-group">
@@ -128,38 +127,25 @@
                     <div class="col-lg-6 col-12">
                         <div class="form-group">
                             <label>Select The Role</label>
-                            <select class="form-control select2bs4" style="width: 100%;" name="role">
-                                @if ($client->role=="1")
-                                {
-                                    <option value="1" selected="selected">Admin</option>
-                                    <option value="2">Coach</option>
-                                    <option value="3">Manager</option>
-                                }
-                                @elseif ($client->role=="2")
-                                {
-                                    <option value="1">Admin</option>
-                                    <option value="2" selected="selected">Coach</option>
-                                    <option value="3">Manager</option>
-                                }
-                                @elseif ($client->role=="3")
-                                {
-                                    <option value="1">Admin</option>
-                                    <option value="2">Coach</option>
-                                    <option value="3" selected="selected">Manager</option>
-                                }
+                            <select class="form-control select2bs4" style="width: 100%;" name="plan">
                                 
-                                @endif 
-                                
-                                    
-                                
-                                    
+                                @foreach ($Plans as $bd)
+                                    @if ($bd->planID == $client->refPlan)
+                                        <option value="{{$bd->planID}}" selected="selected">{{$bd->planName}} - Rs.{{$bd->planPrice}}</option>
+                                    @else
+                                    {
+                                        <option value="{{$bd->planID}}">{{$bd->planName}} - Rs.{{$bd->planPrice}}</option>
+                                    }
+                                    @endif
+                                @endforeach
+                                   
                             </select>
                         </div>
                     </div>
     
                 </div>
                     
-            </form>
+            
         </div>
 
         
