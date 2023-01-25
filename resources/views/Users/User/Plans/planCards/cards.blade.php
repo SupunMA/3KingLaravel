@@ -3,7 +3,7 @@
     <div class="card card-dark">
         <div class="card-header">
 
-             <h3 class="card-title">Calculated Details</h3>
+             <h3 class="card-title">Plan Details</h3>
 
             <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -27,10 +27,12 @@
                         <div class="card-body">
                             
                             <h3>Rs.{{$plan->planPrice}}.00</h3>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <p class="card-text">
+                                Months:
+                            </p>
                         </div>
                         <div class="card-footer">
-                            <button type="submit" class="btn btn-primary"><b>Select This Plan</b> </button>
+                            <button type="submit" class="btn btn-success"><b>Select {{$plan->planName}} Plan</b> </button>
                             
                         </div>
                         </div>
