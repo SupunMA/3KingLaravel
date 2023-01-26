@@ -114,10 +114,13 @@ Route::group(['prefix'=>'Account/Client','middleware'=>['checkUser','auth','lock
     //Delete user profile
     Route::get('user/delete/{ID}', [userController::class, 'deleteUser'])->name('user.deleteProfile');
 
+
     //View Plans
     Route::get('/CustomerAllPlans', [userController::class, 'allPlanView'])->name('CustomerAllPlanView');
+    //Select Plan
+    Route::post('/CustomerSelectPlans', [userController::class, 'CustomerSelectPlan'])->name('selectPlan');
 
-
+    
 });
 
 

@@ -21,6 +21,29 @@
                     
                     @foreach ($plans as $plan)
                    
+                    @if ($plan->planID == Auth::user()->refPlan)
+                        <div class="card col-xl-4 col-lg-12 col-md-6 col-sm-12">
+                            <h2><b>{{$plan->planName}}</b></h2>
+                             <img src="https://abovegroundpoolsknowitall.com/wp-content/uploads/2021/02/crystal_clear_water-05-1024x693.jpeg" style="max-width:600px;height:auto;" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                
+                                <h3>Rs.{{$plan->planPrice}}.00</h3>
+                                <p class="card-text">
+                                    Months: {{$plan->planMonth}}
+                                
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <form action="{{route('selectPlan')}}" method="post">
+                                    @csrf 
+                                    <input type="hidden" name="planID" value="{{$plan->planID}}">
+                                    <button type="submit" disabled class="btn btn-secondary"><b>Selected Plan</b> </button>
+                                </form>
+                            
+                                
+                            </div>
+                        </div>
+                    @else
                         <div class="card col-xl-4 col-lg-12 col-md-6 col-sm-12">
                             <h2><b>{{$plan->planName}}</b></h2>
                         <img src="https://abovegroundpoolsknowitall.com/wp-content/uploads/2021/02/crystal_clear_water-05-1024x693.jpeg" style="max-width:600px;height:auto;" class="card-img-top" alt="...">
@@ -29,13 +52,26 @@
                             <h3>Rs.{{$plan->planPrice}}.00</h3>
                             <p class="card-text">
                                 Months: {{$plan->planMonth}}
+                            
                             </p>
                         </div>
                         <div class="card-footer">
-                            <button type="submit" class="btn btn-success"><b>Select {{$plan->planName}} Plan</b> </button>
+                            <form action="{{route('selectPlan')}}" method="post">
+                                @csrf 
+                                <input type="hidden" name="planID" value="{{$plan->planID}}">
+                                <button type="submit" class="btn btn-success"><b>Select Plan</b> </button>
+                            </form>
+                        
                             
                         </div>
                         </div>
+                        
+                    @endif
+                    
+                        
+
+                        
+                        
                     @endforeach
                 </div>
 
@@ -50,3 +86,4 @@
     </div>
     <!-- /.card -->
 </div>
+

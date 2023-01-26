@@ -3,7 +3,7 @@
 @section('content')
 <div class="container-fluid ">
 
-    {{-- button to go to all clients --}}
+    
     @include('Users.Admin.messages.addMsg')
     
    <h3> Update the Account Details</h3>

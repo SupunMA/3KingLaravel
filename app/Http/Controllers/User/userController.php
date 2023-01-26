@@ -44,9 +44,32 @@ class userController extends Controller
         return redirect()->back()->with('message','successful');
     }
 
+    //view customer plans
     public function allPlanView(Request $request)
     {
         $plans = Plan::all();
         return view('Users.User.Plans.plan',compact('plans'));
     }
+
+    
+    //Select plan
+    public function CustomerSelectPlan(Request $request)
+    {
+        
+        $userId = Auth::id();
+        $request->validate([
+            'planID' => ['required']
+        ]);
+
+        User::where('id', $userId )
+        ->update([
+                    'refPlan' => $request->planID
+                ]);
+
+        return redirect()->back()->with('message','successful');
+
+    }
+
+
+
 }
