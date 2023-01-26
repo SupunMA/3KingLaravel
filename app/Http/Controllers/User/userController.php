@@ -15,8 +15,6 @@ class userController extends Controller
 {
     public function checkUser()
     {
-
-        
         $loanData = Land::join('users','users.id','=','lands.ownerID')
         ->join('loans','loans.loanLandID','=','lands.landID')
         ->where('users.id',Auth::user()->id)->get(['users.*','lands.*','loans.*']);

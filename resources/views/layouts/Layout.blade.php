@@ -34,7 +34,7 @@
             <div class="container">
                 
                 <div class="navbar-brand">
-                    Madhushanka Micro Credit (Pvt) Ltd
+                    3 Kings Swimming Pool Complex
                 </div>
                    
                 <button class="navbar-toggler" type="button" data-toggle="collapse"

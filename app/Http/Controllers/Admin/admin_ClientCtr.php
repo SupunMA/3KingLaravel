@@ -90,11 +90,8 @@ class admin_ClientCtr extends Controller
     //Staff
 
     public function addStaff()
-    {
-       
-        $branches=Plan::all('planName', 'planID', 'planPrice');
-        
-        return view('Users.Admin.Staff.addStaff',compact('branches'));
+    {   
+        return view('Users.Admin.Staff.addStaff');
     }
 
     public function allStaff()

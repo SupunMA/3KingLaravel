@@ -20,7 +20,7 @@ class admin_planCtr extends Controller
     }
 
 
-//Branch
+//Plans
 
     public function addPlan()
     {
@@ -37,7 +37,9 @@ class admin_planCtr extends Controller
     {
          $data->validate([
             'planName' =>['required','string'],
-            'planPrice' =>['required','integer']
+            'planPrice' =>['required','integer'],
+            'planMonth' =>['required','integer']
+
          ]);
         $user = Plan::create($data->all());
         return redirect()->back()->with('message','successful');
@@ -56,11 +58,14 @@ class admin_planCtr extends Controller
     {
         $data->validate([
             'planName' =>'required',
-            'planPrice' =>'required'
+            'planPrice' =>'required',
+            'planMonth' =>'required'
+
          ]);
         Plan::where('planID', $data->planID)
         ->update(['planName' => $data->planName,
                 'planPrice' => $data->planPrice,
+                'planMonth' => $data->planMonth
             ]);
         return redirect()->back()->with('message','successful');
     }

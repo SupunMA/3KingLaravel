@@ -40,7 +40,7 @@
                                     <label>Name of the Plan</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="far fa-building"></i></span>
+                                            <span class="input-group-text"><i class="fa fa-list-alt"></i></span>
                                         </div>
                                         <input type="text" placeholder="Plan Name" name="planName" class="form-control">
                                     </div>
@@ -53,9 +53,22 @@
 
                                     <div class="input-group">
                                         <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="fa fa-money"></i></span>
+                                            <span class="input-group-text"><i class="fa-sharp fa-solid fa-money-bill-1-wave"></i></span>
                                         </div>
                                         <input type="number" name="planPrice" class="form-control" placeholder="Price of the Plan">
+                                    </div>
+                                    <!-- /.input group -->
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label>Plan Months</label>
+
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                                        </div>
+                                        <input type="number" name="planMonth" class="form-control" placeholder="Months">
                                     </div>
                                     <!-- /.input group -->
                                 </div>

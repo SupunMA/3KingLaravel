@@ -17,6 +17,7 @@ class CreatePlanTable extends Migration
             $table->id('planID');
             $table->string('planName')->nullable();
             $table->string('planPrice')->nullable();
+            $table->integer('planMonth')->nullable();
             $table->timestamps();
         });
     }

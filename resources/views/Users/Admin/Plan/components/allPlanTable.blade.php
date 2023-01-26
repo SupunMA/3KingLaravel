@@ -13,6 +13,7 @@
                     <th>Plan ID</th>
                     <th>Plan Name</th>
                     <th>Plan Price</th>
+                    <th>Months</th>
                     <th>Action</th>
                     
                 </tr>
@@ -24,6 +25,7 @@
                         <td>{{$bd->planID}}</td>
                         <td>{{$bd->planName}}</td>
                         <td>{{$bd->planPrice}}</td>
+                        <td>{{$bd->planMonth}}</td>
                         
                         
                         <td>
@@ -47,6 +49,7 @@
                     <th>Plan ID</th>
                     <th>Plan Name</th>
                     <th>Plan Price</th>
+                    <th>Months</th>
                     <th>Action</th>
                 </tr>
             </tfoot>

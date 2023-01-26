@@ -28,7 +28,7 @@
                             
                             <h3>Rs.{{$plan->planPrice}}.00</h3>
                             <p class="card-text">
-                                Months:
+                                Months: {{$plan->planMonth}}
                             </p>
                         </div>
                         <div class="card-footer">
