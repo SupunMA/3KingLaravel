@@ -25,36 +25,20 @@
                 <div class="card-body">
                     <div class="row">
                         
-                        @if ($countTransRows != 0)
-                       
-                        {{-- Not Null Transaction Rows --}}
-                        @include('Users.User.HomeCalculations.transRowCount.NotNullRows')
-                        @endif
-
-
-                        @if ($countTransRows == 0)
-    
-                        {{-- Null Transaction Rows --}}
-                        @include('Users.User.HomeCalculations.transRowCount.ifNullRows')
                         
-                        @endif
                         
-                       
-
-
-                        @foreach ($loanData as $item)
-                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
+                       <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
                             <div class="info-box shadow">
                                 <span class="info-box-icon bg-danger"><i class="fas fa-book-open"></i></span>
 
                                 <div class="info-box-content">
                                     <span class="info-box-text">
 
-                                        <h5>මාසික ණය පොලිය</h5>
+                                        <h5>Available Slots : <b>Today</b></h5>
 
                                     </span>
                                     <span class="info-box-number">
-                                        <h5><b>රු.{{round($item->loanAmount * $item->loanRate / 100,0)}}</b></h5>
+                                        <h5><b>3 Slots</b> </h5>
                                     </span>
                                 </div>
 
@@ -62,6 +46,10 @@
                             </div>
                             <!-- /.info-box -->
                         </div>
+
+
+                        
+                        
                        
                         <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
                             <div class="info-box shadow">
@@ -70,12 +58,12 @@
                                 <div class="info-box-content">
                                     <span class="info-box-text">
 
-                                        <h5>දෛනික ප්‍රමාද ගාස්තුව</h5>
+                                        <h5> Available Coaches : <b>Today</b> </h5>
 
                                     </span>
                                     <span class="info-box-number">
                                         <h5>
-                                            <b>රු.{{round(($item->loanAmount * $item->penaltyRate/100)/30,0)}}</b>
+                                            <b>3 Coaches</b>
                                         </h5>
                                     </span>
                                 </div>
@@ -84,8 +72,54 @@
                             </div>
                             <!-- /.info-box -->
                         </div>
-                        @endforeach
+                        
+
+
+                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
+                            <div class="info-box shadow">
+                                <span class="info-box-icon bg-info"><i class="far fa-clock"></i></span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text">
+
+                                        <h5> Available Plans </h5>
+
+                                    </span>
+                                    <span class="info-box-number">
+                                        <h5>
+                                            <b>3 Plans</b>
+                                        </h5>
+                                    </span>
+                                </div>
+
+                                <!-- /.info-box-content -->
+                            </div>
+                            <!-- /.info-box -->
+                        </div>
+
                     </div>
+
+
+<br>
+
+                    <div class="card text-center">
+                        <div class="card-header">
+                           <h3 class="text-danger">Selected Plan is <b>Gold</b> </h3> 
+                        </div>
+                        <div class="card-body">
+                          <h5 class="">Booking a Slot</h5>
+                          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                        <div class="card-footer text-muted">
+                          2 days ago
+                        </div>
+                      </div>
+
+
+
+
+
 
                 </div>
                 <!-- /.card-body -->
@@ -94,7 +128,7 @@
         </div>
     </div>
 
-    @foreach ($loanData as $item)
+    
     <div class="row">
 
         <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
@@ -109,17 +143,17 @@
 
                 <ul class="form-contrl">
                     <li>
-                        <h5>ණය මුදල්:- <b>රු.{{$item->loanAmount}}</b></h5>
+                        <h5>ණය මුදල්:- <b>රු.fdgfdfgd</b></h5>
                     </li>
                     <li>
-                        <h5>ණය පොලී ප්‍රතිශතය:- <b>{{$item->loanRate}}%</b></h5>
+                        <h5>ණය පොලී ප්‍රතිශතය:- <b>fdgfdfgd%</b></h5>
                     </li>
 
                     <li>
-                        <h5>ප්‍රමාද ගාස්තු ප්‍රතිශතය:- <b>{{$item->penaltyRate}}%</b></h5>
+                        <h5>ප්‍රමාද ගාස්තු ප්‍රතිශතය:- <b>fdgfdfgd%</b></h5>
                     </li>
                     <li>
-                        <h5>ණය ලබාගත් දිනය:- <b>{{$item->loanDate}}</b></h5>
+                        <h5>ණය ලබාගත් දිනය:- <b>fdgfdfgd</b></h5>
                     </li>
                 </ul>
 
@@ -138,10 +172,10 @@
 
                 <ul class="form-contrl">
                     <li>
-                        <h5>වටිනාකම:- <b>රු.{{$item->landValue}}</b> </h5>
+                        <h5>වටිනාකම:- <b>රු.fdgfdfgd</b> </h5>
                     </li>
                     <li>
-                        <h5>ඉඩමේ ලිපිනය:- <br><b>{{$item->landAddress}}</b></h5>
+                        <h5>ඉඩමේ ලිපිනය:- <br><b>fdgfdfgd</b></h5>
                     </li>
                 </ul>
 
@@ -158,16 +192,16 @@
 
                 <ul class="form-contrl">
                     <li>
-                        <h5>නම:- <b>{{$item->name}}</b></h5>
+                        <h5>නම:- <b>fdgfdg</b></h5>
                     </li>
                     <li>
-                        <h5>ජා.හැ.අංකය:- <b>{{$item->NIC}} v/x</b></h5>
+                        <h5>ජා.හැ.අංකය:- <b>fdgfdg v/x</b></h5>
                     </li>
                     <li>
-                        <h5>දුරකතන අංකය:- <b>{{$item->mobile}}</b></h5>
+                        <h5>දුරකතන අංකය:- <b>fdgfdg</b></h5>
                     </li>
                     <li>
-                        <h5>ලිපිනය:- <b>{{$item->address}}</b></h5>
+                        <h5>ලිපිනය:- <b>rthrth</b></h5>
                     </li>
                 </ul>
 
@@ -175,7 +209,7 @@
         </div>
 
     </div>
-    @endforeach
+   
 
 </div>
 @endsection

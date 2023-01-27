@@ -71,5 +71,15 @@ class userController extends Controller
     }
 
 
+    //makePayments
+    public function makePayments(Request $request)
+    {
+        
+        $plans = Plan::all();
+        
+        return view('Users.User.Payment.pay',compact('plans'));
+    }
+
+
 
 }

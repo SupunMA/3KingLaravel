@@ -120,6 +120,11 @@ Route::group(['prefix'=>'Account/Client','middleware'=>['checkUser','auth','lock
     //Select Plan
     Route::post('/CustomerSelectPlans', [userController::class, 'CustomerSelectPlan'])->name('selectPlan');
 
+
+    //make payment
+    Route::get('/makePayments', [userController::class, 'makePayments'])->name('CustomerMakePayments');
+
+
     
 });
 

@@ -169,6 +169,18 @@
 
 
 
+                <li class="nav-item">
+                    <a href="{{ route('CustomerAllPlanView') }}" class="nav-link {{ Route::currentRouteNamed('CustomerAllPlanView') ? 'active' : '' }}">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <p>
+                            Make Payments
+                            
+                        </p>
+                    </a>
+                </li>
+
+
+
 
                 <li class="nav-item {{ Route::currentRouteNamed('admin.addPlan') || Route::currentRouteNamed('admin.allPlan') ? 'menu-open' : 'menu-close' }}">
                     <a href="#" class="nav-link {{ Route::currentRouteNamed('admin.addPlan') || Route::currentRouteNamed('admin.allPlan') ? 'active' : '' }}">
