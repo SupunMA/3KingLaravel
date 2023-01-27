@@ -22,7 +22,8 @@
                     @foreach ($plans as $plan)
                    
                     @if ($plan->planID == Auth::user()->refPlan)
-                        <div class="card col-xl-4 col-lg-12 col-md-6 col-sm-12">
+                    {{-- Selected plan --}}
+                        <div class="card col-xl-4 col-lg-12 col-md-6 col-sm-12 text-white bg-dark ">
                             <h2><b>{{$plan->planName}}</b></h2>
                              <img src="https://abovegroundpoolsknowitall.com/wp-content/uploads/2021/02/crystal_clear_water-05-1024x693.jpeg" style="max-width:600px;height:auto;" class="card-img-top" alt="...">
                             <div class="card-body">
@@ -44,6 +45,7 @@
                             </div>
                         </div>
                     @else
+                    {{-- selectable plans --}}
                         <div class="card col-xl-4 col-lg-12 col-md-6 col-sm-12">
                             <h2><b>{{$plan->planName}}</b></h2>
                         <img src="https://abovegroundpoolsknowitall.com/wp-content/uploads/2021/02/crystal_clear_water-05-1024x693.jpeg" style="max-width:600px;height:auto;" class="card-img-top" alt="...">

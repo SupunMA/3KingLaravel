@@ -174,7 +174,7 @@
                     <a href="#" class="nav-link {{ Route::currentRouteNamed('admin.addPlan') || Route::currentRouteNamed('admin.allPlan') ? 'active' : '' }}">
                         <i class="fas fa-house-user"></i>
                         <p>
-                            Coaches
+                            Select & Review Coach
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
@@ -182,13 +182,13 @@
                       <li class="nav-item">
                           <a href="{{ route('admin.addPlan') }}" class="nav-link {{ Route::currentRouteNamed('admin.addPlan') ? 'active' : '' }}">
                               <i class="far fa-circle nav-icon"></i>
-                              <p> Add Reviews</p>
+                              <p> Select Coach</p>
                           </a>
                       </li>
                       <li class="nav-item">
                           <a href="{{ route('admin.allPlan') }}" class="nav-link {{ Route::currentRouteNamed('admin.allPlan') ? 'active' : '' }}">
                               <i class="far fa-circle nav-icon"></i>
-                              <p> View Reviews</p>
+                              <p> Reviews</p>
                           </a>
                       </li>
                     </ul>

@@ -29,7 +29,8 @@ class User extends Authenticatable
         'joinDate',
         'dob',
         'gender',
-        'refPlan'
+        'refPlan',
+        'days'
     ];
 
     /**

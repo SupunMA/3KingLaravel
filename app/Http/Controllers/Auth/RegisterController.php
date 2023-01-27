@@ -76,6 +76,7 @@ class RegisterController extends Controller
 
     function addingClient(Request $request)
     {
+        
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'gender' => ['required', 'string', 'in:M,F,O'],
@@ -103,6 +104,7 @@ class RegisterController extends Controller
         $user->gender = $request->gender;
         $user->refPlan = $request->refPlan;
         $user->role = $request->role;
+        $user->days = $request->sun.''.$request->mon.''.$request->tue.''.$request->wed.''.$request->thu.''.$request->fri.''.$request->sat;
 
         if( $user->save() ){
             return redirect()->back()->with('message','successful');

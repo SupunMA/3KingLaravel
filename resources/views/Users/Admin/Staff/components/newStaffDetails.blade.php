@@ -123,7 +123,7 @@
                 <div class="col-lg-6 col-12">
                     <div class="form-group">
                         <label>Select The Role</label>
-                        <select class="form-control select2bs4" style="width: 100%;" name="role">
+                        <select class="form-control select2bs4" style="width: 100%;" name="role" >
                             {{-- <option selected="selected">Alabama</option> --}}
                             
                                 <option value="1">Admin</option>
@@ -137,6 +137,27 @@
 
             </div>
 
+            <div class="row" >
+                <div class="form-group">
+                    <label>Select Working Days</label> 
+                    <br>
+                    <input type="checkbox"  name="sun" value="1">
+                    <label for="sun" style="padding-right: 20px;padding-left: 5px;"> Sunday &nbsp;</label>
+                    <input type="checkbox"  name="mon" value="2">
+                    <label for="mon" style="padding-right: 20px;padding-left: 5px;"> Monday</label>
+                    <input type="checkbox"  name="tue" value="3">
+                    <label for="tue" style="padding-right: 20px;padding-left: 5px;"> Tuesday</label>
+                    <input type="checkbox"  name="wed" value="4">
+                    <label for="wed" style="padding-right: 20px;padding-left: 5px;"> Wednesday</label><br>
+                    <input type="checkbox"  name="thu" value="5">
+                    <label for="thu" style="padding-right: 20px;padding-left: 5px;"> Thuresday</label>
+                    <input type="checkbox"  name="fri" value="6">
+                    <label for="fri" style="padding-right: 20px;padding-left: 5px;"> Friday</label>
+                    <input type="checkbox"  name="sat" value="7">
+                    <label for="sat" style="padding-right: 20px;padding-left: 5px;"> Saturday</label><br>
+                </div>
+            </div>
+
 
             {{-- <input name="role" type="hidden" value="2"> --}}
         </div>
@@ -147,6 +168,9 @@
     </div>
 </div>
 {{-- End of First Card --}}
+
+
+
 
 @push('specificJs')
 
