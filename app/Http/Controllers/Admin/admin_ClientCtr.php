@@ -142,7 +142,8 @@ class admin_ClientCtr extends Controller
                     'dob'=> $request->dob,
                     'gender' => $request->gender,
                     'refPlan' => $request->refPlan,
-                    'role' => $request->role
+                    'role' => $request->role,
+                    'days'  => $request->sun.''.$request->mon.''.$request->tue.''.$request->wed.''.$request->thu.''.$request->fri.''.$request->sat
                 ]);
 
         return redirect()->back()->with('message','successful');
