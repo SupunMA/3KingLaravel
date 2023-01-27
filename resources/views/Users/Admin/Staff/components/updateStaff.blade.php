@@ -40,19 +40,20 @@
                         
         
                         <!-- Date -->
-                        <div class="form-group">
-                            <label>Date of Birth</label>
-        
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                        <div class="col-lg-6 col-12">
+                            <div class="form-group">
+                                <label>Date of Birth</label>
+            
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                                    </div>
+                                    <input type="text" class="form-control" data-inputmask-alias="datetime" value="{{$client->dob}}"
+                                        name="dob" data-inputmask-inputformat="yyyy-mm-dd" data-mask>
                                 </div>
-                                <input type="text" class="form-control" data-inputmask-alias="datetime" value="{{$client->dob}}"
-                                    name="dob" data-inputmask-inputformat="yyyy-mm-dd" data-mask>
+                            
                             </div>
-                        
                         </div>
-                    
         
                     </div>
         {{-- Address and zipcode --}}
@@ -111,19 +112,20 @@
         {{-- Joining Date and Plan --}}
                     <div class="row">
                          <!-- Date  -->
-                         <div class="form-group">
-                            <label>Joining Date</label>
-        
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                        <div class="col-lg-6 col-12">
+                            <div class="form-group">
+                                <label>Joining Date</label>
+            
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                                    </div>
+                                    <input type="text" class="form-control" data-inputmask-alias="datetime" value="{{$client->joinDate}}"
+                                        name="joinDate" data-inputmask-inputformat="yyyy-mm-dd" data-mask>
                                 </div>
-                                <input type="text" class="form-control" data-inputmask-alias="datetime" value="{{$client->joinDate}}"
-                                    name="joinDate" data-inputmask-inputformat="yyyy-mm-dd" data-mask>
+                            
                             </div>
-                        
                         </div>
-                    
                         {{-- Role value --}}
         
                         <div class="col-lg-6 col-12">
@@ -160,12 +162,62 @@
         
                     </div>
 
+
+
+                    
+
                     <div class="row" >
+                        <div class="form-group ">
+                            <label>Selected Working Days</label> 
+                            <br>
+                            @foreach (str_split((string)$client->wdays) as $digit)
+                                
+                                @if ($digit == '1')
+                                    <input type="checkbox" name="sun" value="1"  checked >
+                                    <label for="sun" style="padding-right: 32px;padding-left: 5px;"> Sunday</label>
+                               
+                                @elseif ($digit == '2')
+                                    <input type="checkbox" name="mon" value="2" checked >
+                                    <label for="mon" style="padding-right: 32px;padding-left: 5px;"> Monday</label>
+
+                                @elseif ($digit == '3')
+                                    <input type="checkbox" name="tue" value="3" checked >
+                                    <label for="mon" style="padding-right: 32px;padding-left: 5px;"> Tuesday</label>
+                                
+                                @elseif ($digit == '4')
+                                    <input type="checkbox" name="wed" value="4" checked >
+                                    <label for="tue" style="padding-right: 32px;padding-left: 5px;"> Wednesday</label>
+
+                                @elseif ($digit == '5')
+                                    <input type="checkbox" name="thu" value="5" checked >
+                                    <label for="wed" style="padding-right: 32px;padding-left: 5px;">Thuresday </label>
+
+                                @elseif ($digit == '6')
+                                    <input type="checkbox" name="fri" value="6" checked >
+                                    <label for="thu" style="padding-right: 32px;padding-left: 5px;"> Friday</label>
+                               
+                                @elseif ($digit == '7')
+                                    <input type="checkbox" name="sat" value="7" checked >
+                                    <label for="sat" style="padding-right: 32px;padding-left: 5px;"> Saturday</label>
+
+                                @endif
+                            @endforeach
+                            
+                            
+                            
+                            <br>
+                            
+                            
+                            
+                        </div>
+
+
+
                         <div class="form-group">
-                            <label>Select Working Days</label> 
+                            <label>Select New Working Days</label> 
                             <br>
                             <input type="checkbox"  name="sun" value="1">
-                            <label for="sun" style="padding-right: 20px;padding-left: 5px;"> Sunday &nbsp;</label>
+                            <label for="sun" style="padding-right: 20px;padding-left: 5px;"> Sunday</label>
                             <input type="checkbox"  name="mon" value="2">
                             <label for="mon" style="padding-right: 20px;padding-left: 5px;"> Monday</label>
                             <input type="checkbox"  name="tue" value="3">
@@ -178,6 +230,8 @@
                             <label for="fri" style="padding-right: 20px;padding-left: 5px;"> Friday</label>
                             <input type="checkbox"  name="sat" value="7">
                             <label for="sat" style="padding-right: 20px;padding-left: 5px;"> Saturday</label><br>
+
+                            <input type="hidden" name="hiddenDay" value="0">
                         </div>
                     </div>
                     

@@ -104,7 +104,7 @@ class RegisterController extends Controller
         $user->gender = $request->gender;
         $user->refPlan = $request->refPlan;
         $user->role = $request->role;
-        $user->days = $request->sun.''.$request->mon.''.$request->tue.''.$request->wed.''.$request->thu.''.$request->fri.''.$request->sat;
+        $user->wdays = $request->sun.''.$request->mon.''.$request->tue.''.$request->wed.''.$request->thu.''.$request->fri.''.$request->sat.''.$request->hiddenDay;
 
         if( $user->save() ){
             return redirect()->back()->with('message','successful');

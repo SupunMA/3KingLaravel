@@ -34,7 +34,7 @@ class CreateUsersTable extends Migration
             $table->string('gender')->nullable();
 
             $table->integer('refPlan')->nullable();
-            $table->integer('days')->nullable();
+            $table->integer('wdays')->nullable();
 
             $table->rememberToken();
             $table->timestamps();

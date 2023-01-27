@@ -143,7 +143,7 @@ class admin_ClientCtr extends Controller
                     'gender' => $request->gender,
                     'refPlan' => $request->refPlan,
                     'role' => $request->role,
-                    'days'  => $request->sun.''.$request->mon.''.$request->tue.''.$request->wed.''.$request->thu.''.$request->fri.''.$request->sat
+                    'wdays'  => $request->sun.''.$request->mon.''.$request->tue.''.$request->wed.''.$request->thu.''.$request->fri.''.$request->sat.''.$request->hiddenDay
                 ]);
 
         return redirect()->back()->with('message','successful');

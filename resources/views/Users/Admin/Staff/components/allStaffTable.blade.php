@@ -15,13 +15,14 @@
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
-                    <th>Date of Birth</th>
+                    <th>DOB</th>
                     <th>Gender</th>
                     <th>Address, ZipCode</th>
                     <th>Email</th>
                     <th>Mobile</th>
                     <th>Join Date</th>
                     <th>Role</th>
+                    <th>W.Days</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -58,8 +59,11 @@
                             
                         
                         </td>
+                        <td>
+
+                            {{strlen($client->wdays)-1}}
                         
-                        
+                        </td>
                         
                         <td>
                             <a class="btn btn-warning" type="button" data-toggle="modal" data-target="#ClientEditModal-{{$client->id}}" >
@@ -84,17 +88,26 @@
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
-                    <th>Date of Birth</th>
+                    <th>DOB</th>
                     <th>Gender</th>
                     <th>Address, ZipCode</th>
                     <th>Email</th>
                     <th>Mobile</th>
                     <th>Join Date</th>
                     <th>Role</th>
+                    <th>W.Days</th>
                     <th>Actions</th>
                 </tr>
+                </tr>
             </tfoot>
+            
         </table>
+        <p>
+            <b>DOB - Date of Birth <br>
+        W.Days - Working Days</b>
+        </p>
+        
+        
     </div>
     <!-- /.card-body -->
 </div>

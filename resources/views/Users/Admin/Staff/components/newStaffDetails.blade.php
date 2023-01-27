@@ -142,7 +142,7 @@
                     <label>Select Working Days</label> 
                     <br>
                     <input type="checkbox"  name="sun" value="1">
-                    <label for="sun" style="padding-right: 20px;padding-left: 5px;"> Sunday &nbsp;</label>
+                    <label for="sun" style="padding-right: 20px;padding-left: 5px;"> Sunday</label>
                     <input type="checkbox"  name="mon" value="2">
                     <label for="mon" style="padding-right: 20px;padding-left: 5px;"> Monday</label>
                     <input type="checkbox"  name="tue" value="3">
@@ -155,6 +155,8 @@
                     <label for="fri" style="padding-right: 20px;padding-left: 5px;"> Friday</label>
                     <input type="checkbox"  name="sat" value="7">
                     <label for="sat" style="padding-right: 20px;padding-left: 5px;"> Saturday</label><br>
+
+                    <input type="hidden" name="hiddenDay" value="0">
                 </div>
             </div>
 

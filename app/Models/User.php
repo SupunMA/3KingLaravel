@@ -30,7 +30,7 @@ class User extends Authenticatable
         'dob',
         'gender',
         'refPlan',
-        'days'
+        'wdays'
     ];
 
     /**
