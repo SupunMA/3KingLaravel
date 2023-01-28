@@ -76,7 +76,7 @@
                         <li class="nav-item">
                             <a href="{{ route('admin.DeclinedPayment') }}" class="nav-link {{ Route::currentRouteNamed('admin.DeclinedPayment') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Decline List</p>
+                                <p>Declined List</p>
                             </a>
                         </li>
                     </ul>

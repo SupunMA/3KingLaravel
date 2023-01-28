@@ -4,9 +4,9 @@
 <div class="container-fluid ">
 
     {{-- button to go to all clients --}}
-    <a class="btn btn-danger mb-1" href="{{route('admin.allClient')}}">
+    <a class="btn btn-danger mb-1" href="{{route('admin.allStaff')}}">
         <i class="fas fa-list-ul mr-1"></i>
-        <b>View All Clients</b>
+        <b>View Staff Members</b>
     </a>
     
     <form action="{{route('admin.addingClient')}}" method="post">
