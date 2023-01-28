@@ -75,4 +75,49 @@
       elementToHide.style.display = "block";
     }
   });
+
+
+
+
+
+  //run foreeach
+
+  var input = document.getElementById("dateInput");
+  input.addEventListener("change", function() {
+    // Get the selected date
+    var selectedDate = input.value;
+
+    // Define your array
+    var myArray = [1, 2, 3, 4, 5];
+
+    // Use forEach to loop through the array
+    myArray.forEach(function(item) {
+      // Do something with the item
+      console.log(item);
+    });
+  });
+
+
+//Adding data select input using foreach
+
+  var input = document.getElementById("dateInput");
+  var select = document.getElementById("mySelect");
+  input.addEventListener("change", function() {
+    // Get the selected date
+    var selectedDate = input.value;
+
+    // Define your array
+    var myArray = [1, 2, 3, 4, 5];
+
+    // Use forEach to loop through the array
+    myArray.forEach(function(item) {
+      // Create a new option element
+      var option = document.createElement("option");
+      // Set the value and text of the option
+      option.value = item;
+      option.text = item;
+      // Append the option to the select element
+      select.appendChild(option);
+    });
+  });
 </script>
