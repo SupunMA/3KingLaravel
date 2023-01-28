@@ -57,15 +57,9 @@
                         
                       @endforeach 
                         
-                      
-                    
-                      
+
                     @endforeach
                   
-                  
-              
-             
-          
                 </select>
             
             </div>
@@ -94,18 +88,18 @@
 
 //show and hide element when click on date  picker
 
-  var input = document.getElementById("dateInput");
-  input.addEventListener("change", function() {
-    var date = new Date(input.value);
-    var day = date.getDay(); // get the day of the week (0-6)
-    var elementToHide = document.getElementById("elementToHide");
+  // var input = document.getElementById("dateInput");
+  // input.addEventListener("change", function() {
+  //   var date = new Date(input.value);
+  //   var day = date.getDay(); // get the day of the week (0-6)
+  //   var elementToHide = document.getElementById("elementToHide");
 
-    if (day === 0 || day === 6) { // hide element on weekends (day 0 = Sunday, day 6 = Saturday)
-      elementToHide.style.display = "none";
-    } else {
-      elementToHide.style.display = "block";
-    }
-  });
+  //   if (day === 0 || day === 6) { // hide element on weekends (day 0 = Sunday, day 6 = Saturday)
+  //     elementToHide.style.display = "none";
+  //   } else {
+  //     elementToHide.style.display = "block";
+  //   }
+  // });
 
 
 
@@ -113,20 +107,20 @@
 
   //run foreeach
 
-  var input = document.getElementById("dateInput");
-  input.addEventListener("change", function() {
-    // Get the selected date
-    var selectedDate = input.value;
+  // var input = document.getElementById("dateInput");
+  // input.addEventListener("change", function() {
+  //   // Get the selected date
+  //   var selectedDate = input.value;
 
-    // Define your array
-    var myArray = [1, 2, 3, 4, 5];
+  //   // Define your array
+  //   var myArray = [1, 2, 3, 4, 5];
 
-    // Use forEach to loop through the array
-    myArray.forEach(function(item) {
-      // Do something with the item
-      //console.log(item);
-    });
-  });
+  //   // Use forEach to loop through the array
+  //   myArray.forEach(function(item) {
+  //     // Do something with the item
+  //     //console.log(item);
+  //   });
+  // });
 
 
 
@@ -145,6 +139,7 @@
     
     var date = new Date(input.value);
     var selectedDate = date.getDay();
+    var selectedDate = selectedDate + 1;
 
 
     //clear select
@@ -152,18 +147,29 @@
 
     
 
-    // Use forEach to loop through the array
-    data.forEach(function(item) {
-      // Create a new option element
-      var option = document.createElement("option");
-      // Set the value and text of the option
-      option.value = item[1];
-      option.text = item.name +' '+selectedDate;
-      // Append the option to the select element
-      select.appendChild(option);
-     
-      
+    
 
+    // Use forEach to loop through the array
+    data.forEach(function(coach) {
+      let wdays = coach.wdays;
+      let daysArr = wdays.toString().split('').map(Number);
+
+      daysArr.forEach(function(eCoach){
+     
+        if(eCoach === selectedDate) {
+          // Create a new option element
+        var option = document.createElement("option");
+        // Set the value and text of the option
+        option.value = coach.id;
+        option.text = coach.name +' '+selectedDate;
+        // Append the option to the select element
+        select.appendChild(option);
+      
+        console.log(daysArr);
+        }
+        
+
+      });
     });
   });
 
