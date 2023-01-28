@@ -142,8 +142,11 @@
   var select = document.getElementById("mySelect");
   input.addEventListener("change", function() {
     // Get the selected date
-    var selectedDate = input.value;
     
+    var date = new Date(input.value);
+    var selectedDate = date.getDay();
+
+
     //clear select
     select.innerHTML = "";
 
@@ -155,10 +158,10 @@
       var option = document.createElement("option");
       // Set the value and text of the option
       option.value = item[1];
-      option.text = item.name;
+      option.text = item.name +' '+selectedDate;
       // Append the option to the select element
       select.appendChild(option);
-      
+     
       
 
     });
