@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 use Auth;
 use App\Models\User;
 use App\Models\Plan;
+use App\Models\Slot;
+use App\Models\CoachClient;
+
 
 use App\Models\Payment;
 
@@ -19,8 +22,11 @@ class userController extends Controller
        
         //dd($clients);
         $coaches=User::where('users.role',2)->get();
+        $plans=Plan::all();
+        $slots=Slot::all();
+        $tasks=CoachClient::all();
         
-        return view('Users.User.home',compact('coaches'));
+        return view('Users.User.home',compact('coaches','plans','slots','tasks'));
     }
 
 
