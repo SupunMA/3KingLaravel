@@ -9,7 +9,7 @@
             <div class="col-12">
 
                 {{-- button to go to add lands --}}
-               
+              
 
                 <!-- Import Table -->
                @include('Users.Admin.Payment.components.approvedOrDeclinedTable')
@@ -29,5 +29,5 @@
 @endsection
 
 @section('header')
-Approved Payment Details
+Declined Payment Details
 @endsection

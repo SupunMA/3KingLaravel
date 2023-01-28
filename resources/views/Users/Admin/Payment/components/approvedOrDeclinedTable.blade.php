@@ -16,7 +16,7 @@
                     <th>Payment Date</th>
                     <th>Plan Name</th>
                     
-                    <th>Actions</th>
+                   
                 </tr>
             </thead>
             <tbody>
@@ -37,18 +37,7 @@
                                 <td>{{$payment->payDate}}</td>
                                 <td>{{$plan->planName}}</td>
                                 
-                                <td>
-                                    <form action="{{route('admin.approvePayment')}}" method="POST">
-                                        @csrf
-                                        <input type="hidden" name="paymentIdHidden" value="{{$payment->paymentID}}">
-                                        <input type="radio" name="{{$payment->paymentID}}" value="1" checked>
-                                        <label for="1">Accept</label><br>
-                                        <input type="radio" name="{{$payment->paymentID}}" value="2">
-                                        <label for="2">Decline</label><br>
-
-                                        <button type="submit" class="btn btn-warning"><i class="fa-solid fa-check"></i></button>
-                                    </form>
-                                </td>
+                            
                             </tr>
                         
                             
@@ -72,7 +61,7 @@
                     <th>Payment Date</th>
                     <th>Plan Name</th>
                     
-                    <th>Actions</th>
+                    
                 </tr>
             </tfoot>
         </table>

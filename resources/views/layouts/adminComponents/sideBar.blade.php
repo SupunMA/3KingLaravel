@@ -50,15 +50,37 @@
                 </li>
 
                 {{-- Transactions --}}
-                <li class="nav-item">
-                    <a href="{{ route('admin.pendingPaymentList') }}" class="nav-link {{ Route::currentRouteNamed('admin.pendingPaymentList') || Route::currentRouteNamed('admin.pendingPaymentList') || Route::currentRouteNamed('admin.pendingPaymentList') ? 'active' : ' ' }}">
+                
+
+                  <li class="nav-item {{ Route::currentRouteNamed('admin.pendingPaymentList') || Route::currentRouteNamed('admin.approvedPayment') || Route::currentRouteNamed('admin.DeclinedPayment')? 'menu-open' : 'menu-close' }}">
+                    <a href="#" class="nav-link {{ Route::currentRouteNamed('admin.pendingPaymentList') || Route::currentRouteNamed('admin.approvedPayment') || Route::currentRouteNamed('admin.DeclinedPayment') ? 'active' : '' }} ">
                         <i class="fas fa-money-bill-wave"></i>
-                        <p>Payments
-                            <span class="right badge badge-success">Pay</span>
+                        <p>
+                            Payments
+                            <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
-                  </li>
-
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('admin.pendingPaymentList') }}" class="nav-link {{ Route::currentRouteNamed('admin.pendingPaymentList') ? 'active' : '' }} ">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Pending List</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('admin.approvedPayment') }}" class="nav-link {{ Route::currentRouteNamed('admin.approvedPayment') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Approved List</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('admin.DeclinedPayment') }}" class="nav-link {{ Route::currentRouteNamed('admin.DeclinedPayment') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Decline List</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
 
 
                     {{-- Clients --}}

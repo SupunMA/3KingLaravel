@@ -52,6 +52,24 @@ class admin_PaymentCtr extends Controller
 
     }
 
+    public function approvedPayment()
+    {
+        $clients=User::where('users.role',0)->get();
+        $payments=Payment::where('payments.confirm',1)->get();
+        $plans=Plan::all();
+        return view('Users.Admin.Payment.approvedPayment',compact('clients','payments','plans'));
+    }
+
+    public function DeclinedPayment()
+    {
+        $clients=User::where('users.role',0)->get();
+        $payments=Payment::where('payments.confirm',2)->get();
+        $plans=Plan::all();
+        return view('Users.Admin.Payment.declinedPayment',compact('clients','payments','plans'));
+    }
+
+
+
     // public function allLand()
     // {
     //     //$clients=User::where('users.role',0)->get(['id', 'name','NIC']);
