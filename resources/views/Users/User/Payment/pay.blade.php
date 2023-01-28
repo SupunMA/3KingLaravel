@@ -9,50 +9,72 @@
     {{-- {{$client->id}} --}}
 
     
+    @include('Users.Admin.messages.addMsg')
 
-        @foreach ($plans as $bd)
-            @if ($bd->planID == Auth::user()->refPlan)
-               
-                <div class="card text-white bg-success mb-3" style="max-width: 28rem;">
-                    <div class="card-header"><h4>Selected Plan is {{$bd->planName}} <br> Plan Price is {{$bd->planPrice}}</h4> </div>
-                    <div class="card-body">
-                      <h5 class="card-title">Insert Card Details</h5>
+@foreach ($plans as $bd)
+    @if ($bd->planID == Auth::user()->refPlan)
+        <form action="{{route('CustomerMakePayments')}}" method="post">
+            @csrf
+            <div class="card text-white bg-success mb-3" style="max-width: 28rem;">
+                <div class="card-header">
+                    <h4>Selected Plan is {{$bd->planName}} <br> Plan Price is {{$bd->planPrice}}</h4> 
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Insert Card Details</h5>
 
                     <br>
-                    <div class="col-lg-12 col-12">
-                        <div class="form-group">
-                            <label >Card Holder Name</label>
-                            <input type="email" class="form-control" name="email" placeholder="Email Address">
+
+                    <div class="row">
+                        <div class="col-lg-12 col-12">
+                            <div class="form-group">
+                                <label >Card Holder Name</label>
+                                <input type="text" class="form-control" name="name" placeholder="Ex:- Amarathunga Malshan">
+                            </div>
                         </div>
                     </div>
+            
 
-                    
+            
                     <div class="row">
 
                         <div class="col-lg-9 col-9">
                             <div class="form-group">
                                 <label >Card Number</label>
-                                <input type="email" class="form-control" name="email" placeholder="xxxx xxxx xxxx xxxx">
+                                <input type="text"  maxlength="16" class="form-control" name="cardNo" placeholder="xxxxxxxxxxxxxxxx">
                             </div>
                         </div>
 
                         <div class="col-lg-3 col-3">
                             <div class="form-group">
                                 <label >CSV</label>
-                                <input type="email" class="form-control" name="email" placeholder="xxx">
+                                <input type="text"  maxlength="3" class="form-control" name="CSV" placeholder="xxx">
                             </div>
                         </div>
 
                     </div>
-                    
 
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    {{-- payment Date --}}
+
+
+<input type="hidden" name="clientID" value={{Auth::user()->id}}>
+<input type="hidden" name="planID" value={{$bd->planID}}>
+                    <input type="hidden" name="payDate" value="{{ date('Y-m-d') }}">
+
+
+                    <div class="card-footer">
+                        <div class="row" >
+                            <button type="submit" class="btn btn-warning">Pay Now</button>
+                        </div>
+                        
                     </div>
+            
                 </div>
-            @else
-                    
-            @endif
-        @endforeach
+            </div>
+        </form>
+    @else
+            
+    @endif
+@endforeach
         
     
 

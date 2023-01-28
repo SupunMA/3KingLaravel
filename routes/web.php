@@ -121,8 +121,9 @@ Route::group(['prefix'=>'Account/Client','middleware'=>['checkUser','auth','lock
     Route::post('/CustomerSelectPlans', [userController::class, 'CustomerSelectPlan'])->name('selectPlan');
 
 
-    //make payment
-    Route::get('/makePayments', [userController::class, 'makePayments'])->name('CustomerMakePayments');
+    //view make payment 
+    Route::get('/makePayments', [userController::class, 'makePaymentsView'])->name('CustomerMakePaymentsView');
+    Route::POST('/makingPayments', [userController::class, 'makePayments'])->name('CustomerMakePayments');
 
 
     

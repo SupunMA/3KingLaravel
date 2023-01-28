@@ -13,14 +13,11 @@ class CreateLandsTable extends Migration
      */
     public function up()
     {
-        Schema::create('lands', function (Blueprint $table) {
-            $table->id('landID');
-            $table->string('landAddress')->nullable();
-            $table->string('landMap')->nullable();
-            $table->string('landDetails')->nullable();
-            $table->float('landValue',10,2)->nullable();
-
-            $table->integer('ownerID')->nullable();
+        Schema::create('payments', function (Blueprint $table) {
+            $table->id('paymentID');
+            $table->integer('clientID')->nullable();
+            $table->integer('planID')->nullable();
+            $table->date('payDate')->nullable();
 
             $table->timestamps();
         });
@@ -33,6 +30,6 @@ class CreateLandsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lands');
+        Schema::dropIfExists('payments');
     }
 }

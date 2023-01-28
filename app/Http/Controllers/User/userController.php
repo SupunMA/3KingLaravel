@@ -8,31 +8,15 @@ use Illuminate\Http\Request;
 use Auth;
 use App\Models\User;
 use App\Models\Plan;
-use App\Models\Land;
+
+use App\Models\Payment;
 
 
 class userController extends Controller
 {
     public function checkUser()
     {
-        $loanData = Land::join('users','users.id','=','lands.ownerID')
-        ->join('loans','loans.loanLandID','=','lands.landID')
-        ->where('users.id',Auth::user()->id)->get(['users.*','lands.*','loans.*']);
-
-        $transactionData = Land::join('users','users.id','=','lands.ownerID')
-        ->join('loans','loans.loanLandID','=','lands.landID')
-        ->join('transactions','transactions.transLoanID','=','loans.loanID')
-        ->where('users.id',Auth::user()->id)->get(['users.*','lands.*','loans.*','transactions.*'])
-        ->sortByDesc('transID')->first();
-        
-        $transactionDataForCount = Land::join('users','users.id','=','lands.ownerID')
-        ->join('loans','loans.loanLandID','=','lands.landID')
-        ->join('transactions','transactions.transLoanID','=','loans.loanID')
-        ->where('users.id',Auth::user()->id);
-        //dd($transactionData);
-        $countTransRows = $transactionDataForCount->count();
-        //dd($clients);
-        return view('Users.User.home',compact('loanData','transactionData','countTransRows'));
+       
     }
 
 
@@ -72,7 +56,7 @@ class userController extends Controller
 
 
     //makePayments
-    public function makePayments(Request $request)
+    public function makePaymentsView(Request $request)
     {
         
         $plans = Plan::all();
@@ -80,6 +64,32 @@ class userController extends Controller
         return view('Users.User.Payment.pay',compact('plans'));
     }
 
+
+    public function makePayments(Request $request)
+    {
+        $request->validate([
+            'clientID' => ['required','integer'],
+            'planID' => ['required','integer'],
+            'payDate' => ['required', 'string', 'date'],
+            
+        ]);
+
+        $payment = new Payment();
+        $payment->clientID = $request->clientID;
+        $payment->planID = $request->planID;
+        $payment->payDate = $request->payDate;
+       
+        if( $payment->save() ){
+            return redirect()->back()->with('message','successful');
+        }else{
+            return redirect()->back()->with('message','Failed');
+        }
+
+
+
+        
+       
+    }
 
 
 }

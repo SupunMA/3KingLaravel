@@ -170,7 +170,7 @@
 
 
                 <li class="nav-item">
-                    <a href="{{ route('CustomerAllPlanView') }}" class="nav-link {{ Route::currentRouteNamed('CustomerAllPlanView') ? 'active' : '' }}">
+                    <a href="{{ route('CustomerMakePaymentsView') }}" class="nav-link {{ Route::currentRouteNamed('CustomerMakePaymentsView') ? 'active' : '' }}">
                         <i class="fas fa-money-bill-wave"></i>
                         <p>
                             Make Payments
