@@ -18,7 +18,9 @@ class userController extends Controller
     {
        
         //dd($clients);
-        return view('Users.User.home');
+        $coaches=User::where('users.role',2)->get();
+        
+        return view('Users.User.home',compact('coaches'));
     }
 
 

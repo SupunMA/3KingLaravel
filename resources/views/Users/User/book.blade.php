@@ -38,6 +38,35 @@
             
                 <p class="form-text text-muted text-left">Select a Coach</p>
                 <div id="elementToHide" style="display: none">This element will be hidden on certain days</div>
+                
+                <select class="form-control select2bs4" style="width: 100%;" name="refPlan">
+                    @foreach ($coaches as $coach)
+                      @php
+                        $days_array = str_split($coach->wdays);
+                      
+                      @endphp
+
+                      @foreach ($days_array as $days)
+                       {{-- @if ($days ===  $day) --}}
+                     
+                      <option value="" selected="selected" style="">{{$coach->name}}</option>;
+                       
+                       
+                          
+                        {{-- @endif  --}}
+                        
+                      @endforeach 
+                        
+                      
+                    
+                      
+                    @endforeach
+                  
+                  
+              
+             
+          
+                </select>
             
             </div>
 
@@ -46,6 +75,8 @@
 
       {{-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> --}}
       <a href="#" class="btn btn-primary">Go somewhere</a>
+
+      <select name="" class="form-control select2bs4" id="mySelect"></select>
     </div>
     <div class="card-footer text-muted">
         Expiration date :
@@ -93,10 +124,17 @@
     // Use forEach to loop through the array
     myArray.forEach(function(item) {
       // Do something with the item
-      console.log(item);
+      //console.log(item);
     });
   });
 
+
+
+////////////////////////////////////////////////////////////////
+
+    var data = {!! json_encode($coaches) !!};
+    console.log(data[1].name);
+    let x = (data.length);
 
 //Adding data select input using foreach
 
@@ -105,19 +143,32 @@
   input.addEventListener("change", function() {
     // Get the selected date
     var selectedDate = input.value;
+    
+    //clear select
+    select.innerHTML = "";
 
-    // Define your array
-    var myArray = [1, 2, 3, 4, 5];
+    
 
     // Use forEach to loop through the array
-    myArray.forEach(function(item) {
+    data.forEach(function(item) {
       // Create a new option element
       var option = document.createElement("option");
       // Set the value and text of the option
-      option.value = item;
-      option.text = item;
+      option.value = item[1];
+      option.text = item.name;
       // Append the option to the select element
       select.appendChild(option);
+      
+      
+
     });
   });
+
+
+
+
+
+  // Define your array
+    //var myArray = [1, 2, 3, 4, 5];
 </script>
+
