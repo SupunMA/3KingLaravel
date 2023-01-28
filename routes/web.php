@@ -102,6 +102,7 @@ Route::group(['prefix'=>'Admin','middleware'=>['checkAdmin','auth','lockBack']],
 
     //paymentView
     Route::get('pendingPayment', [admin_PaymentCtr::class, 'pendingPaymentList'])->name('admin.pendingPaymentList');
+    Route::POST('approvePayment', [admin_PaymentCtr::class, 'approvePayment'])->name('admin.approvePayment');
 
 
 

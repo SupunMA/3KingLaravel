@@ -11,6 +11,7 @@
             <thead>
                 <tr>
                     <th>Payment ID</th>
+                    <th>Client ID</th>
                     <th>Customer Name</th>
                     <th>Payment Date</th>
                     <th>Plan Name</th>
@@ -25,31 +26,28 @@
                     @foreach ($plans as $plan)
 
                         @foreach ($payments as $payment)
-                    
                 
                         @if ($payment->clientID == $client->id && $payment->planID == $plan->planID)
                         
                             
                             <tr>
                                 <td>{{$payment->paymentID}}</td>
+                                <td>{{$client->id}}</td>
                                 <td>{{$client->name}}</td>
                                 <td>{{$payment->payDate}}</td>
                                 <td>{{$plan->planName}}</td>
                                 
                                 <td>
-                                    <input type="hidden" name="paymentIdHidden" value="{{$payment->paymentID}}">
-                                    <input type="radio" name="{{$payment->paymentID}}" value="1">
-                                    <label for="1">Accept</label><br>
-                                    <input type="radio" name="{{$payment->paymentID}}" value="0">
-                                    <label for="0">Decline</label><br>
-                                    {{-- <a class="btn btn-warning" type="button" data-toggle="modal" data-target="#landEditModal-{{$data->landID}}" >
-                                        <i class="far fa-edit"></i>
-                                    </a>
-                                    <a class="btn btn-danger" type="button" data-toggle="modal" data-target="#landDeleteModal-{{$data->landID}}"  >
-                                        <i class="far fa-trash-alt"></i>
-                                    </a> --}}
+                                    <form action="{{route('admin.approvePayment')}}" method="POST">
+                                        @csrf
+                                        <input type="hidden" name="paymentIdHidden" value="{{$payment->paymentID}}">
+                                        <input type="radio" name="{{$payment->paymentID}}" value="1" checked>
+                                        <label for="1">Accept</label><br>
+                                        <input type="radio" name="{{$payment->paymentID}}" value="0">
+                                        <label for="0">Decline</label><br>
 
-                                    <button type="submit" class="btn btn-warning"><i class="far fa-trash-alt"></i></button>
+                                        <button type="submit" class="btn btn-warning"><i class="fa-solid fa-check"></i></button>
+                                    </form>
                                 </td>
                             </tr>
                         
@@ -69,6 +67,7 @@
             <tfoot>
                 <tr>
                     <th>Payment ID</th>
+                    <th>Client ID</th>
                     <th>Customer Name</th>
                     <th>Payment Date</th>
                     <th>Plan Name</th>

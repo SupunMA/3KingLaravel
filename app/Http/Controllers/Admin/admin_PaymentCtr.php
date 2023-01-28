@@ -27,9 +27,29 @@ class admin_PaymentCtr extends Controller
     public function pendingPaymentList()
     {
         $clients=User::where('users.role',0)->get();
-        $payments=Payment::all();
+        $payments=Payment::where('payments.confirm',0)->get();
         $plans=Plan::all();
         return view('Users.Admin.Payment.pendingPayment',compact('clients','payments','plans'));
+    }
+
+    public function approvePayment(Request $request)
+    {
+        //dd($data);
+
+
+        // $request->validate([
+        //     'name' => ['required', 'string', 'max:255']
+        // ]);
+        $test= $request->paymentIdHidden;
+
+        Payment::where('paymentID', $request->paymentIdHidden)
+        ->update([
+                    'confirm' => $request->$test
+                ]);
+
+        return redirect()->back()->with('message','successful');
+
+
     }
 
     // public function allLand()
