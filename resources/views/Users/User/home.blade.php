@@ -4,9 +4,9 @@
 <div class="container-fluid">
     
     {{-- Date and Time --}}
-    @foreach ($loanData as $item)
+    {{-- @foreach ($loanData as $item)
         @include('Users.User.HomeCalculations.components.timeDate')
-    @endforeach
+    @endforeach --}}
 
     <div class="row">
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 ">

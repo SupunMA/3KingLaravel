@@ -17,6 +17,8 @@ class userController extends Controller
     public function checkUser()
     {
        
+        //dd($clients);
+        return view('Users.User.home');
     }
 
 
@@ -84,11 +86,6 @@ class userController extends Controller
         }else{
             return redirect()->back()->with('message','Failed');
         }
-
-
-
-        
-       
     }
 
 

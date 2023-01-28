@@ -33,10 +33,10 @@ class admin_HomeCtr extends Controller
         $ManagerCount=User::where('users.role',3)->count();
 
 
-        $LandCount = Land::count();
+      
         $PlanCount=Plan::count();
         $TransCount=Transaction::count();
-        return view('Users.Admin.home',compact('PlanCount','ClientsCount','LandCount','TransCount','ManagerCount','CoachCount','AdminCount'));
+        return view('Users.Admin.home',compact('PlanCount','ClientsCount','TransCount','ManagerCount','CoachCount','AdminCount'));
     }
 
     

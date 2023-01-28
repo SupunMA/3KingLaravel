@@ -17,7 +17,7 @@
             @csrf
             <div class="card text-white bg-success mb-3" style="max-width: 28rem;">
                 <div class="card-header">
-                    <h4>Selected Plan is {{$bd->planName}} <br> Plan Price is {{$bd->planPrice}}</h4> 
+                    <h4>Selected Plan is {{$bd->planName}} <br></h4> 
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">Insert Card Details</h5>
@@ -56,14 +56,15 @@
                     {{-- payment Date --}}
 
 
-<input type="hidden" name="clientID" value={{Auth::user()->id}}>
-<input type="hidden" name="planID" value={{$bd->planID}}>
+                    <input type="hidden" name="clientID" value={{Auth::user()->id}}>
+                    <input type="hidden" name="planID" value={{$bd->planID}}>
                     <input type="hidden" name="payDate" value="{{ date('Y-m-d') }}">
 
 
                     <div class="card-footer">
                         <div class="row" >
-                            <button type="submit" class="btn btn-warning">Pay Now</button>
+                            <h5 style="margin-RIGHT: 155PX" class="text-warning">Plan Price is Rs.{{$bd->planPrice}}.00</h5>
+                            <button type="submit" class="btn btn-warning" >Pay Now</button>
                         </div>
                         
                     </div>

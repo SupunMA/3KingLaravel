@@ -18,6 +18,7 @@ class CreateLandsTable extends Migration
             $table->integer('clientID')->nullable();
             $table->integer('planID')->nullable();
             $table->date('payDate')->nullable();
+            $table->date('confirm')->nullable()->default(0);
 
             $table->timestamps();
         });

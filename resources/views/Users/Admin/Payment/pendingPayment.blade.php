@@ -14,7 +14,7 @@
         {{-- <div class="row"> --}}
 
             {{-- Client Details form --}}
-            @include('Users.Admin.Lands.components.newLandDetails')
+            @include('Users.Admin.Payment.components.pendingTable')
            
             {{-- Client Password form --}}
             

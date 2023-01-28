@@ -9,8 +9,9 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Admin\admin_HomeCtr;
 use App\Http\Controllers\Admin\admin_PlanCtr;
 use App\Http\Controllers\Admin\admin_ClientCtr;
+use App\Http\Controllers\Admin\admin_PaymentCtr;
 use App\Http\Controllers\UpdateProfile;
-use App\Http\Controllers\Admin\admin_LandCtr;
+
 use App\Http\Controllers\Admin\admin_TransactionCtr;
 
 use App\Http\Controllers\Home\homePageController;
@@ -98,6 +99,10 @@ Route::group(['prefix'=>'Admin','middleware'=>['checkAdmin','auth','lockBack']],
     Route::POST('AllTransaction/{loanID}', [admin_TransactionCtr::class, 'allTransactionOfLoan'])->name('admin.allTransactionOfLoan');
 
     
+
+    //paymentView
+    Route::get('pendingPayment', [admin_PaymentCtr::class, 'pendingPaymentList'])->name('admin.pendingPaymentList');
+
 
 
     

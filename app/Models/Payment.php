@@ -15,6 +15,7 @@ class Payment extends Model
     protected $fillable = [
         'clientID',
         'planID',
-        'payDate'
+        'payDate',
+        'confirm'
     ];
 }
