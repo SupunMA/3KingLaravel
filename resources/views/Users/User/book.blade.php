@@ -5,7 +5,7 @@
     <div class="card-body text-left">
         <h5 class="">Booking a Slot</h5>
         <div class="row">
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
             
                 <p class="form-text text-muted text-left">Select a Date</p>
                 <input type="date" name="" class="form-control" id="dateInput">
@@ -13,10 +13,10 @@
             </div>
 
             
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
             
                 <p class="form-text text-muted text-left">Select a Time Slot</p>
-                <select class="form-control select2bs4" style="width: 100%;" name="refPlan">
+                <select class="form-control select2bs4" name="refPlan">
                     
                             <option value="" selected="selected">8am - 10am</option>
                             <option value="">8am - 10am</option>
@@ -30,22 +30,24 @@
             
             </div>
 
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+            
+              <p class="form-text text-muted text-left">Select a Coach</p>
+              <div id="elementToHide" style="display: none">This element will be hidden on certain days</div>
+              
+              <select name="" class="form-control select2bs4" id="mySelect"></select>
+          
+          </div>
+
         </div>
         <br>
         <div class="row">
 
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
             
-                <p class="form-text text-muted text-left">Select a Coach</p>
-                <div id="elementToHide" style="display: none">This element will be hidden on certain days</div>
-                
-                <select name="" class="form-control select2bs4" id="mySelect"></select>
-            
-            </div>
 
         </div>
         
-
+<br>
       {{-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> --}}
       <a href="#" class="btn btn-primary">Go somewhere</a>
 
