@@ -39,28 +39,7 @@
                 <p class="form-text text-muted text-left">Select a Coach</p>
                 <div id="elementToHide" style="display: none">This element will be hidden on certain days</div>
                 
-                <select class="form-control select2bs4" style="width: 100%;" name="refPlan">
-                    @foreach ($coaches as $coach)
-                      @php
-                        $days_array = str_split($coach->wdays);
-                      
-                      @endphp
-
-                      @foreach ($days_array as $days)
-                       {{-- @if ($days ===  $day) --}}
-                     
-                      <option value="" selected="selected" style="">{{$coach->name}}</option>;
-                       
-                       
-                          
-                        {{-- @endif  --}}
-                        
-                      @endforeach 
-                        
-
-                    @endforeach
-                  
-                </select>
+                <select name="" class="form-control select2bs4" id="mySelect"></select>
             
             </div>
 
@@ -70,7 +49,7 @@
       {{-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> --}}
       <a href="#" class="btn btn-primary">Go somewhere</a>
 
-      <select name="" class="form-control select2bs4" id="mySelect"></select>
+      
     </div>
     <div class="card-footer text-muted">
         Expiration date :
