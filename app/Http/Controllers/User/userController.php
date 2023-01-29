@@ -25,8 +25,9 @@ class userController extends Controller
         $plans=Plan::all();
         $slots=Slot::all();
         $tasks=CoachClient::all();
-        
-        return view('Users.User.home',compact('coaches','plans','slots','tasks'));
+        $payment=Payment::where('payments.clientID',auth::id())->latest('paymentID')->first();
+        // dd($payment);
+        return view('Users.User.home',compact('coaches','plans','slots','tasks','payment'));
     }
 
 

@@ -34,11 +34,11 @@
                                 <div class="info-box-content">
                                     <span class="info-box-text">
 
-                                        <h5>Available Slots : <b>Today</b></h5>
+                                        <h5>Available Slots</h5>
 
                                     </span>
                                     <span class="info-box-number">
-                                        <h5><b>3 Slots</b> </h5>
+                                        <h5><b>{{ $slots->count() }} Slots</b> </h5>
                                     </span>
                                 </div>
 
@@ -58,12 +58,12 @@
                                 <div class="info-box-content">
                                     <span class="info-box-text">
 
-                                        <h5> Available Coaches : <b>Today</b> </h5>
+                                        <h5> Available Coaches</h5>
 
                                     </span>
                                     <span class="info-box-number">
                                         <h5>
-                                            <b>3 Coaches</b>
+                                            <b>{{ $coaches->count() }} Coaches</b>
                                         </h5>
                                     </span>
                                 </div>
@@ -87,7 +87,9 @@
                                     </span>
                                     <span class="info-box-number">
                                         <h5>
-                                            <b>3 Plans</b>
+                                            <b>
+                                                {{$plans->count()}} Plans
+                                            </b>
                                         </h5>
                                     </span>
                                 </div>

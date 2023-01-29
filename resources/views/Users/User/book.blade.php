@@ -3,6 +3,12 @@
       @foreach ($plans as $plan)
         @if ($plan->planID === Auth::user()->refPlan)
           <h3 class="text-danger">Selected Plan is <b>{{ $plan->planName }}</b> </h3> 
+          
+          @php
+          //Get plan Months
+              $months =$plan->planMonth;
+          @endphp
+
         @endif
       @endforeach
     </div>
@@ -37,22 +43,40 @@
         <br>
         <div class="row">
 
-            
+          <?php
+          //Months got above foreach loop
+          $paidD = new DateTime($payment->payDate);
+          $expD = new DateTime($payment->payDate);
+          $expD -> add(new DateInterval('P'.$months.'M'));
+         
+          ?>
 
         </div>
         
 <br>
       {{-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> --}}
-      <a href="#" class="btn btn-primary">Book Now</a>
+      @php
+          if($paidD >  $expD){
+            echo '<a href="#" class="btn btn-primary" id="bookBtn" disabled>Book Now</a>';
+          }else{
+            echo '<a href="#" class="btn btn-primary" id="bookBtn" disabled>Book Now</a>';
 
+          }
+      @endphp
       
+
+       
     </div>
     <div class="card-footer text-muted">
-        Expiration date :
+        Plan Activated date : {{$payment->payDate}}  |  Expiration date : 
+        <?php
+        //Months got above foreach loop
+        echo $expD->format('Y-m-d');
+        ?>
     </div>
   </div>
 
-
+ 
 
 
 
@@ -72,6 +96,7 @@
   var CoachSelect = document.getElementById("CoachSelect");
   var TimeSelect = document.getElementById("TimeSelect");
 
+
   input.addEventListener("change", function() {
     // Get the selected date
     
@@ -83,6 +108,7 @@
   //clear select
   TimeSelect.innerHTML = "";
   CoachSelect.innerHTML = "";
+
 
 
     // Use forEach to loop through the array
