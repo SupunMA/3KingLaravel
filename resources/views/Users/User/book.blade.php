@@ -26,37 +26,38 @@
     
   <div class="card-body text-left">
     <h5 class="">Booking a Slot</h5>
-    <div class="row">
-      <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-      
-          <p class="form-text text-muted text-left">Select a Date</p>
-          {{-- Max date validate when select date --}}
-          <input type="date" name="" class="form-control" id="dateInput" max= "<?php echo $expD->format('Y-m-d'); ?>">
-      
-      </div>
-
-      
-      <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-      
-          <p class="form-text text-muted text-left">Select a Time Slot</p>
-          <select class="form-control select2bs4" name="refPlan" id="TimeSelect"></select>
-      
-      </div>
-
-      <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-      
-        <p class="form-text text-muted text-left">Select a Coach</p>
-        <select name="" class="form-control select2bs4" id="CoachSelect"></select>
-    
-      </div>
-
-    </div>
-        <br>
+    <form action="{{route('selectPlan')}}" method="post">
+      @csrf
+      <div class="row">
         
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
         
+            <p class="form-text text-muted text-left">Select a Date</p>
+            {{-- Max date validate when select date --}}
+            <input type="date" name="" class="form-control" id="dateInput" max= "<?php echo $expD->format('Y-m-d'); ?>">
+        
+        </div>
 
-           <a href="#" class="btn btn-primary" id="bookBtn" disabled>Book Now</a>
         
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+        
+            <p class="form-text text-muted text-left">Select a Time Slot</p>
+            <select class="form-control select2bs4" name="refPlan" id="TimeSelect"></select>
+        
+        </div>
+
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+        
+          <p class="form-text text-muted text-left">Select a Coach</p>
+          <select name="" class="form-control select2bs4" id="CoachSelect"></select>
+      
+        </div>
+
+      </div>
+      <br>
+
+      <button type="submit" class="btn btn-primary" id="bookBtn" disabled>Book Now</button>
+    </form>
       
 
        
