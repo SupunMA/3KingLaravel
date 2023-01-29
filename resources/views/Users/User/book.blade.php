@@ -59,46 +59,6 @@
 
 <script>
 
-
-
-//show and hide element when click on date  picker
-
-  // var input = document.getElementById("dateInput");
-  // input.addEventListener("change", function() {
-  //   var date = new Date(input.value);
-  //   var day = date.getDay(); // get the day of the week (0-6)
-  //   var elementToHide = document.getElementById("elementToHide");
-
-  //   if (day === 0 || day === 6) { // hide element on weekends (day 0 = Sunday, day 6 = Saturday)
-  //     elementToHide.style.display = "none";
-  //   } else {
-  //     elementToHide.style.display = "block";
-  //   }
-  // });
-
-
-
-
-
-  //run foreeach
-
-  // var input = document.getElementById("dateInput");
-  // input.addEventListener("change", function() {
-  //   // Get the selected date
-  //   var selectedDate = input.value;
-
-  //   // Define your array
-  //   var myArray = [1, 2, 3, 4, 5];
-
-  //   // Use forEach to loop through the array
-  //   myArray.forEach(function(item) {
-  //     // Do something with the item
-  //     //console.log(item);
-  //   });
-  // });
-
-
-
 ////////////////////////////////////////////////////////////////
 
     var coachData = {!! json_encode($coaches) !!};
@@ -141,7 +101,7 @@
         var option = document.createElement("option");
         // Set the value and text of the option
         option.value = coach.id;
-        option.text = coach.name +' '+selectedDate;
+        option.text = coach.name;
         // Append the option to the select element
         CoachSelect.appendChild(option);
       
@@ -157,58 +117,58 @@
     let myArray = [];
 
     taskData.forEach(function(timeTask) {
-      console.log(taskData);///
+      //console.log(taskData);///
       if(input.value === timeTask.date){
-        console.log(input.value +''+ timeTask.date); ////
+        //console.log(input.value +''+ timeTask.date); ////
         slotData.forEach(function(slot) {
           if(slot.slotID === timeTask.slotID){
-            console.log(slot.slotID +''+ timeTask.slotID);///
+            //console.log(slot.slotID +''+ timeTask.slotID);///
 
             if(slot.slotID === 1){
               myArray[0] =+1;
-              console.log(myArray[0]+'  slotid');
+              //console.log(myArray[0]+'  slotid');
             }
 
             if(slot.slotID === 2){
               myArray[1] =+1;
-              console.log(myArray[1]+'  slotid');
+              //console.log(myArray[1]+'  slotid');
             }
 
             if(slot.slotID === 3){
               myArray[2] =+1;
-              console.log(myArray[2]+'  slotid');
+              //console.log(myArray[2]+'  slotid');
             }
 
             if(slot.slotID === 4){
               myArray[3] =+1;
-              console.log(myArray[3]+'  slotid');
+              //console.log(myArray[3]+'  slotid');
             }
 
             if(slot.slotID === 5){
               myArray[4] =+1;
-              console.log(myArray[4]+'  slotid');
+              //console.log(myArray[4]+'  slotid');
             }
 
             if(slot.slotID === 6){
               myArray[5] =+1;
-              console.log(myArray[5]+'  slotid');
+              //console.log(myArray[5]+'  slotid');
             }
             // Create a new option element
             
             //console.log(timeTask.date+'sdfsd');
           }
-          console.log(slot.peopleAmount+' mokk');
+          //console.log(slot.peopleAmount+' mokk');
           for (let i = 0; i < myArray.length; i++) {
             
             if(myArray[i] <= slot.peopleAmount){
-              console.log(myArray[i]+'sdfsdfsdfsdf');
+              //console.log(myArray[i]+'sdfsdfsdfsdf');
             var optionSloat = document.createElement("option");
             // Set the value and text of the option
             optionSloat.value = slot.slotID;
             optionSloat.text = slot.slotTime;
             // Append the option to the select element
             TimeSelect.appendChild(optionSloat);
-            break;
+            
           }
           }
           
@@ -244,10 +204,5 @@
   });
 
 
-
-
-
-  // Define your array
-    //var myArray = [1, 2, 3, 4, 5];
 </script>
 
