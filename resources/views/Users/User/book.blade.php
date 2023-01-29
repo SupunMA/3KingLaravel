@@ -85,9 +85,6 @@
     TimeSelect.innerHTML = "";
     CoachSelect.innerHTML = "";
 
-    
-
-    
 
     // Use forEach to loop through the array
     coachData.forEach(function(coach) {
@@ -113,91 +110,60 @@
     });
 
    
-    //console.log(x1);
     let myArray = [];
 
-    taskData.forEach(function(timeTask) {
-      //console.log(taskData);///
-      if(input.value === timeTask.date){
-        //console.log(input.value +''+ timeTask.date); ////
-        slotData.forEach(function(slot) {
-          if(slot.slotID === timeTask.slotID){
-            //console.log(slot.slotID +''+ timeTask.slotID);///
+    slotData.forEach(function(slot) {
+     
+        taskData.forEach(function(timeTask) {
+          if(slot.slotID === timeTask.slotID && input.value === timeTask.date)
+          {
+          
+            myArray.push(slot.slotID);
+          
 
-            if(slot.slotID === 1){
-              myArray[0] =+1;
-              //console.log(myArray[0]+'  slotid');
-            }
+            let count = myArray.reduce((acc, val) => {
+              return val === slot.slotID ? acc + 1 : acc;
+            }, 0);
 
-            if(slot.slotID === 2){
-              myArray[1] =+1;
-              //console.log(myArray[1]+'  slotid');
+            console.log(count);
+            if(count <= slot.peopleAmount){
+              
+                //console.log(myArray[i]+'sdfsdfsdfsdf');
+              var optionSloat = document.createElement("option");
+              // Set the value and text of the option
+              optionSloat.value = slot.slotID;
+              optionSloat.text = slot.slotTime;
+              // Append the option to the select element
+              TimeSelect.appendChild(optionSloat);
             }
-
-            if(slot.slotID === 3){
-              myArray[2] =+1;
-              //console.log(myArray[2]+'  slotid');
-            }
-
-            if(slot.slotID === 4){
-              myArray[3] =+1;
-              //console.log(myArray[3]+'  slotid');
-            }
-
-            if(slot.slotID === 5){
-              myArray[4] =+1;
-              //console.log(myArray[4]+'  slotid');
-            }
-
-            if(slot.slotID === 6){
-              myArray[5] =+1;
-              //console.log(myArray[5]+'  slotid');
-            }
-            // Create a new option element
-            
-            //console.log(timeTask.date+'sdfsd');
+          
           }
-          //console.log(slot.peopleAmount+' mokk');
-          for (let i = 0; i < myArray.length; i++) {
-            
-            if(myArray[i] <= slot.peopleAmount){
-              //console.log(myArray[i]+'sdfsdfsdfsdf');
+          
+         
+
+        
+        })
+
+      
+    })
+
+       slotData.forEach(function(slot) {
             var optionSloat = document.createElement("option");
             // Set the value and text of the option
             optionSloat.value = slot.slotID;
             optionSloat.text = slot.slotTime;
             // Append the option to the select element
             TimeSelect.appendChild(optionSloat);
-            
+          })
+
+          //Remove duplicate options in time select
+          let options = TimeSelect.querySelectorAll("option");
+          let optionValues = Array.from(options).map(option => option.value);
+          options.forEach(function(option) {
+          if(optionValues.indexOf(option.value) !== optionValues.lastIndexOf(option.value)){
+              option.remove();
           }
-          }
-          
-
-     
-        })
-
-      }else{
-        slotData.forEach(function(slot) {
-        var optionSloat = document.createElement("option");
-            // Set the value and text of the option
-            optionSloat.value = slot.slotID;
-            optionSloat.text = slot.slotTime;
-            // Append the option to the select element
-            TimeSelect.appendChild(optionSloat);
-        })
-      }
-
-      
-    })
-
-    //Remove duplicate options in time select
-    let options = TimeSelect.querySelectorAll("option");
-    let optionValues = Array.from(options).map(option => option.value);
-    options.forEach(function(option) {
-    if(optionValues.indexOf(option.value) !== optionValues.lastIndexOf(option.value)){
-        option.remove();
-    }
-});
+          });
 
     
 
