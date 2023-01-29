@@ -2,8 +2,7 @@
     <div class="container">
 
         <div class="logo float-left">
-            <!-- Uncomment below if you prefer to use an image logo -->
-            <!-- <h1 class="text-light"><a href="#header"><span>NewBiz</span></a></h1> -->
+           
             <a href="#intro" class="scrollto"><img src="homePage/img/logo.png" alt="" class="img-fluid"></a>
         </div>
 
@@ -13,11 +12,7 @@
                 <li class="active"><a href="/#intro">Home</a></li>
                 <li><a href="/#about">About Us</a></li>
                 <li><a href="/#services">Services</a></li>
-               <!-- <li><a href="/lands">Lands For Sale</a></li> -->
-
-               <!-- <li><a href="/#team">Board Of Directors</a></li> -->
-
-               <!-- <li><a href="/#testimonials">Testimonials</a></li>-->
+             
 
                 <li><a href="/#contact">Contact Us</a></li>
 
