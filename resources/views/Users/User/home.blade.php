@@ -106,6 +106,9 @@
 
                     
 @include("Users.User.book")
+@if ($payment->confirm === 1)
+    @include("Users.User.myBooks")
+@endif
 
 
 

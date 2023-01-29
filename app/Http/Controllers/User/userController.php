@@ -27,8 +27,10 @@ class userController extends Controller
         $slots=Slot::all();
         $tasks=CoachClient::all();
         $payment=Payment::where('payments.clientID',auth::id())->latest('paymentID')->first();
+        $timeTables=Timetable::where('timetable.clientID',auth::id())->orderBy('id', 'asc')->get();
+        
         // dd($payment);
-        return view('Users.User.home',compact('coaches','plans','slots','tasks','payment'));
+        return view('Users.User.home',compact('coaches','plans','slots','tasks','payment','timeTables'));
     }
 
 
