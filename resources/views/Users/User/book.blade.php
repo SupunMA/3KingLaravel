@@ -59,13 +59,12 @@
 
 <script>
 
-////////////////////////////////////////////////////////////////
+//////// Coaches Mapping/////////////
 
-    var coachData = {!! json_encode($coaches) !!};
-    var slotData = {!! json_encode($slots) !!};
-    var taskData = {!! json_encode($tasks) !!};
-    // console.log(data[1].name);
-    // let x = (data.length);
+  var coachData = {!! json_encode($coaches) !!};
+  var slotData = {!! json_encode($slots) !!};
+  var taskData = {!! json_encode($tasks) !!};
+   
 
 //Adding data select input using foreach
 
@@ -76,56 +75,57 @@
   input.addEventListener("change", function() {
     // Get the selected date
     
-    var date = new Date(input.value);
-    var selectedDate = date.getDay();
-    var selectedDate = selectedDate + 1;
+  var date = new Date(input.value);
+  var selectedDate = date.getDay();
+  var selectedDate = selectedDate + 1;
 
-    //console.log(input.value);
-    //clear select
-    TimeSelect.innerHTML = "";
-    CoachSelect.innerHTML = "";
+    
+  //clear select
+  TimeSelect.innerHTML = "";
+  CoachSelect.innerHTML = "";
 
 
     // Use forEach to loop through the array
-    coachData.forEach(function(coach) {
-      let wdays = coach.wdays;
-      let daysArr = wdays.toString().split('').map(Number);
+  coachData.forEach(function(coach) {
+    let wdays = coach.wdays;
+    let daysArr = wdays.toString().split('').map(Number);
 
-      daysArr.forEach(function(eCoach){
-     
-        if(eCoach === selectedDate) {
-          // Create a new option element
-        var option = document.createElement("option");
-        // Set the value and text of the option
-        option.value = coach.id;
-        option.text = coach.name;
-        // Append the option to the select element
-        CoachSelect.appendChild(option);
+    daysArr.forEach(function(eCoach){
+    
+      if(eCoach === selectedDate) {
+        // Create a new option element
+      var option = document.createElement("option");
+      // Set the value and text of the option
+      option.value = coach.id;
+      option.text = coach.name;
+      // Append the option to the select element
+      CoachSelect.appendChild(option);
+    
+      }
       
-        // console.log(daysArr);
-        }
-        
 
-      });
     });
+  });
 
-   
-    let myArray = [];
-    let removeArray = [];
+   ///////// Time slots Mapping///////////////////
 
-    slotData.forEach(function(slot) {
-            var optionSloat = document.createElement("option");
-            // Set the value and text of the option
-            optionSloat.value = slot.slotID;
-            optionSloat.text = slot.slotTime;
-            // Append the option to the select element
-            TimeSelect.appendChild(optionSloat);
-          })
+  let myArray = [];
+  let removeArray = [];
 
-    slotData.forEach(function(slot) {
+  slotData.forEach(function(slot) {
+    var optionSloat = document.createElement("option");
+    // Set the value and text of the option
+    optionSloat.value = slot.slotID;
+    optionSloat.text = slot.slotTime;
+    // Append the option to the select element
+    TimeSelect.appendChild(optionSloat);
+        })
+
+  slotData.forEach(function(slot) {
      
-        taskData.forEach(function(timeTask) {
-          if(slot.slotID === timeTask.slotID && input.value === timeTask.date)
+    taskData.forEach(function(timeTask) {
+          
+      if(slot.slotID === timeTask.slotID && input.value === timeTask.date)
           {
           
             myArray.push(slot.slotID);
@@ -135,20 +135,18 @@
               return val === slot.slotID ? acc + 1 : acc;
             }, 0);
 
-            console.log(count +'   '+slot.peopleAmount);
+            
             if(count <= slot.peopleAmount){
-               console.log('run');
-              
-                //console.log(myArray[i]+'sdfsdfsdfsdf');
+
               var optionSloat = document.createElement("option");
               // Set the value and text of the option
               optionSloat.value = slot.slotID;
               optionSloat.text = slot.slotTime;
               // Append the option to the select element
               TimeSelect.appendChild(optionSloat);
+
             }else{
-              //TimeSelect.removeChild(TimeSelect.options[])
-              //TimeSelect.options.remove(1);
+              
               removeArray.push(slot.slotID);
 
               let count2 = removeArray.reduce((acc, val) => {
@@ -156,15 +154,13 @@
               }, 0);
 
               for (let i = 0; i < count2; i++) {
-                //  if (TimeSelect.options[i].value == slot.slotID) {
-                //    TimeSelect.remove(i);
-                //    }
+               
                 TimeSelect.options.remove(slot.slotID - 1);
+                console.log(count2);
                 
                 }
 
-              // console.log(removeArray);
-              // console.log(count2);
+             
             }
           
           }
@@ -176,22 +172,32 @@
 
       
     })
+////// Remove Duplicate Values////////////
 
-      
+    // Create an empty array to store unique options
+    let uniqueOptions = [];
 
-          //Remove duplicate options in time select
-          let options = TimeSelect.querySelectorAll("option");
-          let optionValues = Array.from(options).map(option => option.value);
-          options.forEach(function(option) {
-          if(optionValues.indexOf(option.value) !== optionValues.lastIndexOf(option.value)){
-              option.remove();
-          }
-          });
+    // Loop through all options in the select element
+    for (let i = 0; i < TimeSelect.options.length; i++) {
+      // Check if the option is already in the unique options array
+      let optionExists = uniqueOptions.filter(function (option) {
+        return option.value === TimeSelect.options[i].value;
+      });
 
+      // If the option does not exist in the array, add it
+      if (optionExists.length === 0) {
+        uniqueOptions.push(TimeSelect.options[i]);
+      }
+    }
 
+    // Clear the select element
+    TimeSelect.options.length = 0;
 
-
-    
+    // Loop through the unique options array
+    for (let option of uniqueOptions) {
+      // Add the option to the select element
+      TimeSelect.add(option);
+    }
 
   });
 
