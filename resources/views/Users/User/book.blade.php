@@ -55,14 +55,12 @@
         
 <br>
       {{-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> --}}
-      @php
-          if($paidD >  $expD){
-            echo '<a href="#" class="btn btn-primary" id="bookBtn" disabled>Book Now</a>';
-          }else{
-            echo '<a href="#" class="btn btn-primary" id="bookBtn" disabled>Book Now</a>';
-
-          }
-      @endphp
+     
+         
+          
+        
+           <a href="#" class="btn btn-primary" id="bookBtn" disabled>Book Now</a>
+        
       
 
        
