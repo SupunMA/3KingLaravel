@@ -111,6 +111,16 @@
 
    
     let myArray = [];
+    let removeArray = [];
+
+    slotData.forEach(function(slot) {
+            var optionSloat = document.createElement("option");
+            // Set the value and text of the option
+            optionSloat.value = slot.slotID;
+            optionSloat.text = slot.slotTime;
+            // Append the option to the select element
+            TimeSelect.appendChild(optionSloat);
+          })
 
     slotData.forEach(function(slot) {
      
@@ -125,8 +135,9 @@
               return val === slot.slotID ? acc + 1 : acc;
             }, 0);
 
-            console.log(count);
+            console.log(count +'   '+slot.peopleAmount);
             if(count <= slot.peopleAmount){
+               console.log('run');
               
                 //console.log(myArray[i]+'sdfsdfsdfsdf');
               var optionSloat = document.createElement("option");
@@ -135,6 +146,25 @@
               optionSloat.text = slot.slotTime;
               // Append the option to the select element
               TimeSelect.appendChild(optionSloat);
+            }else{
+              //TimeSelect.removeChild(TimeSelect.options[])
+              //TimeSelect.options.remove(1);
+              removeArray.push(slot.slotID);
+
+              let count2 = removeArray.reduce((acc, val) => {
+              return val === slot.slotID ? acc + 1 : acc;
+              }, 0);
+
+              for (let i = 0; i < count2; i++) {
+                //  if (TimeSelect.options[i].value == slot.slotID) {
+                //    TimeSelect.remove(i);
+                //    }
+                TimeSelect.options.remove(slot.slotID - 1);
+                
+                }
+
+              // console.log(removeArray);
+              // console.log(count2);
             }
           
           }
@@ -147,14 +177,7 @@
       
     })
 
-       slotData.forEach(function(slot) {
-            var optionSloat = document.createElement("option");
-            // Set the value and text of the option
-            optionSloat.value = slot.slotID;
-            optionSloat.text = slot.slotTime;
-            // Append the option to the select element
-            TimeSelect.appendChild(optionSloat);
-          })
+      
 
           //Remove duplicate options in time select
           let options = TimeSelect.querySelectorAll("option");
@@ -164,6 +187,9 @@
               option.remove();
           }
           });
+
+
+
 
     
 
