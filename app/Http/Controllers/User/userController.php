@@ -98,4 +98,27 @@ class userController extends Controller
     }
 
 
+    public function bookingTime(Request $request)
+    {
+        dd($request);
+        $request->validate([
+            'slotID' => ['required','integer'],
+            'coachID' => ['required','integer'],
+            'date' => ['required', 'string', 'date'],
+            
+        ]);
+
+        $payment = new Payment();
+        $payment->clientID = $request->clientID;
+        $payment->planID = $request->planID;
+        $payment->payDate = $request->payDate;
+       
+        if( $payment->save() ){
+            return redirect()->back()->with('message','successful');
+        }else{
+            return redirect()->back()->with('message','Failed');
+        }
+    }
+
+
 }

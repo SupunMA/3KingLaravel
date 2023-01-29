@@ -134,6 +134,9 @@ Route::group(['prefix'=>'Account/Client','middleware'=>['checkUser','auth','lock
     Route::POST('/makingPayments', [userController::class, 'makePayments'])->name('CustomerMakePayments');
 
 
+    //Booking
+    Route::POST('/bookingTime', [userController::class, 'bookingTime'])->name('CustomerBookingTime');
+
     
 });
 

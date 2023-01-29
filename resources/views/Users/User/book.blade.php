@@ -26,7 +26,7 @@
     
   <div class="card-body text-left">
     <h5 class="">Booking a Slot</h5>
-    <form action="{{route('selectPlan')}}" method="post">
+    <form action="{{route('CustomerBookingTime')}}" method="post">
       @csrf
       <div class="row">
         
@@ -34,7 +34,7 @@
         
             <p class="form-text text-muted text-left">Select a Date</p>
             {{-- Max date validate when select date --}}
-            <input type="date" name="" class="form-control" id="dateInput" max= "<?php echo $expD->format('Y-m-d'); ?>">
+            <input type="date" name="date" class="form-control" id="dateInput" max= "<?php echo $expD->format('Y-m-d'); ?>" required>
         
         </div>
 
@@ -42,21 +42,21 @@
         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
         
             <p class="form-text text-muted text-left">Select a Time Slot</p>
-            <select class="form-control select2bs4" name="refPlan" id="TimeSelect"></select>
+            <select class="form-control select2bs4" name="slotID" id="TimeSelect" required></select>
         
         </div>
 
         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
         
           <p class="form-text text-muted text-left">Select a Coach</p>
-          <select name="" class="form-control select2bs4" id="CoachSelect"></select>
+          <select name="coachID" class="form-control select2bs4" id="CoachSelect" required></select>
       
         </div>
 
       </div>
       <br>
 
-      <button type="submit" class="btn btn-primary" id="bookBtn" disabled>Book Now</button>
+      <button type="submit" class="btn btn-primary" >Book Now</button>
     </form>
       
 
