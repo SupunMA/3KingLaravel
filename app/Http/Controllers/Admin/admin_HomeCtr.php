@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 
 use App\Models\Plan;
 use App\Models\User;
-use App\Models\Land;
 
-use App\Models\Transaction;
+
+
 
 class admin_HomeCtr extends Controller
 {
@@ -35,8 +35,8 @@ class admin_HomeCtr extends Controller
 
       
         $PlanCount=Plan::count();
-        $TransCount=Transaction::count();
-        return view('Users.Admin.home',compact('PlanCount','ClientsCount','TransCount','ManagerCount','CoachCount','AdminCount'));
+       
+        return view('Users.Admin.home',compact('PlanCount','ClientsCount','ManagerCount','CoachCount','AdminCount'));
     }
 
     

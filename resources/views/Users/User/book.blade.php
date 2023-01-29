@@ -1,64 +1,60 @@
 <div class="card text-center col-xl-12 col-lg-12 col-md-12 col-sm-12">
-    <div class="card-header">
-      @foreach ($plans as $plan)
-        @if ($plan->planID === Auth::user()->refPlan)
-          <h3 class="text-danger">Selected Plan is <b>{{ $plan->planName }}</b> </h3> 
+  <div class="card-header">
+    @foreach ($plans as $plan)
+      @if ($plan->planID === Auth::user()->refPlan)
+        <h3 class="text-danger">Selected Plan is <b>{{ $plan->planName }}</b> </h3> 
           
-          @php
-          //Get plan Months
-              $months =$plan->planMonth;
-          @endphp
+        @php
+        //Get plan Months
+            $months =$plan->planMonth;
+        @endphp
 
-        @endif
-      @endforeach
+      @endif
+    @endforeach
+
+    <?php
+
+    //Months got above foreach loop
+    $paidD = new DateTime($payment->payDate);
+    $expD = new DateTime($payment->payDate);
+    $expD -> add(new DateInterval('P'.$months.'M'));
+        
+    ?>
+  </div>
+
+  @if ($payment->confirm === 1)
+    
+  <div class="card-body text-left">
+    <h5 class="">Booking a Slot</h5>
+    <div class="row">
+      <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+      
+          <p class="form-text text-muted text-left">Select a Date</p>
+          {{-- Max date validate when select date --}}
+          <input type="date" name="" class="form-control" id="dateInput" max= "<?php echo $expD->format('Y-m-d'); ?>">
+      
+      </div>
+
+      
+      <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+      
+          <p class="form-text text-muted text-left">Select a Time Slot</p>
+          <select class="form-control select2bs4" name="refPlan" id="TimeSelect"></select>
+      
+      </div>
+
+      <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+      
+        <p class="form-text text-muted text-left">Select a Coach</p>
+        <select name="" class="form-control select2bs4" id="CoachSelect"></select>
+    
+      </div>
+
     </div>
-    <div class="card-body text-left">
-        <h5 class="">Booking a Slot</h5>
-        <div class="row">
-            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-            
-                <p class="form-text text-muted text-left">Select a Date</p>
-                <input type="date" name="" class="form-control" id="dateInput">
-            
-            </div>
-
-            
-            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-            
-                <p class="form-text text-muted text-left">Select a Time Slot</p>
-                <select class="form-control select2bs4" name="refPlan" id="TimeSelect"></select>
-            
-            </div>
-
-            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-            
-              <p class="form-text text-muted text-left">Select a Coach</p>
-              <div id="elementToHide" style="display: none">This element will be hidden on certain days</div>
-              
-              <select name="" class="form-control select2bs4" id="CoachSelect"></select>
-          
-          </div>
-
-        </div>
         <br>
-        <div class="row">
-
-          <?php
-          //Months got above foreach loop
-          $paidD = new DateTime($payment->payDate);
-          $expD = new DateTime($payment->payDate);
-          $expD -> add(new DateInterval('P'.$months.'M'));
-         
-          ?>
-
-        </div>
         
-<br>
-      {{-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> --}}
-     
-         
-          
         
+
            <a href="#" class="btn btn-primary" id="bookBtn" disabled>Book Now</a>
         
       
@@ -74,7 +70,18 @@
     </div>
   </div>
 
- 
+  @elseif($payment->confirm === 0)
+  <div class="card-body text-center">
+    <h5 class="">Your Payment has not confirmed yet. Please wait.! </h5>
+  </div>
+
+  @elseif ($payment->confirm === 2)
+  <div class="card-body text-center">
+    <h5 class="">Your Payment was Declined.</h5>
+  </div>
+  @endif
+
+</div>
 
 
 

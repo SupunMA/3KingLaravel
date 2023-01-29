@@ -40,7 +40,7 @@
                     <div class="small-box bg-light">
                         <div class="inner">
         
-                            <h3>{{$TransCount}}</h3>
+                            <h3>0</h3>
                             <h2>Revenue</h2> 
                             
                         </div>
