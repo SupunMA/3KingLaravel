@@ -10,6 +10,7 @@ use App\Models\User;
 use App\Models\Plan;
 use App\Models\Slot;
 use App\Models\CoachClient;
+use App\Models\Timetable;
 
 
 use App\Models\Payment;
@@ -100,7 +101,7 @@ class userController extends Controller
 
     public function bookingTime(Request $request)
     {
-        dd($request);
+        //dd($request);
         $request->validate([
             'slotID' => ['required','integer'],
             'coachID' => ['required','integer'],
@@ -108,12 +109,13 @@ class userController extends Controller
             
         ]);
 
-        $payment = new Payment();
-        $payment->clientID = $request->clientID;
-        $payment->planID = $request->planID;
-        $payment->payDate = $request->payDate;
+        $timeT = new Timetable();
+        $timeT->clientID = auth::id();
+        $timeT->coachID = $request->coachID;
+        $timeT->date = $request->date;
+        $timeT->slotID = $request->slotID;
        
-        if( $payment->save() ){
+        if( $timeT->save() ){
             return redirect()->back()->with('message','successful');
         }else{
             return redirect()->back()->with('message','Failed');
