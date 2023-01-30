@@ -102,13 +102,13 @@
                     </div>
 
 
-<br>
+                    <br>
 
                     
-@include("Users.User.book")
-@if ($payment->confirm === 1)
-    @include("Users.User.myBooks")
-@endif
+                    @include("Users.User.book")
+                    @if ($payment->confirm === 1)
+                        @include("Users.User.myBooks")
+                    @endif
 
 
 
@@ -119,10 +119,6 @@
             <!-- /.card -->
         </div>
     </div>
-
-    
-    
-   
 
 </div>
 @endsection
