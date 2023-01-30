@@ -181,32 +181,6 @@
 
 
 
-
-                <li class="nav-item {{ Route::currentRouteNamed('admin.addPlan') || Route::currentRouteNamed('admin.allPlan') ? 'menu-open' : 'menu-close' }}">
-                    <a href="#" class="nav-link {{ Route::currentRouteNamed('admin.addPlan') || Route::currentRouteNamed('admin.allPlan') ? 'active' : '' }}">
-                        <i class="fas fa-house-user"></i>
-                        <p>
-                            Select & Review Coach
-                            <i class="right fas fa-angle-left"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                      <li class="nav-item">
-                          <a href="{{ route('admin.addPlan') }}" class="nav-link {{ Route::currentRouteNamed('admin.addPlan') ? 'active' : '' }}">
-                              <i class="far fa-circle nav-icon"></i>
-                              <p> Select Coach</p>
-                          </a>
-                      </li>
-                      <li class="nav-item">
-                          <a href="{{ route('admin.allPlan') }}" class="nav-link {{ Route::currentRouteNamed('admin.allPlan') ? 'active' : '' }}">
-                              <i class="far fa-circle nav-icon"></i>
-                              <p> Reviews</p>
-                          </a>
-                      </li>
-                    </ul>
-                </li>
-
-
                 <li class="nav-item">
                     <a href="{{ route('CustomerProfileUpdate') }}" class="nav-link {{ Route::currentRouteNamed('CustomerProfileUpdate') ? 'active' : '' }}">
                         <i class="fas fa-university"></i>

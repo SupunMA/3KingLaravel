@@ -8,6 +8,7 @@ use App\Http\Controllers\Auth\RegisterController;
 
 use App\Http\Controllers\Admin\admin_HomeCtr;
 use App\Http\Controllers\Admin\admin_PlanCtr;
+use App\Http\Controllers\Admin\admin_TimeCtr;
 use App\Http\Controllers\Admin\admin_ClientCtr;
 use App\Http\Controllers\Admin\admin_PaymentCtr;
 use App\Http\Controllers\UpdateProfile;
@@ -88,6 +89,10 @@ Route::group(['prefix'=>'Admin','middleware'=>['checkAdmin','auth','lockBack']],
     Route::POST('addingPlan', [admin_planCtr::class, 'addingPlan'])->name('admin.addingPlan');
     Route::get('plan/delete/{planID}', [admin_planCtr::class, 'deletePlan'])->name('admin.deletePlan');
     Route::post('plan/update', [admin_planCtr::class, 'updatePlan'])->name('admin.updatePlan');
+
+
+    Route::get('allTimeTable', [admin_TimeCtr::class, 'allTimeTable'])->name('admin.allTimeTable');
+
 
     Route::get('AddTransaction', [admin_TransactionCtr::class, 'addTransaction'])->name('admin.addTransaction');
     Route::get('AllTransaction', [admin_TransactionCtr::class, 'allTransaction'])->name('admin.allTransaction');

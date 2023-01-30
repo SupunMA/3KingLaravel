@@ -50,6 +50,13 @@
                 </li>
 
                 {{-- Transactions --}}
+                <li class="nav-item">
+                    <a href="{{ route('admin.allTimeTable') }}" class="nav-link {{ Route::currentRouteNamed('admin.allTimeTable') ? 'active' : ' ' }}">
+                        <i class="fa-solid fa-hourglass-start"></i>
+                        <p>Timetable
+                        </p>
+                    </a>
+                  </li>
                 
 
                   <li class="nav-item {{ Route::currentRouteNamed('admin.pendingPaymentList') || Route::currentRouteNamed('admin.approvedPayment') || Route::currentRouteNamed('admin.DeclinedPayment')? 'menu-open' : 'menu-close' }}">

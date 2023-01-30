@@ -6,8 +6,8 @@
         </div>
 
         <div class="intro-info">
-            
-            <h2>We<br> keep our promises,<br>We<br>give you hope</h2>
+              
+            <h2>The<br> only place<br>that'll keep you cool.</h2>
             <div>
                 @if (Route::has('login'))
                 <div class="well">
