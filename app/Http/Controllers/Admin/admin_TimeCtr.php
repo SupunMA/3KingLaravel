@@ -33,14 +33,11 @@ class admin_TimeCtr extends Controller
     {
         $coaches=User::where('users.role',2)->get();
         $clients=User::where('users.role',0)->get();
-        $plans=Plan::all();
         $slots=Slot::all();
-        $tasks=CoachClient::all();
-        $payment=Payment::all();
         $timeTables=Timetable::all();
         
         // dd($payment);
-        return view('Users.Admin.Timetable.allTime',compact('coaches','plans','slots','tasks','payment','timeTables','clients'));
+        return view('Users.Admin.Timetable.allTime',compact('coaches','slots','timeTables','clients'));
 
     }
 
