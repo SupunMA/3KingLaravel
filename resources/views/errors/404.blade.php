@@ -11,7 +11,7 @@
 
 	<head>
 		<meta charset="utf-8">
-		<title>MMC - Page Not Found</title>
+		<title>3 kings - Page Not Found</title>
 		<meta name="description" content="The description should optimally be between 150-160 characters.">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="ThemeHelite">
@@ -29,9 +29,7 @@
 
         <!-- Your logo on the top left -->
        
-            <a href="{{ route('welcome') }}" class="logo-link" title="back home">
-                <img src="https://drive.google.com/uc?export=view&id=17oMlgpisY5HADXWqOh9jfu5WzDANcE_f" class="logo" alt="Company's logo" />
-            </a>
+           
         
         
         <div class="content">
