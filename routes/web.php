@@ -47,18 +47,6 @@ Route::middleware(['middleware'=>'lockBack'])->group(function(){
 });
 
 
-//common
-//Route::get('/home', [HomeController::class, 'index'])->name('home');
-
-// Route::group(['middleware' => 'auth'], function ()
-// {
-//     Route::get('/myProfile', [UpdateProfile::class, 'StaffViewUpdateProfile'])->name('StaffProfileUpdate');
-//     Route::post('/updatingProfile', [UpdateProfile::class, 'StaffUpdateProfile'])->name('StaffProfileUpdating');
-
-    
-// });
-
-
 //admin
 Route::group(['prefix'=>'Admin','middleware'=>['checkAdmin','auth','lockBack']],function(){
     Route::get('/', [admin_HomeCtr::class, 'checkAdmin'])->name('admin.home');
@@ -78,11 +66,6 @@ Route::group(['prefix'=>'Admin','middleware'=>['checkAdmin','auth','lockBack']],
     Route::get('/myProfile', [UpdateProfile::class, 'StaffViewUpdateProfile'])->name('StaffProfileUpdate');
     Route::post('/updatingProfile', [UpdateProfile::class, 'StaffUpdateProfile'])->name('StaffProfileUpdating');
 
-    Route::get('AddLand', [admin_LandCtr::class, 'addLand'])->name('admin.addLand');
-    Route::get('AllLand', [admin_LandCtr::class, 'allLand'])->name('admin.allLand');
-    Route::POST('addingLand', [admin_LandCtr::class, 'addingLand'])->name('admin.addingLand');
-    Route::get('land/delete/{landID}', [admin_LandCtr::class, 'deleteLand'])->name('admin.deleteLand');
-    Route::post('land/update', [admin_LandCtr::class, 'updateLand'])->name('admin.updateLand');
 
     Route::get('AddPlan', [admin_planCtr::class, 'addPlan'])->name('admin.addPlan');
     Route::get('AllPlan', [admin_planCtr::class, 'allPlan'])->name('admin.allPlan');
@@ -90,20 +73,9 @@ Route::group(['prefix'=>'Admin','middleware'=>['checkAdmin','auth','lockBack']],
     Route::get('plan/delete/{planID}', [admin_planCtr::class, 'deletePlan'])->name('admin.deletePlan');
     Route::post('plan/update', [admin_planCtr::class, 'updatePlan'])->name('admin.updatePlan');
 
-
+//Timetable View
     Route::get('allTimeTable', [admin_TimeCtr::class, 'allTimeTable'])->name('admin.allTimeTable');
 
-
-    Route::get('AddTransaction', [admin_TransactionCtr::class, 'addTransaction'])->name('admin.addTransaction');
-    Route::get('AllTransaction', [admin_TransactionCtr::class, 'allTransaction'])->name('admin.allTransaction');
-    Route::POST('addingTransaction', [admin_TransactionCtr::class, 'addingTransaction'])->name('admin.addingTransaction');
-    // Route::get('branch/delete/{branchID}', [admin_TransactionCtr::class, 'deleteBranch'])->name('admin.deleteBranch');
-    // Route::post('branch/update', [admin_TransactionCtr::class, 'updateBranch'])->name('admin.updateBranch');
-    Route::post('transaction/delete/{transID}', [admin_TransactionCtr::class, 'deleteTransaction'])->name('admin.deleteTransaction');
-
-    Route::POST('AllTransaction/{loanID}', [admin_TransactionCtr::class, 'allTransactionOfLoan'])->name('admin.allTransactionOfLoan');
-
-    
 
     //paymentView
     Route::get('pendingPayment', [admin_PaymentCtr::class, 'pendingPaymentList'])->name('admin.pendingPaymentList');
@@ -154,24 +126,11 @@ Route::group(['prefix'=>'Account/Manager','middleware'=>['checkManager','auth','
 
 
 
-//Checker
-Route::group(['prefix'=>'Account/Checker','middleware'=>['checkChecker','auth','lockBack']],function(){
-    Route::get('/', [checkerController::class, 'checkChecker'])->name('checker.home');
-    
-});
-
 
 
 //Disabled User Registration
-
 
 Route::post('/register', function() {
     return redirect('/register');
 });
 
-
-
-//Re-set PWD and Create new account
-Route::get('/forgot-register', function() {
-    return view('other.forgotAndRegister');
-})->name('forgotPWD');

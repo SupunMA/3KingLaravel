@@ -54,9 +54,7 @@
                             <!-- /.social-auth-links -->
                         </form>
 
-                        <p class="mb-2">
-                            <a href="{{ route('forgotPWD') }}">I forgot my password</a>
-                        </p>
+                       
                         <p class="mb-2">
                             <a href="{{ route('register2') }}" class="text-center">Register a new member</a>
                         </p>

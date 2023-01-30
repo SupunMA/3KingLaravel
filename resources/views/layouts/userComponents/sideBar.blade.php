@@ -38,125 +38,6 @@
                 </li>
 
 
-                    {{-- Clients --}}
-                {{-- <li class="nav-item {{ Route::currentRouteNamed('admin.addClient') || Route::currentRouteNamed('admin.allClient') ? 'menu-open' : 'menu-close' }}">
-                    <a href="#" class="nav-link {{ Route::currentRouteNamed('admin.addClient') || Route::currentRouteNamed('admin.allClient') ? 'active' : '' }} ">
-                      <i class="fas fa-users"></i>
-                        <p>
-                            Clients
-                            <i class="right fas fa-angle-left"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('admin.addClient') }}" class="nav-link {{ Route::currentRouteNamed('admin.addClient') ? 'active' : '' }} ">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Add New Client</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('admin.allClient') }}" class="nav-link {{ Route::currentRouteNamed('admin.allClient') ? 'active' : '' }}">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>All Clients</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li> --}}
-
-
-                    {{-- Lands --}}
-
-                {{-- <li class="nav-item {{ Route::currentRouteNamed('admin.addLand') || Route::currentRouteNamed('admin.allLand') ? 'menu-open' : 'menu-close' }}">
-                  <a href="#" class="nav-link {{ Route::currentRouteNamed('admin.addLand') || Route::currentRouteNamed('admin.allLand') ? 'active' : '' }}">
-                    <i class="fas fa-house-user"></i>
-                      <p>
-                          Lands
-                          <i class="right fas fa-angle-left"></i>
-                      </p>
-                  </a>
-                  <ul class="nav nav-treeview">
-                      <li class="nav-item">
-                          <a href="{{ route('admin.addLand') }}" class="nav-link {{ Route::currentRouteNamed('admin.addLand') ? 'active' : '' }}">
-                              <i class="far fa-circle nav-icon"></i>
-                              <p> Add New Land</p>
-                          </a>
-                      </li>
-                      <li class="nav-item">
-                          <a href="{{ route('admin.allLand') }}" class="nav-link {{ Route::currentRouteNamed('admin.allLand') ? 'active' : '' }}">
-                              <i class="far fa-circle nav-icon"></i>
-                              <p> All Lands</p>
-                          </a>
-                      </li>
-                  </ul>
-              </li> --}}
-
-
-                {{-- Loans --}}
-
-              {{-- <li class="nav-item {{ Route::currentRouteNamed('admin.addLoan') || Route::currentRouteNamed('admin.allLoan') ? 'menu-open' : 'menu-close' }}">
-                <a href="#" class="nav-link {{ Route::currentRouteNamed('admin.addLoan') || Route::currentRouteNamed('admin.allLoan') ? 'active' : '' }}">
-                  <i class="fas fa-money-bill-wave"></i>
-                    <p>
-                        Loans
-                        <i class="right fas fa-angle-left"></i>
-                    </p>
-                </a>
-                <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                        <a href="{{ route('admin.addLoan') }}" class="nav-link {{ Route::currentRouteNamed('admin.addLoan') ? 'active' : '' }}">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p> Add New Loan</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ route('admin.allLoan') }}" class="nav-link {{ Route::currentRouteNamed('admin.allLoan') ? 'active' : '' }}">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p> All Loans</p>
-                        </a>
-                    </li>
-                </ul>
-            </li> --}}
-
-
-            {{-- Branches --}}
-
-            {{-- <li class="nav-item {{ Route::currentRouteNamed('admin.addBranch') || Route::currentRouteNamed('admin.allBranch') ? 'menu-open' : 'menu-close' }}">
-                <a href="#" class="nav-link {{ Route::currentRouteNamed('admin.addBranch') || Route::currentRouteNamed('admin.allBranch') ? 'active' : '' }}">
-                    <i class="far fa-building"></i>
-                    <p>
-                        Branches
-                        <i class="right fas fa-angle-left"></i>
-                    </p>
-                </a>
-                <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                        <a href="{{ route('admin.addBranch') }}" class="nav-link {{ Route::currentRouteNamed('admin.addBranch') ? 'active' : '' }}">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p> Add New Branch</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ route('admin.allBranch') }}" class="nav-link {{ Route::currentRouteNamed('admin.allBranch') ? 'active' : '' }}">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p> All Branches</p>
-                        </a>
-                    </li>
-                </ul>
-            </li> --}}
-
-
-
-                {{-- <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="fas fa-university"></i>
-                        <p>
-                            Capital
-                            <span class="right badge badge-warning">Money</span>
-                        </p>
-                    </a>
-                </li> --}}
-
-
                 <li class="nav-item">
                     <a href="{{ route('CustomerAllPlanView') }}" class="nav-link {{ Route::currentRouteNamed('CustomerAllPlanView') ? 'active' : '' }}">
                         <i class="fa-solid fa-list-check"></i>
@@ -190,11 +71,6 @@
                         </p>
                     </a>
                 </li>
-
-
-
-                
-
 
 
 

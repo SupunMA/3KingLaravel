@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Madhushanka MicroCredit</title>
+    <title>3 Kings Swimming Pool Complex</title>
 
     <!-- style -->
     @include('Home.components.cssJs.style')

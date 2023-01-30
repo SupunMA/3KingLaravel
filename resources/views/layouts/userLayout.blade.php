@@ -11,7 +11,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <title>3 Kings Swimming Pool | Client</title>
 
         <!-- Fav Icon -->
-        @include('CDN_Css_Js.exImages.favIcon')
+        
 
         <!-- Style -->
         @include('layouts.adminComponents.lib.Style')

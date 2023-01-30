@@ -3,7 +3,7 @@
 
         <div class="logo float-left">
            
-            <a href="#intro" class="scrollto"><img src="homePage/img/logo.png" alt="" class="img-fluid"></a>
+            <a href="#intro" class="scrollto"><img src="homePage/img/3kingLogo.png" alt="" class="img-fluid"></a>
         </div>
 
 

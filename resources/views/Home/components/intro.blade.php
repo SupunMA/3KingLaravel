@@ -2,7 +2,7 @@
     <div class="container">
 
         <div class="intro-img">
-            <img src="homePage/img/logot.png" alt="" class="img-fluid">
+            <img src="homePage/img/3kingLogo.png" alt="" class="img-fluid">
         </div>
 
         <div class="intro-info">

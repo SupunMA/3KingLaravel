@@ -13,7 +13,7 @@
     <!-- Scripts -->
     
     <!-- Fav Icon -->
-   @include('CDN_Css_Js.exImages.favIcon')
+  
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">

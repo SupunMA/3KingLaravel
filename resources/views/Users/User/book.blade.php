@@ -12,17 +12,18 @@
       @endif
     @endforeach
 
-    <?php
-
-    //Months got above foreach loop
-    $paidD = new DateTime($payment->payDate);
-    $expD = new DateTime($payment->payDate);
-    $expD -> add(new DateInterval('P'.$months.'M'));
-        
-    ?>
+   
   </div>
 
-  @if ($payment->confirm === 1)
+  @if (isset($payment) && $payment->confirm === 1)
+  <?php
+
+  //Months got above foreach loop
+  $paidD = new DateTime($payment->payDate);
+  $expD = new DateTime($payment->payDate);
+  $expD -> add(new DateInterval('P'.$months.'M'));
+      
+  ?>
     
   <div class="card-body text-left">
     <h5 class="">Booking a Slot</h5>
@@ -71,12 +72,12 @@
     </div>
   </div>
 
-  @elseif($payment->confirm === 0)
+  @elseif(isset($payment) && $payment->confirm === 0)
   <div class="card-body text-center">
     <h5 class="">Your Payment has not confirmed yet. Please wait.! </h5>
   </div>
 
-  @elseif ($payment->confirm === 2)
+  @elseif (isset($payment) && $payment->confirm === 2)
   <div class="card-body text-center">
     <h5 class="">Your Payment was Declined.</h5>
   </div>
