@@ -9,7 +9,6 @@ use Auth;
 use App\Models\User;
 use App\Models\Plan;
 use App\Models\Slot;
-use App\Models\CoachClient;
 use App\Models\Timetable;
 use App\Models\Payment;
 
@@ -23,7 +22,7 @@ class userController extends Controller
         $coaches=User::where('users.role',2)->get();
         $plans=Plan::all();
         $slots=Slot::all();
-        $tasks=CoachClient::all();
+        $tasks=Timetable::all();
         $payment=Payment::where('payments.clientID',auth::id())->latest('paymentID')->first();
         $timeTables=Timetable::where('timetable.clientID',auth::id())->orderBy('date', 'desc')->get();
         
@@ -32,10 +31,10 @@ class userController extends Controller
     }
 
 
-    public function deleteUser($userID)
+    public function deleteUser($ID)
     {
-        //dd($branchID);
-        $delete = User::find($userID);
+        dd($ID);
+        $delete = User::find($ID);
         $delete->delete();
         return redirect()->back()->with('message','successful');
     }

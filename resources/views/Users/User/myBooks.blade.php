@@ -4,11 +4,7 @@
     </div>
     <!-- /.card-header -->
     <div class="card-body">
-        
-       
-
-
-        
+                
         <table id="example1" class="table table-bordered table-striped">
             
             <thead>
@@ -29,7 +25,9 @@
                         <td>{{$timeTable->id}}</td>
                         @foreach ($coaches as $coach)
                             @if ($coach->id === $timeTable->coachID)
-                                <td>{{$coach->name}}</td>
+
+                                    <td>{{$coach->name}}</td>
+
                             @endif
                         @endforeach
 
@@ -42,15 +40,11 @@
                     @endforeach
 
                         
-                      
-                        
+  
                         
                     </tr>
                     
 
-                  
-
-                    
                 @endforeach
             </tbody>
             <tfoot>

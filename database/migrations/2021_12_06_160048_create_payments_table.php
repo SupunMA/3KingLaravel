@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLandsTable extends Migration
+class CreatePaymentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -18,7 +18,7 @@ class CreateLandsTable extends Migration
             $table->integer('clientID')->nullable();
             $table->integer('planID')->nullable();
             $table->date('payDate')->nullable();
-            $table->date('confirm')->nullable()->default(0);
+            $table->date('confirm')->nullable();
 
             $table->timestamps();
         });

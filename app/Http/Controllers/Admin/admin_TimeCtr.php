@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Plan;
 use App\Models\Slot;
-use App\Models\CoachClient;
 use App\Models\Timetable;
 use App\Models\Payment;
 

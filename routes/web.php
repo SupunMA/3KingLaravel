@@ -59,7 +59,7 @@ Route::group(['prefix'=>'Admin','middleware'=>['checkAdmin','auth','lockBack']],
     
     Route::get('AddStaff', [admin_ClientCtr::class, 'addStaff'])->name('admin.addStaff');
     Route::get('AllStaff', [admin_ClientCtr::class, 'allStaff'])->name('admin.allStaff');
-    Route::POST('addingStaff', [admin_ClientCtr::class, 'addingStaff'])->name('admin.addingStaff');
+    Route::POST('addingStaff', [RegisterController::class, 'addingStaff'])->name('admin.addingStaff');
     Route::get('staff/delete/{ID}', [admin_ClientCtr::class, 'deleteStaff'])->name('admin.deleteStaff');
     Route::post('staff/update', [admin_ClientCtr::class, 'updateStaff'])->name('admin.updateStaff');
 

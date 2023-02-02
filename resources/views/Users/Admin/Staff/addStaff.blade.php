@@ -9,7 +9,7 @@
         <b>View Staff Members</b>
     </a>
     
-    <form action="{{route('admin.addingClient')}}" method="post">
+    <form action="{{route('admin.addingStaff')}}" method="post">
         @csrf
         <div class="row">
 
