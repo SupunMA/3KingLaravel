@@ -41,9 +41,12 @@
                         @endforeach
 
                         <td>
-                           
 
-                            <form>
+                            <form action="{{route('coachReview')}}" method="post" >
+                                @csrf
+
+
+                                
                                 <input type="radio" id="{{$timeTable->id}}-1" name="{{$timeTable->id}}" value="1">
                                 <label for="{{$timeTable->id}}-1"> Unacceptable</label><br>
                                 
@@ -58,6 +61,12 @@
                                 
                                 <input type="radio" id="{{$timeTable->id}}-5" name="{{$timeTable->id}}" value="5">
                                 <label for="{{$timeTable->id}}-5"> Excellent</label><br>
+
+                                <input type="hidden" name="timeID" value="{{$timeTable->id}}">
+
+
+                                
+
 
                                 <button type="submit" class="btn btn-success">Save</button>
                             </form>

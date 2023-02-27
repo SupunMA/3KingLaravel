@@ -16,6 +16,7 @@ class Timetable extends Model
         'clientID',
         'slotID',
         'date',
-        'coachID'
+        'coachID',
+        'review'
     ];
 }

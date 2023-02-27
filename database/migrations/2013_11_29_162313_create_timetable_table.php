@@ -18,6 +18,7 @@ class CreateTimetableTable extends Migration
             $table->integer('clientID')->nullable();
             $table->integer('coachID')->nullable();
             $table->integer('slotID')->nullable();
+            $table->integer('review')->nullable();
             $table->date('date')->nullable();
             $table->timestamps();
         });

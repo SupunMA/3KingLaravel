@@ -122,4 +122,22 @@ class userController extends Controller
     }
 
 
+
+    public function coachReview(Request $request){
+
+        // $payment=Timetable::where('id','111');
+        // dd($payment);
+        // $request->validate([
+        //     'planID' => ['required']
+        // ]);
+
+        Timetable::where('id', $request->timeID )
+        ->update([
+                    'review' => 5
+                ]);
+
+        return redirect()->back()->with('message','successful');
+
+    }
+
 }
