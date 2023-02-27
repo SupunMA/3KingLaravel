@@ -32,5 +32,5 @@
 @endsection
 
 @section('header')
-All Clients
+All Staff Members
 @endsection
