@@ -13,6 +13,7 @@
                     <th>Coach Name</th>
                     <th>Date</th>
                     <th>Time Slot</th>
+                    <th>Ratings</th>
                    
                    
                 </tr>
@@ -37,13 +38,37 @@
                         @if ($slot->slotID === $timeTable->slotID)
                             <td>{{$slot->slotTime}}</td>
                         @endif
-                    @endforeach
+                        @endforeach
 
-                        
+                        <td>
+                           
+
+                            <form>
+                                <input type="radio" id="option1" name="rating" value="1">
+                                <label for="option1"> Unacceptable</label><br>
+                                
+                                <input type="radio" id="option2" name="rating" value="2">
+                                <label for="option2"> Weak</label><br>
+                                
+                                <input type="radio" id="option3" name="rating" value="3">
+                                <label for="option3"> Good</label><br>
+                                
+                                <input type="radio" id="option4" name="rating" value="4">
+                                <label for="option4"> Very Good</label><br>
+                                
+                                <input type="radio" id="option5" name="rating" value="5">
+                                <label for="option5"> Excellent</label><br>
+
+                                <button type="submit" class="btn btn-success">Save</button>
+                            </form>
+                              
+
+                        </td>
   
                         
                     </tr>
                     
+
 
                 @endforeach
             </tbody>
@@ -53,7 +78,7 @@
                     <th>Coach Name</th>
                     <th>Date</th>
                     <th>Time Slot</th>
-                   
+                    <th>Ratings</th>
                     
                 </tr>
                 </tr>
