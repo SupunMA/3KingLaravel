@@ -41,8 +41,10 @@
                         @endforeach
 
                         <td>
-
-                            <form action="{{route('coachReview')}}" method="post" >
+                            @if (!$timeTable->review  == NULL)
+                            <B>{{$timeTable->review}}</B>
+                            @else
+                                <form action="{{route('coachReview')}}" method="post" >
                                 @csrf
 
 
@@ -65,11 +67,10 @@
                                 <input type="hidden" name="timeID" value="{{$timeTable->id}}">
 
 
-                                
-
-
                                 <button type="submit" class="btn btn-success">Save</button>
                             </form>
+                            @endif
+                            
                               
 
                         </td>

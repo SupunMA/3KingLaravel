@@ -125,15 +125,15 @@ class userController extends Controller
 
     public function coachReview(Request $request){
 
-        // $payment=Timetable::where('id','111');
-        // dd($payment);
+         $payment=Timetable::find($request->timeID)->value('id');
+         //dd($payment,$request->timeID);
         // $request->validate([
         //     'planID' => ['required']
         // ]);
 
         Timetable::where('id', $request->timeID )
         ->update([
-                    'review' => 5
+                    'review' => $request->$payment
                 ]);
 
         return redirect()->back()->with('message','successful');
