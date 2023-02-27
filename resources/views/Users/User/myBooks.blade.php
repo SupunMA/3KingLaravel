@@ -44,20 +44,20 @@
                            
 
                             <form>
-                                <input type="radio" id="option1" name="rating" value="1">
-                                <label for="option1"> Unacceptable</label><br>
+                                <input type="radio" id="{{$timeTable->id}}-1" name="{{$timeTable->id}}" value="1">
+                                <label for="{{$timeTable->id}}-1"> Unacceptable</label><br>
                                 
-                                <input type="radio" id="option2" name="rating" value="2">
-                                <label for="option2"> Weak</label><br>
+                                <input type="radio" id="{{$timeTable->id}}-2" name="{{$timeTable->id}}" value="2">
+                                <label for="{{$timeTable->id}}-2"> Weak</label><br>
                                 
-                                <input type="radio" id="option3" name="rating" value="3">
-                                <label for="option3"> Good</label><br>
+                                <input type="radio" id="{{$timeTable->id}}-3" name="{{$timeTable->id}}" value="3">
+                                <label for="{{$timeTable->id}}-3"> Good</label><br>
                                 
-                                <input type="radio" id="option4" name="rating" value="4">
-                                <label for="option4"> Very Good</label><br>
+                                <input type="radio" id="{{$timeTable->id}}-4" name="{{$timeTable->id}}" value="4">
+                                <label for="{{$timeTable->id}}-4"> Very Good</label><br>
                                 
-                                <input type="radio" id="option5" name="rating" value="5">
-                                <label for="option5"> Excellent</label><br>
+                                <input type="radio" id="{{$timeTable->id}}-5" name="{{$timeTable->id}}" value="5">
+                                <label for="{{$timeTable->id}}-5"> Excellent</label><br>
 
                                 <button type="submit" class="btn btn-success">Save</button>
                             </form>
