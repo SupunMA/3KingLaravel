@@ -124,9 +124,9 @@ class userController extends Controller
 
 
     public function coachReview(Request $request){
-
-         $payment=Timetable::find($request->timeID)->value('id');
-         //dd($payment,$request->timeID);
+        //dd("fdgfdg");
+         $payment=$request->timeID;
+        // dd($payment,$request->timeID);
         // $request->validate([
         //     'planID' => ['required']
         // ]);
