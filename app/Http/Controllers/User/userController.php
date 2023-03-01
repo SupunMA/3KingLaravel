@@ -33,7 +33,7 @@ class userController extends Controller
 
     public function deleteUser($ID)
     {
-        dd($ID);
+        //dd($ID);
         $delete = User::find($ID);
         $delete->delete();
         return redirect()->back()->with('message','successful');
@@ -138,6 +138,13 @@ class userController extends Controller
 
         return redirect()->back()->with('message','successful');
 
+    }
+
+    public function deletePayment(Request $request)
+    {
+        $delete = Timetable::find($request->payID);
+        $delete->delete();
+        return redirect()->back()->with('message','successful');
     }
 
 }

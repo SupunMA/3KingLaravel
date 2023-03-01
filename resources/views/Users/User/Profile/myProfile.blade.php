@@ -20,8 +20,9 @@
  
         </div>
         <h3> Delete the Account</h3>
-        @include('Users.User.Profile.components.profileDelete')
+        
     </form>
+    @include('Users.User.Profile.components.profileDelete')
     {{-- End of Row --}}
 
     

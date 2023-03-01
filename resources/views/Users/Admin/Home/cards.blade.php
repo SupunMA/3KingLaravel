@@ -60,9 +60,9 @@
                                     @endforeach
                             
                                 @endforeach
-                                {{$totalPaidAmount}}
+                                Rs.{{$totalPaidAmount}}.00
                             </h3>
-                            <h2>Current Month Revenue</h2> 
+                            <h2>This Month Revenue</h2> 
                             
                         </div>
                         <div class="icon">

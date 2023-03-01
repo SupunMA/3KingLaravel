@@ -118,6 +118,9 @@ Route::group(['prefix'=>'Account/Client','middleware'=>['checkUser','auth','lock
     //Coach Review
     Route::POST('/review/coach', [userController::class, 'coachReview'])->name('coachReview');
 
+    //
+   
+    Route::POST('clientPayment/delete', [userController::class, 'deletePayment'])->name('user.deletePayment');
     
 });
 
