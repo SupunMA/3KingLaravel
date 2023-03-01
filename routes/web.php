@@ -86,7 +86,8 @@ Route::group(['prefix'=>'Admin','middleware'=>['checkAdmin','auth','lockBack']],
     //current Month
     Route::get('currentMonthTable', [admin_PaymentCtr::class, 'currentMonthTable'])->name('admin.currentMonthTable');
 
-
+    //View Ratings
+    Route::get('allRatings', [admin_TimeCtr::class, 'allRatings'])->name('admin.allRatings');
 
     
 });

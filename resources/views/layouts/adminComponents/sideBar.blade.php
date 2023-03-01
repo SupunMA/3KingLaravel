@@ -176,6 +176,16 @@
             </li>
 
                 <li class="nav-item">
+                    <a href="{{ route('admin.allRatings') }}" class="nav-link {{ Route::currentRouteNamed('admin.allRatings') ? 'active' : '' }}">
+                        <i class="fas fa-vote-yea"></i>
+                        <p>
+                            Coaches Ratings
+                            <span class="right badge badge-danger">&#9733;</span>
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
                     <a href="{{ route('StaffProfileUpdate') }}" class="nav-link {{ Route::currentRouteNamed('StaffProfileUpdate') ? 'active' : '' }}">
                         <i class="fas fa-university"></i>
                         <p>

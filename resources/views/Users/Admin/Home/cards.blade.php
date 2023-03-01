@@ -62,7 +62,8 @@
                                 @endforeach
                                 Rs.{{$totalPaidAmount}}.00
                             </h3>
-                            <h2>This Month Revenue</h2> 
+                            <h2 style="display: inline-block">Revenue</h2>
+                            <h5 style="display: inline-block">(This Month - {{date('F')}})</h5>
                             
                         </div>
                         <div class="icon">

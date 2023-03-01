@@ -40,5 +40,12 @@ class admin_TimeCtr extends Controller
 
     }
 
+    public function allRatings()
+    {
+        $coaches=User::where('users.role',2)->get();
+        $timeTables=Timetable::all();
+        // dd($payment);
+        return view('Users.Admin.CoachRatings.AllRating',compact('coaches','timeTables'));
+    }
     
 }
