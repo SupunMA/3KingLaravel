@@ -27,5 +27,5 @@
 @endsection
 
 @section('header')
-Pending Payment Details
+This Month Payments
 @endsection

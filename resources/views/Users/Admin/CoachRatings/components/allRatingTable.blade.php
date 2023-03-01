@@ -84,7 +84,13 @@
                         
                         </td>
 
-                        <td>1%</td>
+                        <td> 
+                            @php
+                                $precent = 0;
+                                $precent = (($exc * 5) + ($VeryG * 4) + ($Good * 3) + ($Weak * 2) + ($unac * 1)) *  100 / (($exc + $VeryG + $Good + $Weak + $unac) * 5)
+                            @endphp
+                            <h3>{{round($precent,1)}}%</h3>
+                        </td>
                         
                     </tr>
                 @endforeach
