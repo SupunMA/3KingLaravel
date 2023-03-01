@@ -18,15 +18,16 @@
                 </tr>
             </thead>
             <tbody>
+                 
+
+                @foreach ($coaches as $coach)
                 @php
                     $unac = 0;
                     $Weak = 0;
                     $Good = 0;
                     $VeryG = 0;
                     $exc = 0;
-                @endphp 
-
-                @foreach ($coaches as $coach)
+                @endphp
                     <tr>
                         <td>{{$coach->id}}</td>
                         <td>{{$coach->name}}</td>
@@ -81,15 +82,22 @@
                             Good - {{$Good}} <br>
                             Weak - {{$Weak}} <br>
                             Unacceptable - {{$unac}} <br>
-                        
+                            <br>
+                            <h6><b> Total Reviews : {{$exc + $VeryG + $Good + $Weak + $unac}}</b>  </h6>
                         </td>
 
                         <td> 
-                            @php
+                            @if (($exc + $VeryG + $Good + $Weak + $unac) > 0)
+                                @php
                                 $precent = 0;
                                 $precent = (($exc * 5) + ($VeryG * 4) + ($Good * 3) + ($Weak * 2) + ($unac * 1)) *  100 / (($exc + $VeryG + $Good + $Weak + $unac) * 5)
-                            @endphp
-                            <h3>{{round($precent,1)}}%</h3>
+                                @endphp
+                                <h3>{{round($precent,1)}}%</h3>
+                            @else
+                                <h3>0%</h3>
+                            @endif
+                            
+                            
                         </td>
                         
                     </tr>
