@@ -42,7 +42,24 @@
 
                         <td>
                             @if (!$timeTable->review  == NULL)
-                            <B>{{$timeTable->review}}</B>
+
+                                @if ($timeTable->review == 1)
+                                   Unacceptable - <i>2 Points</i>
+                                @elseif ($timeTable->review == 2)
+                              Weak - <i>4 Points</i>
+
+                                @elseif ($timeTable->review == 3)
+                                Good -<i> 6 Points</i>
+
+                                @elseif ($timeTable->review == 4)
+                                Very Good - <i>8 Points</i>
+
+                                @elseif ($timeTable->review == 5)
+                                Excellent - <i>10 Points</i>
+
+
+                                @endif
+                            
                             @else
                                 <form action="{{route('coachReview')}}" method="post" >
                                 @csrf
@@ -50,19 +67,19 @@
 
                                 
                                 <input type="radio" id="{{$timeTable->id}}-1" name="{{$timeTable->id}}" value="1">
-                                <label for="{{$timeTable->id}}-1"> Unacceptable</label><br>
+                                <label for="{{$timeTable->id}}-1"> Unacceptable - <i>2 Points</i> </label><br>
                                 
                                 <input type="radio" id="{{$timeTable->id}}-2" name="{{$timeTable->id}}" value="2">
-                                <label for="{{$timeTable->id}}-2"> Weak</label><br>
+                                <label for="{{$timeTable->id}}-2"> Weak - <i>4 Points</i></label><br>
                                 
                                 <input type="radio" id="{{$timeTable->id}}-3" name="{{$timeTable->id}}" value="3">
-                                <label for="{{$timeTable->id}}-3"> Good</label><br>
+                                <label for="{{$timeTable->id}}-3"> Good -<i> 6 Points</i></label><br>
                                 
                                 <input type="radio" id="{{$timeTable->id}}-4" name="{{$timeTable->id}}" value="4">
-                                <label for="{{$timeTable->id}}-4"> Very Good</label><br>
+                                <label for="{{$timeTable->id}}-4"> Very Good - <i>8 Points</i></label><br>
                                 
                                 <input type="radio" id="{{$timeTable->id}}-5" name="{{$timeTable->id}}" value="5">
-                                <label for="{{$timeTable->id}}-5"> Excellent</label><br>
+                                <label for="{{$timeTable->id}}-5"> Excellent - <i>10 Points</i></label><br>
 
                                 <input type="hidden" name="timeID" value="{{$timeTable->id}}">
 
