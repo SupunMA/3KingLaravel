@@ -44,28 +44,22 @@
                             @if (!$timeTable->review  == NULL)
 
                                 @if ($timeTable->review == 1)
-                                   Unacceptable - <i>2 Points</i>
+                                    Unacceptable - <i>1 Point</i>
                                 @elseif ($timeTable->review == 2)
-                              Weak - <i>4 Points</i>
-
+                                    Weak - <i>2 Points</i>
                                 @elseif ($timeTable->review == 3)
-                                Good -<i> 6 Points</i>
-
+                                    Good -<i> 3 Points</i>
                                 @elseif ($timeTable->review == 4)
-                                Very Good - <i>8 Points</i>
-
+                                    Very Good - <i>4 Points</i>
                                 @elseif ($timeTable->review == 5)
-                                Excellent - <i>10 Points</i>
-
-
+                                    Excellent - <i>5 Points</i>
                                 @endif
                             
                             @else
+
                                 <form action="{{route('coachReview')}}" method="post" >
                                 @csrf
 
-
-                                
                                 <input type="radio" id="{{$timeTable->id}}-1" name="{{$timeTable->id}}" value="1">
                                 <label for="{{$timeTable->id}}-1"> Unacceptable - <i>2 Points</i> </label><br>
                                 
