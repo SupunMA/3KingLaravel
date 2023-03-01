@@ -6,10 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Models\Plan;
+use App\Models\Payment;
 use App\Models\User;
-
-
-
 
 class admin_HomeCtr extends Controller
 {
@@ -27,16 +25,15 @@ class admin_HomeCtr extends Controller
 //Dashboard
     public function checkAdmin()
     {
-        $ClientsCount=User::where('users.role',0)->count();
-        $AdminCount=User::where('users.role',1)->count();
-        $CoachCount=User::where('users.role',2)->count();
-        $ManagerCount=User::where('users.role',3)->count();
-
-
-      
+        $ClientsCount   =   User::where('users.role',0)->count();
+        $AdminCount     =   User::where('users.role',1)->count();
+        $CoachCount     =   User::where('users.role',2)->count();
+        $ManagerCount   =   User::where('users.role',3)->count();
         $PlanCount=Plan::count();
-       
-        return view('Users.Admin.home',compact('PlanCount','ClientsCount','ManagerCount','CoachCount','AdminCount'));
+
+        $AllPlans       = Plan::all();
+        $AllPayments    = Payment::all();
+        return view('Users.Admin.home',compact('PlanCount','ClientsCount','ManagerCount','CoachCount','AdminCount','AllPlans','AllPayments'));
     }
 
     

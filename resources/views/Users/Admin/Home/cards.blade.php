@@ -40,7 +40,28 @@
                     <div class="small-box bg-light">
                         <div class="inner">
         
-                            <h3>0</h3>
+                            @php
+                                $totalPaidAmount = 0;
+
+                            @endphp
+                            <h3>
+                                @foreach ($AllPlans as $plan)
+                        
+                                    @foreach ($AllPayments as $AllPayment)
+                                    
+                                        @if ($plan->planID === $AllPayment->planID && $AllPayment->confirm === 1)
+                                            
+                                            @php
+                                                 $totalPaidAmount = $totalPaidAmount + $plan->planPrice;
+                                            @endphp
+                                            
+                                        @endif
+                                    
+                                    @endforeach
+                            
+                                @endforeach
+                                {{$totalPaidAmount}} - {{ date('m') }}
+                            </h3>
                             <h2>Revenue</h2> 
                             
                         </div>
