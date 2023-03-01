@@ -83,6 +83,9 @@ Route::group(['prefix'=>'Admin','middleware'=>['checkAdmin','auth','lockBack']],
 
     Route::get('approvedPayment', [admin_PaymentCtr::class, 'approvedPayment'])->name('admin.approvedPayment');
     Route::get('DeclinedPayment', [admin_PaymentCtr::class, 'DeclinedPayment'])->name('admin.DeclinedPayment');
+    //current Month
+    Route::get('currentMonthTable', [admin_PaymentCtr::class, 'currentMonthTable'])->name('admin.currentMonthTable');
+
 
 
     

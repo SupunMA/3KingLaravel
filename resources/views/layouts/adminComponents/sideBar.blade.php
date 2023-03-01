@@ -59,8 +59,8 @@
                   </li>
                 
 
-                  <li class="nav-item {{ Route::currentRouteNamed('admin.pendingPaymentList') || Route::currentRouteNamed('admin.approvedPayment') || Route::currentRouteNamed('admin.DeclinedPayment')? 'menu-open' : 'menu-close' }}">
-                    <a href="#" class="nav-link {{ Route::currentRouteNamed('admin.pendingPaymentList') || Route::currentRouteNamed('admin.approvedPayment') || Route::currentRouteNamed('admin.DeclinedPayment') ? 'active' : '' }} ">
+                  <li class="nav-item {{ Route::currentRouteNamed('admin.pendingPaymentList') || Route::currentRouteNamed('admin.approvedPayment') || Route::currentRouteNamed('admin.DeclinedPayment') || Route::currentRouteNamed('admin.currentMonthTable')? 'menu-open' : 'menu-close' }}">
+                    <a href="#" class="nav-link {{ Route::currentRouteNamed('admin.pendingPaymentList') || Route::currentRouteNamed('admin.approvedPayment') || Route::currentRouteNamed('admin.DeclinedPayment') || Route::currentRouteNamed('admin.currentMonthTable') ? 'active' : '' }} ">
                         <i class="fas fa-money-bill-wave"></i>
                         <p>
                             Payments
@@ -68,6 +68,12 @@
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('admin.currentMonthTable') }}" class="nav-link {{ Route::currentRouteNamed('admin.currentMonthTable') ? 'active' : '' }} ">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Current Month</p>
+                            </a>
+                        </li>
                         <li class="nav-item">
                             <a href="{{ route('admin.pendingPaymentList') }}" class="nav-link {{ Route::currentRouteNamed('admin.pendingPaymentList') ? 'active' : '' }} ">
                                 <i class="far fa-circle nav-icon"></i>

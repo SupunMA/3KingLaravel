@@ -16,7 +16,7 @@
         <div class="card-body">
             <div class="row">
                
-                <div class="col-xl-2 col-lg-4 col-md-4 col-12">
+                <div class="col-xl-3 col-lg-4 col-md-4 col-12">
                     <!-- small card -->
                     <div class="small-box bg-primary">
                         <div class="inner">
@@ -35,7 +35,7 @@
                 </div>
         
             
-                <div class="col-xl-2 col-lg-4 col-md-4 col-12">
+                <div class="col-xl-3 col-lg-4 col-md-4 col-12">
                     <!-- small card -->
                     <div class="small-box bg-light">
                         <div class="inner">
@@ -62,13 +62,13 @@
                                 @endforeach
                                 {{$totalPaidAmount}}
                             </h3>
-                            <h2>Revenue</h2> 
+                            <h2>Current Month Revenue</h2> 
                             
                         </div>
                         <div class="icon">
                             <i class="fas fa-money-bill-wave"></i>
                         </div>
-                        <a href="" class="small-box-footer">
+                        <a href="{{route('admin.currentMonthTable')}}" class="small-box-footer">
                             More info <i class="fas fa-arrow-circle-right"></i>
                         </a>
                     </div>

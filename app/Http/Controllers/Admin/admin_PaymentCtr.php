@@ -8,10 +8,16 @@ use App\Models\User;
 use App\Models\Payment;
 use App\Models\Plan;
 
+use Carbon\Carbon;
+
+
 
 class admin_PaymentCtr extends Controller
 {
    //protected $task;
+
+  
+
     
    
  //Authenticate all Admin routes
@@ -68,6 +74,19 @@ class admin_PaymentCtr extends Controller
         return view('Users.Admin.Payment.declinedPayment',compact('clients','payments','plans'));
     }
 
+
+    
+    public function currentMonthTable()
+    {
+        //Used Carbon Library
+        $currentMonth = Carbon::now()->month;
+        $currentYear = Carbon::now()->year;
+
+        $clients=User::where('users.role',0)->get();
+        $payments=Payment::where('payments.confirm',1)->whereRaw('MONTH(payDate) = ?', [$currentMonth])->whereRaw('YEAR(payDate) = ?', [$currentYear])->get();
+        $plans=Plan::all();
+        return view('Users.Admin.Payment.currentMonth',compact('clients','payments','plans'));
+    }
 
 
     // public function allLand()
