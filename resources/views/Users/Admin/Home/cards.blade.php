@@ -49,7 +49,7 @@
                         
                                     @foreach ($AllPayments as $AllPayment)
                                     
-                                        @if ($plan->planID === $AllPayment->planID && $AllPayment->confirm === 1)
+                                        @if ($plan->planID === $AllPayment->planID && $AllPayment->confirm === 1 && date('m', strtotime($AllPayment->payDate)) === date('m') && date('y', strtotime($AllPayment->payDate)) === date('y'))
                                             
                                             @php
                                                  $totalPaidAmount = $totalPaidAmount + $plan->planPrice;
@@ -60,7 +60,7 @@
                                     @endforeach
                             
                                 @endforeach
-                                {{$totalPaidAmount}} - {{ date('m') }}
+                                {{$totalPaidAmount}}
                             </h3>
                             <h2>Revenue</h2> 
                             
