@@ -110,7 +110,7 @@
                    <th>Action</th>
                     
                 </tr>
-                </tr>
+                
             </tfoot>
             
         </table>
